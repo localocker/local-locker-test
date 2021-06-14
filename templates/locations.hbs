@@ -1,0 +1,25 @@
+---
+{
+    "stream": {
+        "$id": "sites-locations",
+        "source": "knowledgeGraph",
+        "destination": "pages",
+        "fields": [
+        "id", 
+        "uid", 
+        "locale",
+        "name", 
+        "address", 
+        "mainPhone", 
+        "description", 
+        "slug"
+        ], 
+        "filter" : {
+            "entityTypes": [
+                "location"
+            ]
+        }
+    },
+    "urlFormat": "{{slug}}"
+}
+---
