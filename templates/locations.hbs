@@ -11,7 +11,7 @@
         "address", 
         "mainPhone",
         "hours" ,
-        "services",
+      "services",
         "description", 
         "slug"
         ], 
@@ -25,30 +25,34 @@
 }
 ---
 
-
 <html>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>{{name}} - {{geomodifier}} </title>
+    <script src="main.js"></script>
+
    </head>
-    <body> 
-        <div class='title pt-6 pb-6 border-b-8 border-green-400'> 
-          <h1 class='text-5xl  font-extralight text-white ml-6'> {{name}} </h1>
-        </div>
-        
-        <div class="container mx-auto px-32">
-          <div class='mt-6  flex'> 
-            <div class='branch-details pr-32'>
-              <h4 class='text-2xl font-bold mb-4'>Branch Details</h4>
+    <body>         
+        <div class="container bg-gray-50 mx-auto px-32">
+          <div class='mt-6'> 
+            <h1 class='text-4xl font-extralight'> {{name}} </h1>
+            <div class='address'>
+              <div class='text-lg font-bold mb-4'> Address:</div>
               <div> 
-                <p> {{address.line1}} </p>
-                <p> {{address.city}}, {{address.region}} {{address.postalCode}}</p>
+                <p> {{address.line1}} {{address.city}}, {{address.region}} {{address.postalCode}}</p>
               </div>
-              <p> {{mainPhone}} </p>
             </div>
+            <div class='details'>
+              <div class='text-lg font-bold mb-4'> Details:</div>
+              <div> 
+                <p> {{description}}</p>
+              </div>
+            </div>
+
+
             <div class='branch-hours pr-32'>
-              <h4 class='text-2xl font-bold mb-4' >Branch Hours</h4>
+              <h4 class='text-lg font-bold my-4' >Branch Hours</h4>
               <div class='hours-list'>
                 {{#each hours}}
                     {{#if this.date}}
@@ -68,25 +72,10 @@
               </div>
             </div>
 
-          {{#each hours}}
-            {{#if this.date}}
-            <div class='holiday-hours pr-32'>
-              <h4 class='text-2xl font-bold mb-4' >Upcoming Holiday Hours</h4>
-              <div class='hours-list'>
-                      <p>
-                      {{#each this}}
-                        {{#if isClosed}}
-                          <div>Closed on {{this.date}}</div>
-                        {{/if}}
-                      {{/each}} 
-                      </p> 
-              </div>
-            </div>
-          {{/if}}
-           {{/each}} 
+
 
             <div class='branch-services pr-32'>
-              <h4 class='text-2xl font-bold mb-4'>Services</h4>
+              <h4 class='text-2xl font-bold my-4'>Services</h4>
               <ul class="branch-services-list list-disc">
                 {{#each services}}
                   <li>{{this}}</li>
@@ -95,6 +84,13 @@
             </div>
           </div>
         </div>
+
+        
+
+
+
+
+
 
 
     </body> 

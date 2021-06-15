@@ -18,8 +18,8 @@
         "requiredFiles": []
     },
     "buildArtifacts": {
-        "build_setup_cmd": "echo install",
-        "build_cmd": "echo build"
+        "build_setup_cmd": "npm install",
+        "build_cmd": "npm run build"
     },
     "livePreview": {
         "serve_setup_cmd": "echo setup",
