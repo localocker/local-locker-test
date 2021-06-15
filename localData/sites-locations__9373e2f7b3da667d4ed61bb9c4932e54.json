@@ -1,0 +1,163 @@
+{
+	"uid": 23038038,
+	"name": "Local Locker Storage",
+	"services": [
+		"self-storage facility",
+		"self storage",
+		"storage units",
+		"storage facility",
+		"storage company",
+		"storage lockers",
+		"storage"
+	],
+	"id": "2",
+	"address": {
+		"city": "New York",
+		"postalCode": "10024",
+		"region": "NY",
+		"line1": "451 Columbus Ave.",
+		"countryCode": "US"
+	},
+	"mainPhone": "+16469164408",
+	"hours": {
+		"monday": {
+			"openIntervals": [
+				{
+					"end": "20:00",
+					"start": "08:00"
+				}
+			]
+		},
+		"sunday": {
+			"openIntervals": [
+				{
+					"end": "20:00",
+					"start": "08:00"
+				}
+			]
+		},
+		"friday": {
+			"openIntervals": [
+				{
+					"end": "20:00",
+					"start": "08:00"
+				}
+			]
+		},
+		"holidayHours": [
+			{
+				"date": "2021-07-04",
+				"openIntervals": [
+					{
+						"end": "20:00",
+						"start": "08:00"
+					}
+				]
+			},
+			{
+				"date": "2021-07-05",
+				"openIntervals": [
+					{
+						"end": "20:00",
+						"start": "08:00"
+					}
+				]
+			},
+			{
+				"date": "2021-09-06",
+				"openIntervals": [
+					{
+						"end": "20:00",
+						"start": "08:00"
+					}
+				]
+			},
+			{
+				"date": "2021-10-11",
+				"openIntervals": [
+					{
+						"end": "20:00",
+						"start": "08:00"
+					}
+				]
+			},
+			{
+				"openIntervals": [
+					{
+						"end": "20:00",
+						"start": "08:00"
+					}
+				],
+				"date": "2021-11-11"
+			},
+			{
+				"date": "2021-11-25",
+				"openIntervals": [
+					{
+						"end": "20:00",
+						"start": "08:00"
+					}
+				]
+			},
+			{
+				"openIntervals": [
+					{
+						"end": "20:00",
+						"start": "08:00"
+					}
+				],
+				"date": "2021-12-24"
+			},
+			{
+				"openIntervals": [
+					{
+						"start": "08:00",
+						"end": "20:00"
+					}
+				],
+				"date": "2021-12-25"
+			},
+			{
+				"openIntervals": [
+					{
+						"start": "08:00",
+						"end": "20:00"
+					}
+				],
+				"date": "2021-12-31"
+			}
+		],
+		"wednesday": {
+			"openIntervals": [
+				{
+					"end": "20:00",
+					"start": "08:00"
+				}
+			]
+		},
+		"saturday": {
+			"openIntervals": [
+				{
+					"end": "20:00",
+					"start": "08:00"
+				}
+			]
+		},
+		"thursday": {
+			"openIntervals": [
+				{
+					"end": "20:00",
+					"start": "08:00"
+				}
+			]
+		},
+		"tuesday": {
+			"openIntervals": [
+				{
+					"end": "20:00",
+					"start": "08:00"
+				}
+			]
+		}
+	}
+}
