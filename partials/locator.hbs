@@ -419,8 +419,7 @@ function getValueFromPath(object, path) {
 }
 
 function processParameterizedRichTextContentMapping(entityProfile, mapping) {
-    //console.log(entityProfile);
-    //console.log(mapping);
+
   const fieldValue = getValueFromPath(entityProfile, mapping);
   return mapping.isRtf ? RtfConverter.toHTML(fieldValue) : fieldValue;
 }
@@ -950,8 +949,6 @@ let selected_marker_icon;
 
 function addMarkersToMap(locations) {
   bounds = new google.maps.LatLngBounds();
-  console.log("MARKERS")
-  console.log(markers)
   for (let index = 0; index < markers.length; index++) {
     var marker = markers[index];
     marker.setMap(null);
