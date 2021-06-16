@@ -36,23 +36,9 @@
     <body>      
 
         <div class="flex min-h-screen w-full"> 
-            <div class="w-1 sm:w-4 md:w-8 lg:w-16 min-h-screen bg-red-500">
-                <a href="https://localocker.com/" class="p-2 hidden md:block"><img class="w-full" src="https://booking.localocker.com/static/media/locker-main-logo.9defa528.svg" alt="Locker Main Logo"></a>
-            </div>
-
+            {{>sidebar}}
             <div class="w-full">
-                <div class="bg-blue-900">
-                    <div class="container">
-                        <div class=" flex flex-col md:flex-row gap-4 text-sm uppercase tracking-wider text-white ">
-                            <a href="/" class="px-4 py-3 hover:bg-blue-800 cursor-pointer">Home</a>
-                            <a href="/" class="px-4 py-3 hover:bg-blue-800 cursor-pointer">About</a>
-                            <a href="/" class="px-4 py-3 hover:bg-blue-800 cursor-pointer">Investor Relations</a>
-                            <a href="/" class="px-4 py-3 hover:bg-blue-800 cursor-pointer">Executive Team</a>
-                        </div>
-                    </div>
-
-                </div>
-
+                {{>nav}}
                 <div class="bg-gray-50">
                     <div class="container pl-4 py-4">
                         <div class="border-b pb-2 mb-6 bg-orange-700">
