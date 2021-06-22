@@ -1,9 +1,15 @@
 # TODO 
 
+
 ## location pages 
-- styling
-- async stuff
+- format hours 
+- real data for units 
+- address pagespeed issues (render blocking js)
+- figure out intermittent google maps issue
+- add services 
 
 ## locator 
-- make a standard button class
-- make "near XXX string" dynamic
+- set up links to locator page 
+- figure out intermittent google maps issue 
+
+
