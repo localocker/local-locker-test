@@ -1,6 +1,5 @@
 <div class="full-width-locator">
 
-  
   <div class="panel">
     <div class="header-section">
         <div class="lp-param lp-param-{$customizationInstanceID}-headline header">
@@ -21,8 +20,8 @@
       </div>
       <div class="error-text"></div>
       <div class="search-bar">
-        <input type="text" class="form-control lp-param-placeholderText" id="location-input" placeholder="{$placeholder}" aria-label="E.g. New York">
-        <input type="submit" value="Search" class="lp-param-searchButtonText btn btn-primary search" id="search-location-button">
+        <input type="text" class="form-control lp-param-placeholderText" id="location-input" placeholder="E.g. Lower East Side" aria-label="E.g. New York">
+        <input type="submit" value="Search" class="btn btn-primary bg-red-500  text-white border-red-500 focus:ring-2 focus:bg-red-900 border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none" id="search-location-button">
       </div>
       <div class="search-center"></div>
     </div>
@@ -510,14 +509,14 @@ function locationJSONtoHTML(entityProfile, index, locationOptions) {
       cardTitleLinkUrlValue = cardTitleLinkUrlValue["url"];
     }
     html +=
-      '<div class="name">' +
-      '<a href="' +
+      '<div class="name hover:underline hover:font-semibold text-ll-red ">' +
+      '<a href="'  +
       cardTitleLinkUrlValue +
       '">' +
       cardTitleValue +
       "</a></div>";
   } else if (cardTitleValue) {
-    html += '<div class="name">' + cardTitleValue + "</div>";
+    html += '<div class="name hover:underline hover:font-semibold text-ll-red ">' + cardTitleValue + "</div>";
   }
   html += "</div>";
 

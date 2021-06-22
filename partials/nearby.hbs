@@ -1,5 +1,8 @@
 <div class="container nearby-locations">
-  <h2 class="headline"> Nearby Locations</h2>
+  <div class="flex justify-center">
+    <h1 class="text-xl font-bold mb-4"> Nearby Stores</h1>
+  </div>
+  
   <div class="row locations-row location-data flex flex-row gap-4"> </div>
 </div>
 
@@ -263,7 +266,7 @@
         if (true) {
             if (location.websiteUrl) {
             locationHTML =
-                '<div class="col-md-3 col-sm-6 location"><div class="name"><a href="' +
+                '<div class="col-md-3 col-sm-6 location"><div class="name hover:underline hover:font-semibold text-ll-red "><a href="' +
                 location.websiteUrl.url +
                 '">' +
                 location.name +
@@ -282,7 +285,7 @@
                 location.address.line1 +
                 "</div></div>";
             }
-            console.log(locationHTML);
+            //console.log(locationHTML);
             [].slice
             .call(document.querySelectorAll(".location-data") || [])
             .forEach(function (el) {
