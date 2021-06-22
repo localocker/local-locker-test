@@ -45,12 +45,14 @@
                             </a>
 
                         </div>
-                        <h1 class='text-5xl font-extrabold mb-4 text-ll-blue'> Local Locker Storage </h1>
-                        <h3 class='text-xl font-extrabold mb-4 text-ll-blue'> Local Locker Storage - Discover Storage Near You </h3>
+
                         <div class="flex flex-col md:flex-row">
                             <div class="md:w-2/3">
+                                <h1 class='text-5xl font-extrabold mb-6 text-ll-blue'> Local Locker Storage </h1>
+                                <h3 class='text-2xl font-extrabold  text-ll-blue'> Local Locker Storage - Discover Storage Near You </h3>
+                                <p class="text-lg mb-8"> 11 reviews</p>
                                 <div class="flex flex-row gap-6">
-                                    <div class='address mb-4 h-16'>
+                                    <div class='address mb-4 mr-16 h-16'>
                                         <h3 class="font-bold"> Address:</h3>
                                         <div> 
                                             <p> 186 Montague St. Brooklyn, NY 11201</p>
@@ -68,20 +70,25 @@
                                     </div>                                    
                                 </div>
                                 <div class="flex flex-row gap-6">
-                                    <div class='branch-hours mb-4'>
+                                    <div class='branch-hours mb-4 mr-32'>
                                         <h3 class="font-bold" >Access Hours</h3>
                                         <div class='hours-list'>
-                                                <p>friday:
+                                                <p>tuesday:
                                                     
                                                     08:00-20:00
                                                  
                                                 </p> 
-                                                                                            <p>tuesday:
+                                                                                            <p>wednesday:
                                                     
                                                     08:00-20:00
                                                  
                                                 </p> 
-                                                                                                                                        <p>monday:
+                                                                                                                                        <p>friday:
+                                                    
+                                                    08:00-20:00
+                                                 
+                                                </p> 
+                                                                                            <p>monday:
                                                     
                                                     08:00-20:00
                                                  
@@ -101,23 +108,13 @@
                                                     08:00-20:00
                                                  
                                                 </p> 
-                                                                                            <p>wednesday:
-                                                    
-                                                    08:00-20:00
-                                                 
-                                                </p> 
                                             
                                         </div>
                                     </div>
                                     <div class='access-hours mb-4'>
                                         <h3 class="font-bold" >Support Hours</h3>
                                         <div class='hours-list'>
-                                                <p>saturday:
-                                                    
-                                                    07:00-21:30
-                                                 
-                                                </p> 
-                                                                                            <p>thursday:
+                                                <p>friday:
                                                     
                                                     07:00-21:30
                                                  
@@ -127,17 +124,22 @@
                                                     07:00-21:30
                                                  
                                                 </p> 
-                                                                                            <p>tuesday:
-                                                    
-                                                    07:00-21:30
-                                                 
-                                                </p> 
                                                                                             <p>sunday:
                                                     
                                                     07:00-21:30
                                                  
                                                 </p> 
-                                                                                            <p>friday:
+                                                                                            <p>tuesday:
+                                                    
+                                                    07:00-21:30
+                                                 
+                                                </p> 
+                                                                                            <p>saturday:
+                                                    
+                                                    07:00-21:30
+                                                 
+                                                </p> 
+                                                                                            <p>thursday:
                                                     
                                                     07:00-21:30
                                                  
@@ -151,51 +153,41 @@
                                         </div>
                                     </div>
                                 </div>
-
-                            </div>
-                            <div class="md:w-1/3">
-                                <div class="map" id="map-snip" ></div>
-                            </div>                            
-                        </div>
-
-                        <div class="container"> 
-                            <div class="container justify-center">
-                                <h1 class="text-xl font-bold mb-4"> Available Units</h1>
                                                 <table class="min-w-full divide-y divide-gray-200 table-auto">
-                                                    <thead class="bg-gray-100">
+                                                    <thead class="">
                                                         <tr>
-                                                        <th scope="col" class='px-6 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
+                                                        <th scope="col" class='px-6 py-2 text-left font-semibold	   tracking-wider'>
                                                             Size
                                                         </th>
-                                                        <th scope="col" class='px-6 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
+                                                        <th scope="col" class='px-6 py-2 text-left font-semibold	   tracking-wider'>
                                                             Status
                                                         </th>
-                                                        <th scope="col" class='px-6 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
+                                                        <th scope="col" class='px-6 py-2 text-left font-semibold	   tracking-wider'>
                                                             Price
                                                         </th>
-                                                        <th scope="col" class='px-6 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
+                                                        <th scope="col" class='px-6 py-2 text-left font-semibold	   tracking-wider'>
                                                             Deals
                                                         </th>
                                                         </tr>
                                                     </thead>
                                                     <tbody class="divide-y divide-gray-200">
                                                         <tr class="hover:bg-gray-100">
-                                                            <td class="px-6 py-6 whitespace-nowrap text-2xl text-ll-blue">
+                                                            <td class="px-6 py-2 whitespace-nowrap  text-ll-blue">
                                                                 3'w x 4'd x 7.5'h
                                                             </td>
-                                                            <td class="px-6 py-6 whitespace-nowrap  text-ll-blue uppercase">
+                                                            <td class="px-6 py-2 whitespace-nowrap  text-ll-blue uppercase">
                                                                 <div class="text-xs font-medium tracking-wider">
                                                                     <div class="px-2 py-1 rounded-md border  border-green-300 bg-green-50 text-green-900 inline-block">
-                                                                                    Available
+                                                                      Available
                                                                     </div>
                                                                 </div>
                                                             </td>
-                                                            <td class="px-6 py-6 whitespace-nowrap text-sm text-ll-blue">
+                                                            <td class="px-6 py-2 whitespace-nowrap text-sm text-ll-blue">
                                                                 $90
                                                             </td>
-                                                            <td class="px-6 py-6 whitespace-nowrap text-sm text-ll-blue">
+                                                            <td class="px-6 py-2 whitespace-nowrap text-sm text-ll-blue">
                                                                 <div>
-                                                                    <a href="#" class=" border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none btn text-ll-red border-ll-red hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100">
+                                                                    <a href="#" class=" border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none btn bg-ll-red text-white border-ll-red hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100">
                                                                         Book Now
                                                                     </a>
                                  
@@ -203,22 +195,22 @@
                                                             </td>
                                                         </tr>
                                                         <tr class="hover:bg-gray-100">
-                                                            <td class="px-6 py-6 whitespace-nowrap text-2xl text-ll-blue">
+                                                            <td class="px-6 py-2 whitespace-nowrap  text-ll-blue">
                                                                 14 x 4 x 7
                                                             </td>
-                                                            <td class="px-6 py-6 whitespace-nowrap  text-ll-blue uppercase">
+                                                            <td class="px-6 py-2 whitespace-nowrap  text-ll-blue uppercase">
                                                                 <div class="text-xs font-medium tracking-wider">
                                                                     <div class="px-2 py-1 rounded-md border  border-green-300 bg-green-50 text-green-900 inline-block">
                                                                         Available
                                                                     </div>
                                                                 </div>
                                                             </td>
-                                                            <td class="px-6 py-6 whitespace-nowrap text-sm text-ll-blue">
+                                                            <td class="px-6 py-2 whitespace-nowrap text-sm text-ll-blue">
                                                                 $420
                                                             </td>
-                                                            <td class="px-6 py-6 whitespace-nowrap text-sm text-ll-blue">
+                                                            <td class="px-6 py-2 whitespace-nowrap text-sm text-ll-blue">
                                                                 <div>
-                                                                    <a href="#" class=" border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none btn text-ll-red border-ll-red hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100">
+                                                                    <a href="#" class=" border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none btn bg-ll-red text-white border-ll-red hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100">
                                                                         Book Now
                                                                     </a>
                                  
@@ -226,22 +218,22 @@
                                                             </td>
                                                         </tr>
                                                         <tr class="hover:bg-gray-100">
-                                                            <td class="px-6 py-6 whitespace-nowrap text-2xl text-ll-blue">
+                                                            <td class="px-6 py-2 whitespace-nowrap  text-ll-blue">
                                                                 4'w x 2.5'd x 7'h	
                                                             </td>
-                                                            <td class="px-6 py-6 whitespace-nowrap  text-ll-blue uppercase">
+                                                            <td class="px-6 py-2 whitespace-nowrap  text-ll-blue uppercase">
                                                                 <div class="text-xs font-medium tracking-wider">
                                                                     <div class="px-2 py-1 rounded-md border  border-green-300 bg-green-50 text-green-900 inline-block">
                                                                         Available
                                                                     </div>
                                                                 </div>
                                                             </td>
-                                                            <td class="px-6 py-6 whitespace-nowrap text-sm text-ll-blue">
+                                                            <td class="px-6 py-2 whitespace-nowrap text-sm text-ll-blue">
                                                                 $115
                                                             </td>
-                                                            <td class="px-6 py-6 whitespace-nowrap text-sm text-ll-blue">
+                                                            <td class="px-6 py-2 whitespace-nowrap text-sm text-ll-blue">
                                                                 <div>
-                                                                    <a href="#" class=" border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none btn text-ll-red border-ll-red hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100">
+                                                                    <a href="#" class=" border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none btn bg-ll-red text-white border-ll-red hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100">
                                                                         Book Now
                                                                     </a>
                                  
@@ -249,22 +241,22 @@
                                                             </td>
                                                         </tr>
                                                         <tr class="hover:bg-gray-100">
-                                                            <td class="px-6 py-6 whitespace-nowrap text-2xl text-ll-blue">
+                                                            <td class="px-6 py-2 whitespace-nowrap  text-ll-blue">
                                                                 5'w x 3'd x 7'h	
                                                             </td>
-                                                            <td class="px-6 py-6 whitespace-nowrap  text-ll-blue uppercase">
+                                                            <td class="px-6 py-2 whitespace-nowrap  text-ll-blue uppercase">
                                                                 <div class="text-xs font-medium tracking-wider">
                                                                     <div class="px-2 py-1 rounded-md border  border-green-300 bg-green-50 text-green-900 inline-block">
                                                                     Available
                                                                     </div>
                                                                 </div>
                                                             </td>
-                                                            <td class="px-6 py-6 whitespace-nowrap text-sm text-ll-blue">
+                                                            <td class="px-6 py-2 whitespace-nowrap text-sm text-ll-blue">
                                                                 $90
                                                             </td>
-                                                            <td class="px-6 py-6 whitespace-nowrap text-sm text-ll-blue">
+                                                            <td class="px-6 py-2 whitespace-nowrap text-sm text-ll-blue">
                                                                 <div>
-                                                                    <a href="#" class=" border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none btn text-ll-red border-ll-red hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100">
+                                                                    <a href="#" class=" border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none btn bg-ll-red text-white border-ll-red hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100">
                                                                         Book Now
                                                                     </a>
                                  
@@ -272,22 +264,22 @@
                                                             </td>
                                                         </tr>
                                                         <tr class="hover:bg-gray-100">
-                                                            <td class="px-6 py-6 whitespace-nowrap text-2xl text-ll-blue">
+                                                            <td class="px-6 py-6 whitespace-nowrap text-ll-blue">
                                                                 Bike Storage (Wall Hook)	
                                                             </td>
-                                                            <td class="px-6 py-6 whitespace-nowrap  text-ll-blue uppercase">
+                                                            <td class="px-6 py-2 whitespace-nowrap  text-ll-blue uppercase">
                                                                 <div class="text-xs font-medium tracking-wider">
                                                                     <div class="px-2 py-1 rounded-md border  border-green-300 bg-green-50 text-green-900 inline-block">
                                                                     Available
                                                                     </div>
                                                                 </div>
                                                             </td>
-                                                            <td class="px-6 py-6 whitespace-nowrap text-sm text-ll-blue">
+                                                            <td class="px-6 py-2 whitespace-nowrap text-sm text-ll-blue">
                                                                 $90
                                                             </td>
-                                                            <td class="px-6 py-6 whitespace-nowrap text-sm text-ll-blue">
+                                                            <td class="px-6 py-2 whitespace-nowrap text-sm text-ll-blue">
                                                                 <div>
-                                                                    <a href="#" class=" border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none btn text-ll-red border-ll-red hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100">
+                                                                    <a href="#" class=" border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none btn bg-ll-red text-white border-ll-red hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100">
                                                                         Book Now
                                                                     </a>
                                  
@@ -297,6 +289,34 @@
                                                     </tbody>
                                                 </table>
                                 
+
+                            </div>
+                            <div class="md:w-1/3 ml-4">
+                                <div class="map mb-8" id="map-snip" ></div>
+                                <div class="container mb-8">
+                                    <img src="https://images.unsplash.com/photo-1521080755838-d2311117f767?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=df4dba6eb71efcca6d13c50bc2f97693&auto=format&fit=crop&w=600&q=80">
+
+                                </div>
+                                
+                                <div class="container services">
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="text-left lowercase "> ELEVATOR_ACCESS </div>
+                                        <div class="text-left lowercase "> NO_STAIRS_REQURIED </div>
+                                        <div class="text-left lowercase "> CLIMATE_CONTROLLED </div>
+                                        <div class="text-left lowercase "> SECURITY_CAMERAS </div>
+                                        <div class="text-left lowercase "> 24_HOUR_SURVEILLANCE_SYSTEM </div>
+                                        <div class="text-left lowercase "> TEMPERATURE_CONTROLLED_FACILITY </div>
+                                        <div class="text-left lowercase "> MONTH-TO-MONTH_LEASES </div>
+                                        <div class="text-left lowercase "> CONTACTLESS_MOVE-INS </div>
+                                        <div class="text-left lowercase "> COMPLIMENTARY_INSURANCE_UP_TO_$1,000 </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+
+                        <div class="container"> 
+                            <div class="container justify-center">
+                   
                             </div> 
 
                             <div class="container mt-4">
