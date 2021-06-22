@@ -1,0 +1,720 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Local Locker Storage -  </title>
+    <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18&libraries=places&callback=initMaps "></script>
+    <script>
+            var initMapsFunctions = [];
+            var initMaps = function(noKey) {
+                for (i = 0; i < initMapsFunctions.length; i++) {
+                    initMapsFunctions[i](noKey);
+                }
+            }
+    </script>
+   
+   </head>
+    <body>      
+ 
+        <div class="flex min-h-screen w-full"> 
+            <div class="w-1 sm:w-4 md:w-8 lg:w-16 min-h-screen bg-ll-red">
+                <a href="https://localocker.com/" class="p-2 hidden md:block"><img class="w-full" src="https://booking.localocker.com/static/media/locker-main-logo.9defa528.svg" alt="Locker Main Logo"></a>
+            </div>            <div class="w-full">
+                <div class="bg-ll-blue">
+                    <div class="container">
+                        <div class=" flex flex-col md:flex-row gap-4 text-sm uppercase tracking-wider text-white ">
+                            <a href="/" class="px-4 py-3 hover:bg-blue-800 cursor-pointer">Home</a>
+                            <a href="/" class="px-4 py-3 hover:bg-blue-800 cursor-pointer">About</a>
+                            <a href="/" class="px-4 py-3 hover:bg-blue-800 cursor-pointer">Investor Relations</a>
+                            <a href="/" class="px-4 py-3 hover:bg-blue-800 cursor-pointer">Executive Team</a>
+                        </div>
+                    </div>
+                </div>                <div class="bg-gray-50">
+                    <div class="container pl-4 py-4">
+                        <div class="border-b pb-2 mb-6 bg-orange-700">
+                            <a href="/locator.html" class="flex items-center">
+                                <div>
+                                    <svg width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M.117 5.14a.337.337 0 000 .499l4.307 4.336c.117.146.351.146.498 0l.557-.586a.337.337 0 000-.498L2.02 5.375 5.48 1.889c.146-.147.146-.381 0-.498L4.922.805c-.147-.147-.381-.147-.498 0L.117 5.14z" fill="#00173C">
+                                        </path>
+                                    </svg>
+                                </div>
+                               <div class="">&nbsp;Back</div>
+                            </a>
+
+                        </div>
+                        <h1 class='text-5xl font-extrabold mb-4 text-ll-blue'> Local Locker Storage </h1>
+                        <h3 class='text-xl font-extrabold mb-4 text-ll-blue'> Local Locker Storage - Discover Storage Near You </h3>
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-2/3">
+                                <div class="flex flex-row gap-6">
+                                    <div class='address mb-4 h-16'>
+                                        <h3 class="font-bold"> Address:</h3>
+                                        <div> 
+                                            <p> 1027 Cortelyou Rd Brooklyn, NY 11218</p>
+                                        </div>
+                                    </div>                                     
+                                    <div>
+                                        <div class="btn btn-secondary text-red-500 border-red-500 
+                                                 hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100 
+                                                 border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all 
+                                                 cursor-pointer hover:shadow-lg block text-center focus:outline-none 
+                                                flex items-center justify-center">
+                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="mr-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"></path></svg>
+                                            +13479054408
+                                        </div>                                        
+                                    </div>                                    
+                                </div>
+                                <div class="flex flex-row gap-6">
+                                    <div class='branch-hours mb-4'>
+                                        <h3 class="font-bold" >Access Hours</h3>
+                                        <div class='hours-list'>
+                                                <p>thursday:
+                                                    
+                                                    08:00-20:00
+                                                 
+                                                </p> 
+                                                                                            <p>wednesday:
+                                                    
+                                                    08:00-20:00
+                                                 
+                                                </p> 
+                                                                                            <p>friday:
+                                                    
+                                                    08:00-20:00
+                                                 
+                                                </p> 
+                                                                                            <p>saturday:
+                                                    
+                                                    08:00-20:00
+                                                 
+                                                </p> 
+                                                                                            <p>sunday:
+                                                    
+                                                    08:00-20:00
+                                                 
+                                                </p> 
+                                                                                                                                        <p>monday:
+                                                    
+                                                    08:00-20:00
+                                                 
+                                                </p> 
+                                                                                            <p>tuesday:
+                                                    
+                                                    08:00-20:00
+                                                 
+                                                </p> 
+                                            
+                                        </div>
+                                    </div>
+                                    <div class='access-hours mb-4'>
+                                        <h3 class="font-bold" >Support Hours</h3>
+                                        <div class='hours-list'>
+                                                <p>sunday:
+                                                    
+                                                    07:00-21:30
+                                                 
+                                                </p> 
+                                                                                            <p>friday:
+                                                    
+                                                    07:00-21:30
+                                                 
+                                                </p> 
+                                                                                            <p>wednesday:
+                                                    
+                                                    07:00-21:30
+                                                 
+                                                </p> 
+                                                                                            <p>saturday:
+                                                    
+                                                    07:00-21:30
+                                                 
+                                                </p> 
+                                                                                            <p>thursday:
+                                                    
+                                                    07:00-21:30
+                                                 
+                                                </p> 
+                                                                                            <p>monday:
+                                                    
+                                                    07:00-21:30
+                                                 
+                                                </p> 
+                                                                                            <p>tuesday:
+                                                    
+                                                    07:00-21:30
+                                                 
+                                                </p> 
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="md:w-1/3">
+                                <div class="map" id="map-snip" ></div>
+                            </div>                            
+                        </div>
+
+                        <div class="container"> 
+                            <div class="container justify-center">
+                                <h1 class="text-xl font-bold mb-4"> Available Units</h1>
+                                                <table class="min-w-full divide-y divide-gray-200 table-auto">
+                                                    <thead class="bg-gray-100">
+                                                        <tr>
+                                                        <th scope="col" class='px-6 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
+                                                            Size
+                                                        </th>
+                                                        <th scope="col" class='px-6 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
+                                                            Status
+                                                        </th>
+                                                        <th scope="col" class='px-6 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
+                                                            Price
+                                                        </th>
+                                                        <th scope="col" class='px-6 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
+                                                            Deals
+                                                        </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="divide-y divide-gray-200">
+                                                        <tr class="hover:bg-gray-100">
+                                                            <td class="px-6 py-6 whitespace-nowrap text-2xl text-ll-blue">
+                                                                3'w x 4'd x 7.5'h
+                                                            </td>
+                                                            <td class="px-6 py-6 whitespace-nowrap  text-ll-blue uppercase">
+                                                                <div class="text-xs font-medium tracking-wider">
+                                                                    <div class="px-2 py-1 rounded-md border  border-green-300 bg-green-50 text-green-900 inline-block">
+                                                                                    Available
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="px-6 py-6 whitespace-nowrap text-sm text-ll-blue">
+                                                                $90
+                                                            </td>
+                                                            <td class="px-6 py-6 whitespace-nowrap text-sm text-ll-blue">
+                                                                <div>
+                                                                    <a href="#" class=" border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none btn text-ll-red border-ll-red hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100">
+                                                                        Book Now
+                                                                    </a>
+                                 
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="hover:bg-gray-100">
+                                                            <td class="px-6 py-6 whitespace-nowrap text-2xl text-ll-blue">
+                                                                14 x 4 x 7
+                                                            </td>
+                                                            <td class="px-6 py-6 whitespace-nowrap  text-ll-blue uppercase">
+                                                                <div class="text-xs font-medium tracking-wider">
+                                                                    <div class="px-2 py-1 rounded-md border  border-green-300 bg-green-50 text-green-900 inline-block">
+                                                                        Available
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="px-6 py-6 whitespace-nowrap text-sm text-ll-blue">
+                                                                $420
+                                                            </td>
+                                                            <td class="px-6 py-6 whitespace-nowrap text-sm text-ll-blue">
+                                                                <div>
+                                                                    <a href="#" class=" border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none btn text-ll-red border-ll-red hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100">
+                                                                        Book Now
+                                                                    </a>
+                                 
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="hover:bg-gray-100">
+                                                            <td class="px-6 py-6 whitespace-nowrap text-2xl text-ll-blue">
+                                                                4'w x 2.5'd x 7'h	
+                                                            </td>
+                                                            <td class="px-6 py-6 whitespace-nowrap  text-ll-blue uppercase">
+                                                                <div class="text-xs font-medium tracking-wider">
+                                                                    <div class="px-2 py-1 rounded-md border  border-green-300 bg-green-50 text-green-900 inline-block">
+                                                                        Available
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="px-6 py-6 whitespace-nowrap text-sm text-ll-blue">
+                                                                $115
+                                                            </td>
+                                                            <td class="px-6 py-6 whitespace-nowrap text-sm text-ll-blue">
+                                                                <div>
+                                                                    <a href="#" class=" border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none btn text-ll-red border-ll-red hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100">
+                                                                        Book Now
+                                                                    </a>
+                                 
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="hover:bg-gray-100">
+                                                            <td class="px-6 py-6 whitespace-nowrap text-2xl text-ll-blue">
+                                                                5'w x 3'd x 7'h	
+                                                            </td>
+                                                            <td class="px-6 py-6 whitespace-nowrap  text-ll-blue uppercase">
+                                                                <div class="text-xs font-medium tracking-wider">
+                                                                    <div class="px-2 py-1 rounded-md border  border-green-300 bg-green-50 text-green-900 inline-block">
+                                                                    Available
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="px-6 py-6 whitespace-nowrap text-sm text-ll-blue">
+                                                                $90
+                                                            </td>
+                                                            <td class="px-6 py-6 whitespace-nowrap text-sm text-ll-blue">
+                                                                <div>
+                                                                    <a href="#" class=" border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none btn text-ll-red border-ll-red hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100">
+                                                                        Book Now
+                                                                    </a>
+                                 
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="hover:bg-gray-100">
+                                                            <td class="px-6 py-6 whitespace-nowrap text-2xl text-ll-blue">
+                                                                Bike Storage (Wall Hook)	
+                                                            </td>
+                                                            <td class="px-6 py-6 whitespace-nowrap  text-ll-blue uppercase">
+                                                                <div class="text-xs font-medium tracking-wider">
+                                                                    <div class="px-2 py-1 rounded-md border  border-green-300 bg-green-50 text-green-900 inline-block">
+                                                                    Available
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="px-6 py-6 whitespace-nowrap text-sm text-ll-blue">
+                                                                $90
+                                                            </td>
+                                                            <td class="px-6 py-6 whitespace-nowrap text-sm text-ll-blue">
+                                                                <div>
+                                                                    <a href="#" class=" border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none btn text-ll-red border-ll-red hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100">
+                                                                        Book Now
+                                                                    </a>
+                                 
+                                                                </div>
+                                                            </td>
+                                                        </tr>                                            
+                                                    </tbody>
+                                                </table>
+                                
+                            </div> 
+
+                            <div class="container mt-4">
+                                <div class="container nearby-locations">
+                                  <div class="flex justify-center">
+                                    <h1 class="text-xl font-bold mb-4"> Nearby Stores</h1>
+                                  </div>
+                                  
+                                  <div class="row locations-row location-data flex flex-row gap-4 justify-center"> </div>
+                                </div>
+                                
+                                <script>
+                                    window.dayName = function(currentDate) {
+                                      return days[currentDate.getDay()];
+                                    };
+                                
+                                    window.formatDate = function(intervalStamp, addDays) {
+                                      let baseDate = new Date();
+                                      let hours = intervalStamp / 100;
+                                      let minutes = intervalStamp % 100;
+                                      baseDate.setHours(hours);
+                                      baseDate.setMinutes(minutes);
+                                      const options = {hour: '2-digit', minute:'2-digit'};
+                                      if (addDays != undefined) {
+                                        options.weekday = "short";
+                                        baseDate.setDate(baseDate.getDate() + addDays);
+                                      }
+                                      return baseDate.toLocaleTimeString([], options);
+                                    };
+                                
+                                    window.getYextTimeWithUtcOffset = function(entityUtcOffsetSeconds) {
+                                      const now = new Date();
+                                      let utcOffset = 0;
+                                      if (entityUtcOffsetSeconds) {
+                                        utcOffset = entityUtcOffsetSeconds * 1000;
+                                      }
+                                      if (utcOffset !== 0) {
+                                        const localUtcOffset = now.getTimezoneOffset() * 60 * 1000;
+                                        return new Date(now.valueOf() + utcOffset + localUtcOffset);
+                                      }
+                                      return now;
+                                    };
+                                
+                                    window.parseTimeZoneUtcOffset = function(timeString) {
+                                      if (!timeString) {
+                                        return 0;
+                                      }
+                                      const parts = timeString.split(":");
+                                      const hours = parseInt(parts[0].replace(/\u200E/g, ''), 10);
+                                      const minutes = parseInt(parts[1].replace(/\u200E/g, ''), 10);
+                                      if (hours < 0) {
+                                        return -(Math.abs(hours) + minutes / 60) * 60 * 60;
+                                      }
+                                      return (hours + minutes / 60) * 60 * 60;
+                                    };
+                                
+                                	window.dateStringToInt = function(dateString) {
+                                			return parseInt(dateString.replace(":",""))
+                                		};
+                                
+                                    window.getOpenNowString = function(hoursData, utcOffset) {
+                                		  if (!hoursData) {
+                                		    return ""
+                                        }
+                                
+                                      const now = getYextTimeWithUtcOffset(utcOffset);
+                                      const tomorrow = new Date(now.getTime() + 60 * 60 * 24 * 1000);
+                                      const yesterday = new Date(now.getTime() - 60 * 60 * 24 * 1000);
+                                      const nowTimeNumber = now.getHours() + now.getMinutes()/60;
+                                
+                                      function getIntervalOnDate(date) {
+                                        const day = date.getDate();
+                                        const month = date.getMonth() + 1;
+                                        const year = date.getFullYear();
+                                
+                                        const days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+                                
+                                        const dateString = year + '-' + (month < 10 ? '0' + month : month) + '-' + (day < 10 ? '0' + day : day);
+                                        const dayOfWeekString = days[date.getDay()];
+                                
+                                        // Check for holiday
+                                        if (hoursData.holidayHours) {
+                                          for (let i = 0; i < hoursData.holidayHours.length; i++) {
+                                            const holiday = hoursData.holidayHours[i];
+                                            if (holiday.date == dateString) {
+                                              if (holiday.openIntervals) {
+                                                return holiday.openIntervals;
+                                              } else if (holiday.isClosed === true) {
+                                                return null; // On holiday but closed
+                                              }
+                                            }
+                                          }
+                                        }
+                                
+                                        // Not on holiday
+                                        if (hoursData[dayOfWeekString] && hoursData[dayOfWeekString].openIntervals) {
+                                          return hoursData[dayOfWeekString].openIntervals;
+                                        } else {
+                                          return null;
+                                        }
+                                      }
+                                
+                                      function timeStringToNumber(timeString) {
+                                        const parts = timeString.split(":");
+                                        const hours = parseInt(parts[0].replace(/\u200E/g, ''),10);
+                                        const minutes = parseInt(parts[1].replace(/\u200E/g, ''),10);
+                                        return hours + minutes / 60;
+                                      }
+                                
+                                      function formatTime(time) {
+                                        const tempDate = new Date("January 1, 2020 " + time)
+                                        const localeString = 'en-US';
+                                        const tempTime = tempDate.toLocaleTimeString(localeString.replace('_', '-'), { hour: "numeric", minute: "numeric" });
+                                        return tempTime;
+                                      }
+                                
+                                      const intervalsToday = getIntervalOnDate(now);
+                                      const intervalsTomorrow = getIntervalOnDate(tomorrow);
+                                      const intervalsYesterday = getIntervalOnDate(yesterday);
+                                      let openRightNow = false;
+                                      let currentInterval = null;
+                                      let nextInterval = null;
+                                
+                                      if (intervalsYesterday) {
+                                        for (let i = 0; i < intervalsYesterday.length; i++) {
+                                          const interval = intervalsYesterday[i];
+                                          const startIntervalNumber = timeStringToNumber(interval.start);
+                                          const endIntervalNumber = timeStringToNumber(interval.end);
+                                
+                                          // If end overflows to the next day (i.e. today).
+                                          if (endIntervalNumber < startIntervalNumber) {
+                                            if (nowTimeNumber < endIntervalNumber) {
+                                              currentInterval = interval;
+                                              openRightNow = true;
+                                            }
+                                          }
+                                        }
+                                      }
+                                
+                                      // Assumes no overlapping intervals
+                                      if (intervalsToday) {
+                                        for (let i = 0; i < intervalsToday.length; i++) {
+                                          const interval = intervalsToday[i];
+                                          const startIntervalNumber = timeStringToNumber(interval.start);
+                                          const endIntervalNumber = timeStringToNumber(interval.end);
+                                
+                                          // If current time doesn't belong to one of yesterdays interval.
+                                          if (currentInterval == null) {
+                                            if (endIntervalNumber < startIntervalNumber) {
+                                              if (nowTimeNumber >= startIntervalNumber) {
+                                                currentInterval = interval;
+                                                openRightNow = true;
+                                              }
+                                            } else if (nowTimeNumber >= startIntervalNumber
+                                              && nowTimeNumber < endIntervalNumber) {
+                                              currentInterval = interval;
+                                              openRightNow = true;
+                                            }
+                                          }
+                                
+                                          if (nextInterval == null) {
+                                            if (startIntervalNumber > nowTimeNumber) {
+                                              nextInterval = interval
+                                            }
+                                          } else {
+                                            if (startIntervalNumber > nowTimeNumber
+                                              && startIntervalNumber < timeStringToNumber(nextInterval.start)) {
+                                              nextInterval = interval;
+                                            }
+                                          }
+                                        }
+                                      }
+                                
+                                      let nextIsTomorrow = false;
+                                
+                                      // If no more intervals in the day
+                                      if (nextInterval == null) {
+                                        if (intervalsTomorrow) {
+                                          if (intervalsTomorrow.length > 0) {
+                                            nextInterval = intervalsTomorrow[0];
+                                            nextIsTomorrow = true;
+                                          }
+                                        }
+                                      }
+                                
+                                      let message = 'Closed';
+                                
+                                      if (openRightNow) {
+                                        if (currentInterval.start === "00:00" && currentInterval.end === "23:59") {
+                                          message = 'Open 24 Hours';
+                                        } else {
+                                          message = 'Open · Closes at [closingTime]';
+                                          message = message.replace("[closingTime]", formatTime(currentInterval.end));
+                                        }
+                                      } else if (nextInterval) {
+                                        if (nextIsTomorrow) {
+                                          message = 'Closed · Opens at [openingTime] tomorrow';
+                                          message = message.replace("[openingTime]", formatTime(nextInterval.start));
+                                        } else {
+                                          message = 'Closed · Opens at [openingTime]';
+                                          message = message.replace("[openingTime]", formatTime(nextInterval.start));
+                                        }
+                                      }
+                                
+                                      return message;
+                                    };
+                                </script>
+                                
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function () {
+                                    var baseURL = "https://liveapi.yext.com/v2/accounts/me/entities/geosearch?";
+                                    var api_key = "c1be28fe46a4efb864aa9d8583108490";
+                                    var vparam = "20181017";
+                                    var lat = "40.693807";
+                                    var lng = "-73.9917";
+                                    var location = lat + ", " + lng;
+                                    var limit = 4;
+                                    var radius = 500;
+                                    var entityTypes =
+                                        "location,healthcareProfessional,restaurant,healthcareFacility,atm,financialProfessional";
+                                    var fields = "name,hours,address,websiteUrl,timeZoneUtcOffset";
+                                    const savedSearchIdString = "";
+                                    var fullURL =
+                                        baseURL +
+                                        "api_key=" +
+                                        api_key +
+                                        "&v=" +
+                                        vparam +
+                                        "&location=" +
+                                        location +
+                                        "&limit=" +
+                                        (limit + 1) +
+                                        "&radius=" +
+                                        radius +
+                                        "&entityTypes=" +
+                                        entityTypes +
+                                        "&fields=" +
+                                        fields +
+                                        "&resolvePlaceholders=true" +
+                                        savedSearchIdString;
+                                
+                                    [].slice
+                                        .call(document.querySelectorAll(".location-data") || [])
+                                        .forEach(function (el) {
+                                            el.innerHTML = '<div class="col">Loading Text</div>';
+                                        });
+                                    $.get(fullURL, function (data) {
+                                        entities = data.response.entities;
+                                
+                                        [].slice
+                                        .call(document.querySelectorAll(".location-data") || [])
+                                        .forEach(function (el) {
+                                            el.innerHTML = "";
+                                        });
+                                        if (
+                                        entities.length == 0 ||
+                                        (entities.length == 1 && entities[0].meta.id == "10")
+                                        ) {
+                                        [].slice
+                                            .call(document.querySelectorAll(".location-data") || [])
+                                            .forEach(function (el) {
+                                            el.innerHTML = '<div class="col">No Locations Found</div>';
+                                            });
+                                        }
+                                        for (var i = 0; i < entities.length; i++) {
+                                        location = entities[i];
+                                        locationHTML = "";
+                                        const parsedOffset = parseTimeZoneUtcOffset(location.timeZoneUtcOffset);
+                                        if (true) {
+                                            if (location.websiteUrl) {
+                                            locationHTML =
+                                                '<div class="col-md-3 col-sm-6 location"><div class="name hover:underline hover:font-semibold text-ll-red "><a href="' +
+                                                location.websiteUrl.url +
+                                                '">' +
+                                                location.name +
+                                                '</a></div><div class="openat">' +
+                                                getOpenNowString(location.hours, parsedOffset) +
+                                                '</div><div class="address">' +
+                                                location.address.line1 +
+                                                "</div></div>";
+                                            } else {
+                                            locationHTML =
+                                                '<div class="col-md-3 col-sm-6 location"><div class="name">' +
+                                                location.name +
+                                                '</div><div class="openat">' +
+                                                getOpenNowString(location.hours, parsedOffset) +
+                                                '</div><div class="address">' +
+                                                location.address.line1 +
+                                                "</div></div>";
+                                            }
+                                            //console.log(locationHTML);
+                                            [].slice
+                                            .call(document.querySelectorAll(".location-data") || [])
+                                            .forEach(function (el) {
+                                                el.innerHTML += locationHTML;
+                                            });
+                                        }
+                                        }
+                                    });
+                                    });
+                                
+                                </script>
+                            </div> 
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        
+        </div>   
+
+        <script>
+        initMapsFunctions.push(function (noKey) {
+            
+            var mapElement = document.getElementById('map-snip');
+                    var mapCenter = {
+                        lat: 40.63971799999999,
+                        lng: -73.968313,
+                    };
+
+                    var map = new google.maps.Map(mapElement, {
+                        zoom: 15,
+                        center: mapCenter,
+                        styles: [
+                            { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
+                            { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
+                            { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+                            {
+                                featureType: "administrative.locality",
+                                elementType: "labels.text.fill",
+                                stylers: [{ color: "#d59563" }],
+                            },
+                            {
+                                featureType: "poi",
+                                elementType: "labels.text.fill",
+                                stylers: [{ color: "#d59563" }],
+                            },
+                            {
+                                featureType: "poi.park",
+                                elementType: "geometry",
+                                stylers: [{ color: "#263c3f" }],
+                            },
+                            {
+                                featureType: "poi.park",
+                                elementType: "labels.text.fill",
+                                stylers: [{ color: "#6b9a76" }],
+                            },
+                            {
+                                featureType: "road",
+                                elementType: "geometry",
+                                stylers: [{ color: "#38414e" }],
+                            },
+                            {
+                                featureType: "road",
+                                elementType: "geometry.stroke",
+                                stylers: [{ color: "#212a37" }],
+                            },
+                            {
+                                featureType: "road",
+                                elementType: "labels.text.fill",
+                                stylers: [{ color: "#9ca5b3" }],
+                            },
+                            {
+                                featureType: "road.highway",
+                                elementType: "geometry",
+                                stylers: [{ color: "#746855" }],
+                            },
+                            {
+                                featureType: "road.highway",
+                                elementType: "geometry.stroke",
+                                stylers: [{ color: "#1f2835" }],
+                            },
+                            {
+                                featureType: "road.highway",
+                                elementType: "labels.text.fill",
+                                stylers: [{ color: "#f3d19c" }],
+                            },
+                            {
+                                featureType: "transit",
+                                elementType: "geometry",
+                                stylers: [{ color: "#2f3948" }],
+                            },
+                            {
+                                featureType: "transit.station",
+                                elementType: "labels.text.fill",
+                                stylers: [{ color: "#d59563" }],
+                            },
+                            {
+                                featureType: "water",
+                                elementType: "geometry",
+                                stylers: [{ color: "#17263c" }],
+                            },
+                            {
+                                featureType: "water",
+                                elementType: "labels.text.fill",
+                                stylers: [{ color: "#515c6d" }],
+                            },
+                            {
+                                featureType: "water",
+                                elementType: "labels.text.stroke",
+                                stylers: [{ color: "#17263c" }],
+                            },
+                            ],
+
+                        disableDefaultUI: true,
+                    });
+
+                    var config = {
+                      position: mapCenter,
+                      map: map
+                    };
+
+                    var marker = new google.maps.Marker(config);
+                
+        });
+       </script>     
+
+    </body> 
+</html>

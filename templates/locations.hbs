@@ -9,6 +9,7 @@
         "uid", 
         "name", 
         "address", 
+        "accessHours",
         "mainPhone",
         "geocodedCoordinate",
         "hours" ,
@@ -64,47 +65,71 @@
                             </a>
 
                         </div>
-                        <h1 class='text-4xl font-extrabold mb-4 text-ll-blue'> {{name}} </h1>
-
+                        <h1 class='text-5xl font-extrabold mb-4 text-ll-blue'> {{name}} </h1>
+                        <h3 class='text-xl font-extrabold mb-4 text-ll-blue'> Local Locker Storage - Discover Storage Near You </h3>
                         <div class="flex flex-col md:flex-row">
-
-                            <div class="md:w-1/3">
-
-                                <div class='address mb-4'>
-                                    <h3 class="font-bold"> Address:</h3>
-                                    <div> 
-                                        <p> {{address.line1}} {{address.city}}, {{address.region}} {{address.postalCode}}</p>
-                                    </div>
-                                </div> 
-                                <div class='details mb-4'>
-                                    <h3 class="font-bold" > Details:</h3>
-                                    <div> 
-                                        <p> Convenient storage units in Soho, NYC. We offer very secure storage with keycode access and small facilities. Call today for additional availability, discounts, and more. Located on Thompson St.</p>
-                                    </div>
+                            <div class="md:w-2/3">
+                                <div class="flex flex-row gap-6">
+                                    <div class='address mb-4 h-16'>
+                                        <h3 class="font-bold"> Address:</h3>
+                                        <div> 
+                                            <p> {{address.line1}} {{address.city}}, {{address.region}} {{address.postalCode}}</p>
+                                        </div>
+                                    </div>                                     
+                                    <div>
+                                        <div class="btn btn-secondary text-red-500 border-red-500 
+                                                 hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100 
+                                                 border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all 
+                                                 cursor-pointer hover:shadow-lg block text-center focus:outline-none 
+                                                flex items-center justify-center">
+                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="mr-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"></path></svg>
+                                            {{mainPhone}}
+                                        </div>                                        
+                                    </div>                                    
                                 </div>
-                                
-                            </div>
-                            <div class="md:w-1/3">
-                                 <div class='branch-hours mb-4'>
-                                    <h3 class="font-bold" >Access Hours</h3>
-                                    <div class='hours-list'>
-                                        {{#each hours}}
-                                            {{#if this.date}}
-                                            {{else}}
-                                            <p>{{@key}}:
-                                            {{#each this}}
-                                                {{#if isClosed}}
-                                                Closed
-                                                {{/if}}
+                                <div class="flex flex-row gap-6">
+                                    <div class='branch-hours mb-4'>
+                                        <h3 class="font-bold" >Access Hours</h3>
+                                        <div class='hours-list'>
+                                            {{#each hours}}
+                                                {{#if this.date}}
+                                                {{else}}
+                                                <p>{{@key}}:
                                                 {{#each this}}
-                                                {{this.start}}-{{this.end}}
-                                                {{/each}}
-                                            {{/each}} 
-                                            </p> 
-                                            {{/if}}
-                                        {{/each}}
+                                                    {{#if isClosed}}
+                                                    Closed
+                                                    {{/if}}
+                                                    {{#each this}}
+                                                    {{this.start}}-{{this.end}}
+                                                    {{/each}}
+                                                {{/each}} 
+                                                </p> 
+                                                {{/if}}
+                                            {{/each}}
+                                        </div>
+                                    </div>
+                                    <div class='access-hours mb-4'>
+                                        <h3 class="font-bold" >Support Hours</h3>
+                                        <div class='hours-list'>
+                                            {{#each accessHours}}
+                                                {{#if this.date}}
+                                                {{else}}
+                                                <p>{{@key}}:
+                                                {{#each this}}
+                                                    {{#if isClosed}}
+                                                    Closed
+                                                    {{/if}}
+                                                    {{#each this}}
+                                                    {{this.start}}-{{this.end}}
+                                                    {{/each}}
+                                                {{/each}} 
+                                                </p> 
+                                                {{/if}}
+                                            {{/each}}
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
                             <div class="md:w-1/3">
                                 <div class="map" id="map-snip" ></div>
@@ -112,7 +137,7 @@
                         </div>
 
                         <div class="container"> 
-                            <div class="flex sm:flex-row sm:flex-wrap flex-col gap-2 mb-4">
+                            {{!-- <div class="flex sm:flex-row sm:flex-wrap flex-col gap-2 mb-4">
                                 <button class="btn btn-primary bg-red-500  text-white border-red-500 focus:ring-2 focus:bg-red-900 border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none"> See Prices</button>
                                 <div class="btn btn-secondary text-red-500 border-red-500 hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100 border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none flex items-center justify-center">
                                     <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="mr-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"></path></svg>
@@ -126,7 +151,7 @@
                                     Directions
                                 </div>
 
-                            </div> 
+                            </div>  --}}
                             <div class="container justify-center">
                                 <h1 class="text-xl font-bold mb-4"> Available Units</h1>
                                 {{>units}}
