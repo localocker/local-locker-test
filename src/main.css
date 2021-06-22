@@ -1,9 +1,29 @@
 @tailwind base;
 @tailwind components;
 
+
+
 #map-snip {
     height: 300px;
 }
+
+
+.btn {
+    @apply border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none;
+}
+  
+.btn-primary {
+    @apply bg-ll-red  text-white border-ll-red focus:ring-2 focus:bg-red-900;
+}
+  
+.btn-secondary {
+    @apply text-ll-red border-ll-red hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100;
+}
+  
+.btn-link {
+    @apply hover:bg-gray-100 focus:ring-2 focus:bg-gray-100;
+}
+
 
 .error-text {
     padding-bottom: 10px;
