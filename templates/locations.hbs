@@ -11,6 +11,7 @@
         "address", 
         "accessHours",
         "c_features",
+        "frequentlyAskedQuestions",
         "mainPhone",
         "geocodedCoordinate",
         "hours" ,
@@ -47,7 +48,6 @@
    
    </head>
     <body>      
- 
         <div class="flex min-h-screen w-full"> 
             {{>sidebar}}
             <div class="w-full">
@@ -150,6 +150,7 @@
                                     {{/each}}
                                     </div>
                                 </div>
+
                             </div>                            
                         </div>
 
@@ -179,6 +180,22 @@
                             <div class="container">
                                 {{>reviews}}
                             </div> 
+
+                            <div class="container">
+                                <ul>
+                                {{#each frequentlyAskedQuestions}}
+                                    <li>
+                                        <div class="text-left font-bold">
+                                            {{this.question}}
+                                        </div>
+                                        <div class="text-left">
+                                            {{this.answer}}
+                                        </div>
+                                    </li>
+                                {{/each}}
+                                </ul>
+                            </div> 
+
                         </div>
                     </div>
                 </div>
