@@ -22,6 +22,17 @@ module.exports = {
             }, 
             'postcss-loader'
         ],
+      },
+      {
+        test: /\.(png|jpe?g|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/[name].[ext]'
+            }
+          }
+        ]
       }
     ],
   }
