@@ -54,8 +54,9 @@
             <div class="w-full">
                 {{>nav}}
                 <div class="bg-gray-50">
-                    <div class="container pl-4 py-4">
-                        <div class="border-b pb-2 mb-6 bg-orange-700">
+                    <div class="container pl-12 pr-12 py-15">
+                        {{!-- Back Button for Locator --}}
+                        <div class="border-b pb-2 mb-6 bg-orange-700 pt-8">
                             <a href="/locator.html" class="flex items-center">
                                 <div>
                                     <svg width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,16 +66,18 @@
                                 </div>
                                <div class="">&nbsp;Back</div>
                             </a>
-
                         </div>
 
-                        <div class="flex flex-col md:flex-row">
-                            <div class="md:w-2/3">
+                    <div class="grid-cols-1 xl:grid grid-cols-5 gap-3">
+                    <div class="col-span-1 pr-10 lg:col-span-3">
+                        {{!-- Section for Address, Hours, Units, Map, Carousel, and Services --}}
+                        {{!-- <div class="flex flex-col md:flex-row"> --}}
+                            {{!-- <div class="md:w-2/3"> --}}
                                 <h1 class='text-5xl font-extrabold mb-6 text-ll-blue'> {{name}} </h1>
                                 <h3 class='text-2xl font-extrabold  text-ll-blue'> Local Locker Storage - Discover Storage Near You </h3>
                                 <div class="flex items-center"><div class="flex"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg></div><div class="ml-2">115 Reviews</div></div>
 
-                                <div class="flex flex-row gap-6">
+                                <div class="flex flex-row gap-6 content-center">
                                     <div class='address mb-4 mr-16 h-16'>
                                         <h3 class="font-bold"> Address:</h3>
                                         <div> 
@@ -135,9 +138,12 @@
                                     </div>
                                 </div>
                                 {{>units}}
+                            {{!-- </div> --}}
+                        {{!-- </div> --}}
+                    </div>
 
-                            </div>
-                            <div class="md:w-1/3 ml-4">
+                        <div class="col-span-1 pl-10 lg:col-span-2">
+                            {{!-- <div class="md:w-1/3 ml-4"> --}}
                                 <div class="map mb-8" id="map-snip" ></div>
                                 <div class="container mb-8">
                                     {{!-- <img src="https://images.unsplash.com/photo-1521080755838-d2311117f767?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=df4dba6eb71efcca6d13c50bc2f97693&auto=format&fit=crop&w=600&q=80"> --}}
@@ -154,8 +160,9 @@
                                     </div>
                                 </div>
 
-                            </div>                            
+                            {{!-- </div>                             --}}
                         </div>
+                    </div>
 
                         <div class="container"> 
                             {{!-- <div class="flex sm:flex-row sm:flex-wrap flex-col gap-2 mb-4">
