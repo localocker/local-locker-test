@@ -1,7 +1,6 @@
-<div class="container nearby-locations">
-  <div class="flex justify-center">
-    <h1 class="text-xl font-bold mb-4"> Nearby Stores</h1>
-  </div>
+<div class="">
+    <h2 class="section-header">Nearby Stores</h2>
+  
   
   <div class="row locations-row location-data flex flex-row gap-4 justify-center"> </div>
 </div>
@@ -208,8 +207,8 @@
     var baseURL = "https://liveapi.yext.com/v2/accounts/me/entities/geosearch?";
     var api_key = "c1be28fe46a4efb864aa9d8583108490";
     var vparam = "20181017";
-    var lat = "40.693807";
-    var lng = "-73.9917";
+    var lat = {{latitude}};
+    var lng = {{longitude}};
     var location = lat + ", " + lng;
     var limit = 4;
     var radius = 500;

@@ -1,0 +1,20 @@
+<div class="hours-list">
+  {{#each this}}
+    {{#if this.date}}
+
+    {{else}}
+      <p>
+        {{@key}}
+        :
+        {{#each this}}
+          {{#if isClosed}}
+            Closed
+          {{/if}}
+          {{#each this}}
+            {{this.start}}-{{this.end}}
+          {{/each}}
+        {{/each}}
+      </p>
+    {{/if}}
+  {{/each}}
+</div>

@@ -13,6 +13,10 @@
             {
                 "root": "partials", 
                 "pattern":"*.hbs"
+            },
+            {
+                "root": "public", 
+                "pattern":"*.hbs"
             }
         ]
     },

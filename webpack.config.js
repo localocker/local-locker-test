@@ -1,14 +1,29 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    main: './src/main.js',
+    reviews: './src/reviews.ts'
+  },
   output: {
-    filename: 'main.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'public'),
     clean: true
   },
+  devtool: 'inline-source-map',  
   module: {
     rules: [
+      {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env']
+        },
+      },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
       {
         test: /\.css$/,
         use: [
