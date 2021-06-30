@@ -2,14 +2,16 @@
   <h2 class="section-header">
     Frequently Asked Questions
   </h2>
-  {{#each this}}
-    <details open class="mb-8">
-      <summary class="text-lg font-bold">
-        {{question}}
-      </summary>
-      <div>
-        {{answer}}
-      </div>
-    </details>
-  {{/each}}
+  <div class="grid grid-cols-2 gap-4">
+    {{#each this}}
+      <details open class="mb-8 bg-gray-200 p-4 rounded-sm">
+        <summary class="text-lg font-bold cursor-pointer">
+          {{question}}
+        </summary>
+        <div>
+          {{answer}}
+        </div>
+      </details>
+    {{/each}}
+  </div>
 </div>
