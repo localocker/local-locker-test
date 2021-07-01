@@ -4,14 +4,14 @@
   </h2>
   <div class="grid grid-cols-2 gap-4">
     {{#each this}}
-      <details open class="mb-8 bg-gray-200 p-4 rounded-sm">
-        <summary class="text-lg font-bold cursor-pointer">
+      <div class="bg-gray-200 p-4 rounded-sm">
+        <h4>
           {{question}}
-        </summary>
-        <div>
+        </h4>
+        <p>
           {{answer}}
-        </div>
-      </details>
+        </p>
+      </div>
     {{/each}}
   </div>
 </div>

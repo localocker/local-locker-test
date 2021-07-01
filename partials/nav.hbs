@@ -1,22 +1,20 @@
-<div class="bg-ll-blue">
-  <div class="container">
-    <div
-      class="flex flex-col md:flex-row gap-4 text-sm uppercase tracking-wider text-white"
-    >
-      <a href="/" class="px-4 py-3 hover:bg-blue-800 cursor-pointer">
-        Home
-      </a>
-      <a href="/" class="px-4 py-3 hover:bg-blue-800 cursor-pointer">
-        About
-      </a>
-      <a href="/" class="px-4 py-3 hover:bg-blue-800 cursor-pointer">
-        Investor
-        Relations
-      </a>
-      <a href="/" class="px-4 py-3 hover:bg-blue-800 cursor-pointer">
-        Executive
-        Team
-      </a>
+<div class="bg-ll-blue py-2 px-4">
+  <div class="flex flex-col lg:flex-row lg:justify-between text-white lg:items-center">
+    {{> searchbar}}
+    <div class=" flex-col lg:flex-row lg:items-center hidden lg:flex" >
+        <a href="tel:+1 (646) 713-0937" class="flex items-center p-4 hover:underline">
+            <div class="mr-2">{{> icon-phone}}</div>
+            <div>(646) 713-0937</div>
+        </a>
+        <a href="sms:+1 (646) 849-2749" class="flex items-center p-4 hover:underline">
+            <div class="mr-2">{{> icon-text}}</div>
+            <div>(646) 713-0937</div>
+        </a>
+        <a href="email:reserve@localocker.com" class="flex items-center p-4 hover:underline">
+            <div class="mr-2">{{> icon-email}}</div>
+            <div>reserve@localocker.com</div>
+        </a>
+        <a href="https://localocker.com/faq/" class="block hover:underline font-medium p-4">FAQ</a>
     </div>
   </div>
 </div>

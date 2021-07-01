@@ -40,18 +40,18 @@
         <div class="flex min-h-screen w-full"> 
             {{>sidebar}}
             <div class="w-full">
-                {{>nav}}        
-                    
+                {{>nav}}                            
                     <div class="centered-container">                                              
                         {{>backtolocator}}
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 space-x-4">
                             <div class="md:col-span-1 lg:col-span-2">
-                                {{> locationdetails}}                                
+                                {{> locationdetails}}  
+                                <div class="section">{{>units }}</div>                        
                             </div>
                             <div>
                                 <div class="mb-4 w-full">{{>staticmap geocodedCoordinate}}</div>
-                                {{!-- <div class="pb-10">{{>carousel photoGallery}}</div>                                         --}}
-                                <div class="container services">{{>featurelist c_features}}</div> 
+                                <div class="pb-10">{{>carousel photoGallery}}</div>                                        
+                                <div class="">{{>featurelist c_features}}</div> 
                             </div>
                         </div>
                         <div class="section">{{>nearby geocodedCoordinate}}</div>

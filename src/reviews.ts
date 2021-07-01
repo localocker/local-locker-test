@@ -39,6 +39,7 @@ const fetchReviews = async () => {
   document.getElementById("reviews-container").innerHTML =
     reviewsTemplateSkeleton.repeat(5);
   populateReviewsTotalCount('<div class="w-36 h-6 skeleton"></div>');
+
   const res = await axios.get(`https://admin.localocker.com/location/${48}/`);
   const {
     data: { all_location_reviews_and_rating },
@@ -55,7 +56,6 @@ const fetchReviews = async () => {
       starRatings[r.starRating],
       r.comment
     );
-    console.log(r);
   });
 
   populateReviewsTotalCount(`<div class="flex items-center text-ll-blue">
