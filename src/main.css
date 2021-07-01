@@ -158,4 +158,16 @@ h2.section-header {
   min-height: 40px;
 }
 
+.form label {
+  @apply text-sm mt-4 block mb-1;
+}
+
+.form input {
+  @apply border border-ll-blue w-full block py-1 px-2;
+}
+
+.form select {
+  @apply border border-ll-blue w-full block py-1 px-2;
+}
+
 @tailwind utilities;

@@ -32,5 +32,6 @@
   "livePreview": {
     "serve_setup_cmd": "echo setup",
     "serve_cmd": "echo serve"
-  }
+  },
+  "watch_cmd": "npm run watch"
 }

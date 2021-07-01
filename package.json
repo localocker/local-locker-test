@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production TAILWIND_MODE=build webpack ",
-    "watch": "NODE_ENV=development webpack --watch ",
-    "start": "yext sites develop"
+    "watch": "NODE_ENV=development webpack --watch",
+    "dev": "yext sites develop"
   },
   "repository": {
     "type": "git",
@@ -43,6 +43,7 @@
     "webpack-cli": "^4.7.2"
   },
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "jquery": "^3.6.0"
   }
 }

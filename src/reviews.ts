@@ -44,7 +44,7 @@ const fetchReviews = async () => {
   const {
     data: { all_location_reviews_and_rating },
   } = res;
-  console.log(all_location_reviews_and_rating);
+
   const { average_rating_all_locations, reviews, total_reviews_count } =
     all_location_reviews_and_rating;
 

@@ -1,0 +1,98 @@
+<div
+  class="fixed z-10 inset-0 overflow-y-auto"
+  aria-labelledby="modal-title"
+  role="dialog"
+  aria-modal="true"
+  id="waitlist-modal"
+  style="display: none;"
+>
+  <div
+    class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
+  >
+    <div
+      class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+      aria-hidden="true"
+    ></div>
+    <span
+      class="hidden sm:inline-block sm:align-middle sm:h-screen"
+      aria-hidden="true"
+    >
+      ​
+    </span>
+    <div
+      class="inline-block align-bottom bg-white px-6 pt-5 pb-6 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-xl sm:w-full sm:p-10"
+    >
+      <h2>
+        Join Waitlist
+      </h2>
+      <p>
+        Please provide your personal information. We will notify you as soon as the unit you are interested in is available
+      </p>
+      <form class="form" id="waitlist-form">
+        <div class="flex gap-4">
+          <div class="w-full">
+            <label>
+              First Name
+            </label>
+            <input name="firstName" required />
+          </div>
+          <div class="w-full">
+            <label>
+              Last Name
+            </label>
+            <input name="lastName" required />
+          </div>
+        </div>
+        <div>
+          <label>
+            Email
+          </label>
+          <input name="email" type="email" autocapitalize="none" required />
+        </div>
+        <div>
+          <label>
+            Phone
+          </label>
+          <input name="phone" type="phone" required />
+        </div>
+        <div>
+          <label>
+            How did you hear about us?
+          </label>
+          <select name="select" required>
+            <option disabled selected value>
+              -- select an option --
+            </option>
+            <option value="Google Maps">
+              Google Maps
+            </option>
+            <option value="Google Search">
+              Google Search
+            </option>
+            <option value="Facebook or Instagram Post/Ad">
+              Facebook or Instagram Post/Ad
+            </option>
+            <option value="Signage/Walked by">
+              Signage/Walked by
+            </option>
+            <option value="Friend/Family">
+              Friend/Family
+            </option>
+            <option value="Flyer">
+              Flyer
+            </option>
+            <option value="Yelp">
+              Yelp
+            </option>
+            <option value="Other">
+              Other
+            </option>
+          </select>
+        </div>
+        <button class="btn btn-primary w-full mt-8">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
