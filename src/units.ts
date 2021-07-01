@@ -55,7 +55,7 @@ const renderUnitRow = (uc: UnitCategory) => {
       ? `<a class="btn btn-primary w-32" href="https://booking.localocker.com/booking/1?unitCategory=${uc.id}">
         Book Now
       </a>`
-      : `<button class="btn btn-secondary w-32" onclick="showWaitlistModal">
+      : `<button class="btn btn-secondary w-32" onclick="showWaitlistModal()">
         Join Waitlist
       </button>`;
   return `
