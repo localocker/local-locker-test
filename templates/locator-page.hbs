@@ -25,7 +25,19 @@
             {{>sidebar}}
             <div class="w-full">
                 {{>nav}}
+                {{!-- <div class="centered-container"> --}}
                 <div class="container">
+                    <style>
+                        @media screen and (min-width: 1536px) {
+                            .container {
+                                max-width: 100%;
+                            }
+                        }
+
+                        .availability {
+                            font-weight: bold;
+                        }
+                    </style>
                     {{>locator}}
                 </div>
 

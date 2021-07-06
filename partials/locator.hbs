@@ -1,3 +1,4 @@
+<div class="pb-2 mb-6 bg-orange-700 pt-8"></div>
 <div class="full-width-locator">
   <div class="panel">
     <div class="header-section">
@@ -63,8 +64,8 @@
         contentSource: "FIELD",
       },
       cardTitleLinkUrl: {
-        value: "/",
-        contentSource: "text",
+        value: "slug",
+        contentSource: "FIELD",
       },
       hours: {
         value: "hours",
@@ -72,6 +73,10 @@
       },
       address: {
         value: "address",
+        contentSource: "FIELD",
+      },
+      availability: {
+        value: "c_limitedAvailability",
         contentSource: "FIELD",
       },
       phoneNumber: {
@@ -464,6 +469,10 @@
       locationOptions["phoneNumber"]["contentSource"] === "FIELD"
         ? getValueFromPath(entityProfile, locationOptions["phoneNumber"]["value"])
         : locationOptions["phoneNumber"]["value"];
+    const availabilityValue =
+      locationOptions["availability"]["contentSource"] === "FIELD"
+        ? getValueFromPath(entityProfile, locationOptions["availability"]["value"])
+        : locationOptions["availability"]["value"];
     let viewDetailsLinkUrlValue =
       locationOptions["viewDetailsLinkUrl"]["contentSource"] === "FIELD"
         ? getValueFromPath(
@@ -508,6 +517,13 @@
       regionAbbr: false,
       derivedData: { address: addressValue },
     });
+
+    html += '<div class="lp-param-results lp-subparam-availability">';
+    if (availabilityValue) {
+        html += '<div class="availability">' + "Limited Availability" + "</div>";
+    }
+    html += "</div>";
+
 
     html += '<div class="lp-param-results lp-subparam-phoneNumber">';
     if (phoneNumberValue) {
@@ -1159,7 +1175,7 @@
 <script>
     var zoom = 5;    
     var map;
-    console.log("Here!");
+    console.log(zoom);
     map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 40.693807, lng: 73.9917 },
     zoom: zoom,
