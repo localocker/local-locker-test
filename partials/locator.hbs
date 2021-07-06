@@ -1,27 +1,20 @@
 <div class="full-width-locator">
-
   <div class="panel">
     <div class="header-section">
         <div class="lp-param lp-param-{$customizationInstanceID}-headline header">
             <h1> Find a locker near you</h1>
         </div>
       <div class="directions">
-      
-          <div class="lp-param-promptText">
-              Search for a location
-          </div>
-      
-        
-          <div class="btn btn-link lp-param-requestLocationText" onclick="getUsersLocation();" role="button">
-
-              Use my location
-          </div>
        
       </div>
       <div class="error-text"></div>
       <div class="search-bar">
         <input type="text" class="form-control lp-param-placeholderText" id="location-input" placeholder="E.g. Lower East Side" aria-label="E.g. New York">
         <input type="submit" value="Search" class="btn btn-primary bg-red-500  text-white border-red-500 focus:ring-2 focus:bg-red-900 border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none" id="search-location-button">
+        <div class="btn btn-link lp-param-requestLocationText ml-auto" onclick="getUsersLocation();" role="button">
+            Use my location
+        </div>
+      
       </div>
       <div class="search-center"></div>
     </div>
@@ -44,111 +37,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/libphonenumber-js/1.7.22/libphonenumber-js.min.js"></script>
 <script src="https://assets.sitescdn.net/rtf-converter/rtf-converter.min.js"></script>
-
-
-<script>
-    var zoom = 5;    
-    var map;
-    initMapsFunctions.push(function (noKey) {
-    if (!noKey) {
-        map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 40.693807, lng: 73.9917 },
-        zoom: zoom,
-        styles: [
-          { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
-          { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
-          { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
-          {
-            featureType: "administrative.locality",
-            elementType: "labels.text.fill",
-            stylers: [{ color: "#d59563" }],
-          },
-          {
-            featureType: "poi",
-            elementType: "labels.text.fill",
-            stylers: [{ color: "#d59563" }],
-          },
-          {
-            featureType: "poi.park",
-            elementType: "geometry",
-            stylers: [{ color: "#263c3f" }],
-          },
-          {
-            featureType: "poi.park",
-            elementType: "labels.text.fill",
-            stylers: [{ color: "#6b9a76" }],
-          },
-          {
-            featureType: "road",
-            elementType: "geometry",
-            stylers: [{ color: "#38414e" }],
-          },
-          {
-            featureType: "road",
-            elementType: "geometry.stroke",
-            stylers: [{ color: "#212a37" }],
-          },
-          {
-            featureType: "road",
-            elementType: "labels.text.fill",
-            stylers: [{ color: "#9ca5b3" }],
-          },
-          {
-            featureType: "road.highway",
-            elementType: "geometry",
-            stylers: [{ color: "#746855" }],
-          },
-          {
-            featureType: "road.highway",
-            elementType: "geometry.stroke",
-            stylers: [{ color: "#1f2835" }],
-          },
-          {
-            featureType: "road.highway",
-            elementType: "labels.text.fill",
-            stylers: [{ color: "#f3d19c" }],
-          },
-          {
-            featureType: "transit",
-            elementType: "geometry",
-            stylers: [{ color: "#2f3948" }],
-          },
-          {
-            featureType: "transit.station",
-            elementType: "labels.text.fill",
-            stylers: [{ color: "#d59563" }],
-          },
-          {
-            featureType: "water",
-            elementType: "geometry",
-            stylers: [{ color: "#17263c" }],
-          },
-          {
-            featureType: "water",
-            elementType: "labels.text.fill",
-            stylers: [{ color: "#515c6d" }],
-          },
-          {
-            featureType: "water",
-            elementType: "labels.text.stroke",
-            stylers: [{ color: "#17263c" }],
-          },
-        ],
-        mapTypeControl: false,
-        });
-
-        if (enableAutocomplete) {
-        autocomplete = new google.maps.places.Autocomplete(document.getElementById('location-input'), {
-            options: {
-            types: ['(regions)'],
-            }
-        });
-        autocomplete.addListener('place_changed', autocompleteChanged);
-        }
-    }
-    });
-</script>
-
 
 <script>
   var limit = 5;
@@ -1037,7 +925,6 @@
     markers = [];
 
     const coordinates = { value: "geocodedCoordinate", contentSource: "FIELD" };
-
     pinStyles = {
       fill: "#fff", //default google red
       stroke: "#fff",
@@ -1089,7 +976,6 @@
           },
           optimized: false,
         });
-
         selected_marker = new google.maps.Marker({
           position: {
             lat: coordinatesValue.latitude,
@@ -1270,9 +1156,107 @@
   }
 
 </script>
+<script>
+    var zoom = 5;    
+    var map;
+    console.log("Here!");
+    map = new google.maps.Map(document.getElementById('map'), {
+    center: { lat: 40.693807, lng: 73.9917 },
+    zoom: zoom,
+    styles: [
+      { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
+      { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
+      { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+      {
+        featureType: "administrative.locality",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#d59563" }],
+      },
+      {
+        featureType: "poi",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#d59563" }],
+      },
+      {
+        featureType: "poi.park",
+        elementType: "geometry",
+        stylers: [{ color: "#263c3f" }],
+      },
+      {
+        featureType: "poi.park",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#6b9a76" }],
+      },
+      {
+        featureType: "road",
+        elementType: "geometry",
+        stylers: [{ color: "#38414e" }],
+      },
+      {
+        featureType: "road",
+        elementType: "geometry.stroke",
+        stylers: [{ color: "#212a37" }],
+      },
+      {
+        featureType: "road",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#9ca5b3" }],
+      },
+      {
+        featureType: "road.highway",
+        elementType: "geometry",
+        stylers: [{ color: "#746855" }],
+      },
+      {
+        featureType: "road.highway",
+        elementType: "geometry.stroke",
+        stylers: [{ color: "#1f2835" }],
+      },
+      {
+        featureType: "road.highway",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#f3d19c" }],
+      },
+      {
+        featureType: "transit",
+        elementType: "geometry",
+        stylers: [{ color: "#2f3948" }],
+      },
+      {
+        featureType: "transit.station",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#d59563" }],
+      },
+      {
+        featureType: "water",
+        elementType: "geometry",
+        stylers: [{ color: "#17263c" }],
+      },
+      {
+        featureType: "water",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#515c6d" }],
+      },
+      {
+        featureType: "water",
+        elementType: "labels.text.stroke",
+        stylers: [{ color: "#17263c" }],
+      },
+    ],
+    mapTypeControl: false,
+    });
+
+    if (enableAutocomplete) {
+    autocomplete = new google.maps.places.Autocomplete(document.getElementById('location-input'), {
+        options: {
+        types: ['(regions)'],
+        }
+    });
+    autocomplete.addListener('place_changed', autocompleteChanged);
+    }
+</script>
 
 <script>
-
     /**
  * @name MarkerWithLabel for V3
  * @version 1.2.3
