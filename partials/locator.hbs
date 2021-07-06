@@ -518,13 +518,6 @@
       derivedData: { address: addressValue },
     });
 
-    html += '<div class="lp-param-results lp-subparam-availability">';
-    if (availabilityValue) {
-        html += '<div class="availability">' + "Limited Availability" + "</div>";
-    }
-    html += "</div>";
-
-
     html += '<div class="lp-param-results lp-subparam-phoneNumber">';
     if (phoneNumberValue) {
       const formattedPhoneNumber = formatPhone(
@@ -555,6 +548,11 @@
       '">' +
       getDirectionsLabelValue +
       "</a></div>";
+    html += "</div>";
+    html += '<div class="lp-param-results lp-subparam-availability mt-3">';
+    if (availabilityValue) {
+        html += '<div class="availability">' + "<strong>Limited Availability</strong>" + "</div>";
+    }
     html += "</div>";
     if (viewDetailsLinkUrlValue && viewDetailsLinkTextValue) {
       // Url value is URL object and not url.
