@@ -1,34 +1,13 @@
-<div class="hours-list">
-  {{#each this}}
-    {{#if this.date}}
-
-    {{else}}
-      <p>
-        {{@key}}
-        :
-        {{#each this}}
-          {{#if isClosed}}
-            Closed
-          {{/if}}
-          {{#each this}}
-            {{this.start}}-{{this.end}}
-          {{/each}}
-        {{/each}}
-      </p>
-    {{/if}}
-  {{/each}}
-</div>
-
-{{!-- <div class="hours-list">
+<div class="hours-list">  
   {{#with (formatHours this "Monday" "TimeFormatShort" "DateFormatShort") }}
-          <script>console.log({{this}})</script>
       {{#each this.regularHours}}
-        {{this.displayDay}}
-        {{#if this.isClosed}}closed!{{/if}}
-        {{#if this.is247}}open 24/7!{{/if}}
+        <p><strong>{{this.displayDay}}:</strong>
+        {{#if this.isClosed}}Closed{{/if}}
+        {{#if this.is247}}Open 24/7{{/if}}
         {{#each this.openIntervals}}
           {{this.start}}-{{this.end}}
         {{/each}}
+        </p>
       {{/each}}
   {{/with}}
-</div> --}}
+</div>
