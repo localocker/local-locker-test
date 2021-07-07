@@ -18,3 +18,17 @@
     {{/if}}
   {{/each}}
 </div>
+
+{{!-- <div class="hours-list">
+  {{#with (formatHours this "Monday" "TimeFormatShort" "DateFormatShort") }}
+          <script>console.log({{this}})</script>
+      {{#each this.regularHours}}
+        {{this.displayDay}}
+        {{#if this.isClosed}}closed!{{/if}}
+        {{#if this.is247}}open 24/7!{{/if}}
+        {{#each this.openIntervals}}
+          {{this.start}}-{{this.end}}
+        {{/each}}
+      {{/each}}
+  {{/with}}
+</div> --}}
