@@ -1,6 +1,8 @@
 <div class="hours-list">  
   {{#with (formatHours this "Monday" "TimeFormatShort" "DateFormatShort") }}
+        <script>console.log('formatHours array\n{{this.regularHours}}');</script>
       {{#each this.regularHours}}
+        <script>console.log('regularHours array\n{{this.displayDay}}');</script>
         <p><strong>{{this.displayDay}}:</strong>
         {{#if this.isClosed}}Closed{{/if}}
         {{#if this.is247}}Open 24/7{{/if}}
