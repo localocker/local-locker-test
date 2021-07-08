@@ -1,4 +1,5 @@
 <div class="hours-list">  
+  <script>console.log('inbound hours\n{{this}}');</script>
   {{#with (formatHours this "Monday" "TimeFormatShort" "DateFormatShort") }}
         <script>console.log('formatHours array\n{{this.regularHours}}');</script>
       {{#each this.regularHours}}
