@@ -86,7 +86,7 @@ const renderUnits = async () => {
   const tableBodyContainer = document.getElementById("units-table-body");
 
   //   Load Skeleton
-  tableBodyContainer.innerHTML = renderUnitSkeleton().repeat(3);
+  tableBodyContainer.innerHTML = renderUnitSkeleton().repeat(6);
 
   // Run API Request
   const unitCategories = await fetchUnitCategories(48);
@@ -110,6 +110,7 @@ const hookupForm = () => {
     });
 
     document.getElementById("waitlist-form");
+    console.log(formData);
 
     // axios.post(
     //   "https://webhook.site/#!/e4128d2d-9449-4f25-a229-c84a1945a531/008ff727-edaa-4620-bce7-5bb2c814d365/1",
