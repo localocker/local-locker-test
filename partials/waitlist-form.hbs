@@ -1,3 +1,25 @@
+<style>
+  .close-button {
+  border: none;
+  display: inline-block;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap
+}
+
+.topright {
+  position: absolute;
+  right: 0;
+  top: 0
+}
+</style>
+
 <div
   class="fixed z-10 inset-0 overflow-y-auto"
   aria-labelledby="modal-title"
@@ -22,6 +44,8 @@
     <div
       class="inline-block align-bottom bg-white px-6 pt-5 pb-6 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-xl sm:w-full sm:p-10"
     >
+      <span onclick="document.getElementById('waitlist-modal').style.display='none'" class="close-button topright">&times;</span>
+
       <h2>
         Join Waitlist
       </h2>
