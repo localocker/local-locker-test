@@ -143,6 +143,14 @@ h2.section-header {
   display: flex;
 }
 
+.search-bar::selection {
+  background: @apply bg-gray-50 text-ll-blue;
+}
+
+.search-bar-icon {
+  cursor: pointer;
+}
+
 .search {
   margin-left: 0.5rem;
 }
