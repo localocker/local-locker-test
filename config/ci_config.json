@@ -1,32 +1,37 @@
 {
-    "artifactStructure": {
-        "assets": [
-            {
-                "root": "public"
-            }
-        ],
-        "hbsTemplates": [
-            { 
-                "root": "templates",
-                "pattern": "*.hbs"
-            }, 
-            {
-                "root": "partials", 
-                "pattern":"*.hbs"
-            }
-        ]
-    },
-    "base_image_tag": "node-12.18",
-    "dependencies": {
-        "installDepsCmd": "echo install",
-        "requiredFiles": []
-    },
-    "buildArtifacts": {
-        "build_setup_cmd": "npm install",
-        "build_cmd": "npm run build"
-    },
-    "livePreview": {
-        "serve_setup_cmd": "echo setup",
-        "serve_cmd": "echo serve"
-    }
+  "artifactStructure": {
+    "assets": [
+      {
+        "root": "public"
+      }
+    ],
+    "hbsTemplates": [
+      {
+        "root": "templates",
+        "pattern": "*.hbs"
+      },
+      {
+        "root": "partials",
+        "pattern": "**/*.hbs"
+      },
+      {
+        "root": "public",
+        "pattern": "*.hbs"
+      }
+    ]
+  },
+  "base_image_tag": "node-12.18",
+  "dependencies": {
+    "installDepsCmd": "echo install",
+    "requiredFiles": []
+  },
+  "buildArtifacts": {
+    "build_setup_cmd": "npm install",
+    "build_cmd": "npm run build"
+  },
+  "livePreview": {
+    "serve_setup_cmd": "echo setup",
+    "serve_cmd": "echo serve"
+  },
+  "watch_cmd": "npm run watch"
 }

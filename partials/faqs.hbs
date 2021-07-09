@@ -1,0 +1,17 @@
+<div class="">
+  <h2 class="section-header">
+    Frequently Asked Questions
+  </h2>
+  <div class="grid grid-cols-2 gap-4">
+    {{#each this}}
+      <div class="bg-gray-200 p-4 rounded-sm">
+        <h4>
+          {{question}}
+        </h4>
+        <p>
+          {{answer}}
+        </p>
+      </div>
+    {{/each}}
+  </div>
+</div>

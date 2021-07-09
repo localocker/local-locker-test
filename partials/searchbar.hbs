@@ -1,0 +1,29 @@
+<form id="form" class="border border-ll-light-blue rounded-lg w-full lg:w-72 px-3 mt-3 py-2 flex items-center focus-within:border-white">
+  <button class="search-bar-icon">
+    {{> icon-search}}
+  </button>
+    <input
+      type="search"
+      id="query"
+      name="q"
+      placeholder="Enter ZIP Code or Address"
+      aria-label="Search for locations using an address or zip code"
+      class="bg-transparent w-full block mx-2 focus:outline-none"
+    />
+      {{> icon-location-arrow}}
+</form>
+
+<script>
+  const f = document.getElementById('form');
+  const q = document.getElementById('query');
+  const site = '/?q=';
+
+  function submitted(event) {
+  event.preventDefault();
+  const url = site + q.value;
+  const win = window.open(url, '_self');
+  win.focus();
+  }
+
+  f.addEventListener('submit', submitted);
+</script>

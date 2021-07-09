@@ -5,19 +5,21 @@
         "source": "knowledgeGraph",
         "destination": "pages",
         "fields": [
-        "id", 
-        "uid", 
-        "name", 
-        "address", 
-        "accessHours",
-        "c_features",
-        "frequentlyAskedQuestions",
-        "mainPhone",
-        "geocodedCoordinate",
-        "hours" ,
-        "services",
-        "description", 
-        "slug"
+            "id", 
+            "uid", 
+            "name", 
+            "address", 
+            "accessHours",
+            "c_features",
+            "frequentlyAskedQuestions",
+            "mainPhone",
+            "geocodedCoordinate",
+            "hours" ,
+            "services",
+            "description", 
+            "slug",
+            "neighborhood",
+            "photoGallery"
         ], 
         "filter" : {
             "entityTypes": [
@@ -30,285 +32,42 @@
 ---
 
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>{{name}} - {{geomodifier}} </title>
-    <script src="main.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18&libraries=places&callback=initMaps "></script>
-    <script>
-            var initMapsFunctions = [];
-            var initMaps = function(noKey) {
-                for (i = 0; i < initMapsFunctions.length; i++) {
-                    initMapsFunctions[i](noKey);
-                }
-            }
-    </script>
-   
-   </head>
+    <head>
+        {{>head }}
+        <title>{{name}} - {{neighborhood}}</title>
+    </head>
     <body>      
         <div class="flex min-h-screen w-full"> 
             {{>sidebar}}
             <div class="w-full">
-                {{>nav}}
-                <div class="bg-gray-50">
-                    <div class="container pl-4 py-4">
-                        <div class="border-b pb-2 mb-6 bg-orange-700">
-                            <a href="/locator.html" class="flex items-center">
-                                <div>
-                                    <svg width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M.117 5.14a.337.337 0 000 .499l4.307 4.336c.117.146.351.146.498 0l.557-.586a.337.337 0 000-.498L2.02 5.375 5.48 1.889c.146-.147.146-.381 0-.498L4.922.805c-.147-.147-.381-.147-.498 0L.117 5.14z" fill="#00173C">
-                                        </path>
-                                    </svg>
-                                </div>
-                               <div class="">&nbsp;Back</div>
-                            </a>
-
-                        </div>
-
-                        <div class="flex flex-col md:flex-row">
-                            <div class="md:w-2/3">
-                                <h1 class='text-5xl font-extrabold mb-6 text-ll-blue'> {{name}} </h1>
-                                <h3 class='text-2xl font-extrabold  text-ll-blue'> Local Locker Storage - Discover Storage Near You </h3>
-                                <div class="flex items-center"><div class="flex"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg></div><div class="ml-2">115 Reviews</div></div>
-
-                                <div class="flex flex-row gap-6">
-                                    <div class='address mb-4 mr-16 h-16'>
-                                        <h3 class="font-bold"> Address:</h3>
-                                        <div> 
-                                            <p> {{address.line1}} {{address.city}}, {{address.region}} {{address.postalCode}}</p>
-                                        </div>
-                                    </div>                                     
-                                    <div>
-                                        <div class="btn btn-secondary text-red-500 border-red-500 
-                                                 hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100 
-                                                 border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all 
-                                                 cursor-pointer hover:shadow-lg block text-center focus:outline-none 
-                                                flex items-center justify-center">
-                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="mr-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"></path></svg>
-                                            {{mainPhone}}
-                                        </div>                                        
-                                    </div>                                    
-                                </div>
-                                <div class="flex flex-row gap-6">
-                                    <div class='branch-hours mb-4 mr-32'>
-                                        <h3 class="font-bold" >Access Hours</h3>
-                                        <div class='hours-list'>
-                                            {{#each hours}}
-                                                {{#if this.date}}
-                                                {{else}}
-                                                <p>{{@key}}:
-                                                {{#each this}}
-                                                    {{#if isClosed}}
-                                                    Closed
-                                                    {{/if}}
-                                                    {{#each this}}
-                                                    {{this.start}}-{{this.end}}
-                                                    {{/each}}
-                                                {{/each}} 
-                                                </p> 
-                                                {{/if}}
-                                            {{/each}}
-                                        </div>
-                                    </div>
-                                    <div class='access-hours mb-4'>
-                                        <h3 class="font-bold" >Support Hours</h3>
-                                        <div class='hours-list'>
-                                            {{#each accessHours}}
-                                                {{#if this.date}}
-                                                {{else}}
-                                                <p>{{@key}}:
-                                                {{#each this}}
-                                                    {{#if isClosed}}
-                                                    Closed
-                                                    {{/if}}
-                                                    {{#each this}}
-                                                    {{this.start}}-{{this.end}}
-                                                    {{/each}}
-                                                {{/each}} 
-                                                </p> 
-                                                {{/if}}
-                                            {{/each}}
-                                        </div>
-                                    </div>
-                                </div>
-                                {{>units}}
-
+                {{>nav}}                            
+                    <div class="centered-container">                                              
+                        {{>backtolocator}}
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 space-x-4">
+                            <div class="md:col-span-1 lg:col-span-2">
+                                {{> locationdetails}}  
+                                <div class="section units-table">
+                                    <style>
+                                        .section.units-table {
+                                            height: 350px;
+                                            overflow-y: auto;
+                                        }
+                                    </style>
+                                    {{>units }}
+                                </div>                        
                             </div>
-                            <div class="md:w-1/3 ml-4">
-                                <div class="map mb-8" id="map-snip" ></div>
-                                <div class="container mb-8">
-                                    <img src="https://images.unsplash.com/photo-1521080755838-d2311117f767?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=df4dba6eb71efcca6d13c50bc2f97693&auto=format&fit=crop&w=600&q=80">
-
-                                </div>
-                                
-                                <div class="container services">
-                                    <div class="grid grid-cols-2 gap-4">
-                                    {{#each c_features}}
-                                        <div class="text-left lowercase "> {{this}} </div>
-                                    {{/each}}
-                                    </div>
-                                </div>
-
-                            </div>                            
-                        </div>
-
-                        <div class="container"> 
-                            {{!-- <div class="flex sm:flex-row sm:flex-wrap flex-col gap-2 mb-4">
-                                <button class="btn btn-primary bg-red-500  text-white border-red-500 focus:ring-2 focus:bg-red-900 border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none"> See Prices</button>
-                                <div class="btn btn-secondary text-red-500 border-red-500 hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100 border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none flex items-center justify-center">
-                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="mr-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"></path></svg>
-                                    {{mainPhone}}
-                                </div>
-                                <div class="btn btn-secondary text-red-500 border-red-500 hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100 border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none flex items-center justify-center">
-                                    Book a Tour
-                                </div>
-                                <div class="btn btn-secondary text-red-500 border-red-500 hover:bg-white focus:ring-2 focus:ring-ll-red focus:bg-red-100 border px-4 py-2 rounded transform hover:-translate-y-1 ease-in-out transition-all cursor-pointer hover:shadow-lg block text-center focus:outline-none flex items-center justify-center">
-                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" class="mr-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path></svg>
-                                    Directions
-                                </div>
-                            </div>  --}}
-                            <div class="container justify-center">
-                   
-                            </div> 
-
-                            <div class="container mt-4">
-                                {{>nearby}}
+                            <div>
+                                <div class="mb-4 w-full">{{>staticmap geocodedCoordinate}}</div>
+                                <div class="pb-10">{{>carousel photoGallery}}</div>                                        
+                                <div class="">{{>featurelist c_features}}</div> 
                             </div>
-
-                            <div class="container">
-                                {{>reviews}}
-                            </div> 
-
-                            <div class="container">
-                                <ul>
-                                {{#each frequentlyAskedQuestions}}
-                                    <li>
-                                        <div class="text-left font-bold">
-                                            {{this.question}}
-                                        </div>
-                                        <div class="text-left">
-                                            {{this.answer}}
-                                        </div>
-                                    </li>
-                                {{/each}}
-                                </ul>
-                            </div> 
-
                         </div>
+                        <div class="section">{{>nearby geocodedCoordinate}}</div>
+                        <div class="section">{{>reviews}}</div> 
+                        <div class="section">{{>faqs frequentlyAskedQuestions}}</div>                        
                     </div>
                 </div>
-
             </div>
-        
-        </div>   
-
-        <script>
-        initMapsFunctions.push(function (noKey) {
-            
-            var mapElement = document.getElementById('map-snip');
-                    var mapCenter = {
-                        lat: {{geocodedCoordinate.latitude}},
-                        lng: {{geocodedCoordinate.longitude}},
-                    };
-
-                    var map = new google.maps.Map(mapElement, {
-                        zoom: 15,
-                        center: mapCenter,
-                        styles: [
-                            { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
-                            { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
-                            { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
-                            {
-                                featureType: "administrative.locality",
-                                elementType: "labels.text.fill",
-                                stylers: [{ color: "#d59563" }],
-                            },
-                            {
-                                featureType: "poi",
-                                elementType: "labels.text.fill",
-                                stylers: [{ color: "#d59563" }],
-                            },
-                            {
-                                featureType: "poi.park",
-                                elementType: "geometry",
-                                stylers: [{ color: "#263c3f" }],
-                            },
-                            {
-                                featureType: "poi.park",
-                                elementType: "labels.text.fill",
-                                stylers: [{ color: "#6b9a76" }],
-                            },
-                            {
-                                featureType: "road",
-                                elementType: "geometry",
-                                stylers: [{ color: "#38414e" }],
-                            },
-                            {
-                                featureType: "road",
-                                elementType: "geometry.stroke",
-                                stylers: [{ color: "#212a37" }],
-                            },
-                            {
-                                featureType: "road",
-                                elementType: "labels.text.fill",
-                                stylers: [{ color: "#9ca5b3" }],
-                            },
-                            {
-                                featureType: "road.highway",
-                                elementType: "geometry",
-                                stylers: [{ color: "#746855" }],
-                            },
-                            {
-                                featureType: "road.highway",
-                                elementType: "geometry.stroke",
-                                stylers: [{ color: "#1f2835" }],
-                            },
-                            {
-                                featureType: "road.highway",
-                                elementType: "labels.text.fill",
-                                stylers: [{ color: "#f3d19c" }],
-                            },
-                            {
-                                featureType: "transit",
-                                elementType: "geometry",
-                                stylers: [{ color: "#2f3948" }],
-                            },
-                            {
-                                featureType: "transit.station",
-                                elementType: "labels.text.fill",
-                                stylers: [{ color: "#d59563" }],
-                            },
-                            {
-                                featureType: "water",
-                                elementType: "geometry",
-                                stylers: [{ color: "#17263c" }],
-                            },
-                            {
-                                featureType: "water",
-                                elementType: "labels.text.fill",
-                                stylers: [{ color: "#515c6d" }],
-                            },
-                            {
-                                featureType: "water",
-                                elementType: "labels.text.stroke",
-                                stylers: [{ color: "#17263c" }],
-                            },
-                            ],
-
-                        disableDefaultUI: true,
-                    });
-
-                    var config = {
-                      position: mapCenter,
-                      map: map
-                    };
-
-                    var marker = new google.maps.Marker(config);
-                
-        });
-       </script>     
-
+        </div>           
     </body> 
 </html>
