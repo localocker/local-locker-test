@@ -18,7 +18,8 @@ type Unit = {
 type UnitCategory = {
   id: number;
   status: "booked" | "available";
-  is_hiddden: boolean;
+  is_hidden: boolean;
+  join_waitlist: boolean;
   size: string;
   details: string;
   price: string;
@@ -89,7 +90,7 @@ const renderUnits = async () => {
   tableBodyContainer.innerHTML = renderUnitSkeleton().repeat(6);
 
   // Run API Request
-  const unitCategories = await fetchUnitCategories(48);
+  const unitCategories = await fetchUnitCategories(entityId);
 
   console.log(unitCategories);
   //Load Content
