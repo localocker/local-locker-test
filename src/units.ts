@@ -7,6 +7,7 @@ function toTitleCase(str: string) {
   });
 }
 
+
 type Unit = {
   id: number;
   unit_number: number;
@@ -90,6 +91,8 @@ const renderUnits = async () => {
   tableBodyContainer.innerHTML = renderUnitSkeleton().repeat(6);
 
   // Run API Request
+  var script_tag = document.getElementById('units-script');
+  var entityId = script_tag.getAttribute('data');
   const unitCategories = await fetchUnitCategories(entityId);
 
   console.log(unitCategories);
