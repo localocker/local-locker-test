@@ -91,9 +91,11 @@ const renderUnits = async () => {
   // Run API Request
   const unitCategories = await fetchUnitCategories(48);
 
+  console.log(unitCategories);
   //Load Content
   tableBodyContainer.innerHTML = unitCategories
     // .filter((uc) => uc.status === "available")
+    .filter(uc => (uc.status === "available" && uc.is_hidden === false) || (uc.status === "booked" && uc.join_waitlist === true && uc.is_hidden === false))
     .map((uc) => renderUnitRow(uc))
     .join("");
 };
