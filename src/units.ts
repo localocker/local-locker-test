@@ -7,6 +7,7 @@ function toTitleCase(str: string) {
   });
 }
 
+
 type Unit = {
   id: number;
   unit_number: number;
@@ -18,7 +19,8 @@ type Unit = {
 type UnitCategory = {
   id: number;
   status: "booked" | "available";
-  is_hiddden: boolean;
+  is_hidden: boolean;
+  join_waitlist: boolean;
   size: string;
   details: string;
   price: string;
@@ -89,11 +91,15 @@ const renderUnits = async () => {
   tableBodyContainer.innerHTML = renderUnitSkeleton().repeat(6);
 
   // Run API Request
-  const unitCategories = await fetchUnitCategories(48);
+  var script_tag = document.getElementById('units-script');
+  var entityId = script_tag.getAttribute('data');
+  const unitCategories = await fetchUnitCategories(entityId);
 
+  console.log(unitCategories);
   //Load Content
   tableBodyContainer.innerHTML = unitCategories
     // .filter((uc) => uc.status === "available")
+    .filter(uc => (uc.status === "available" && uc.is_hidden === false) || (uc.status === "booked" && uc.join_waitlist === true && uc.is_hidden === false))
     .map((uc) => renderUnitRow(uc))
     .join("");
 };

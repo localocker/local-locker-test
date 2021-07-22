@@ -93,11 +93,11 @@
             {{#each this}}
                 {{#if @first}}
                     <li class="carousel__slide current-slide">
-                        <img class="carousel__image" src={{dynamicImage image.url "300x200" false}} alt="">
+                        <img class="carousel__image" src={{dynamicImage image.url "300x200" false}} alt="Local Locker image {{@index}}" width="300" height="200">
                     </li>
                 {{else}}
                     <li class="carousel__slide">
-                        <img class="carousel__image" src={{dynamicImage image.url "300x200" false}} alt="">
+                        <img class="carousel__image" src={{dynamicImage image.url "300x200" false}} alt="Local Locker image {{@index}}" width="300" height="200">
                     </li>
                 {{/if}}
             {{/each}}
