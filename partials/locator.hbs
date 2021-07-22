@@ -3,7 +3,7 @@
   <div class="panel">
     <div class="header-section">
         <div class="lp-param lp-param-{$customizationInstanceID}-headline header">
-            <h1> Find a locker near you</h1>
+            <h1> Local Locker locations near you</h1>
         </div>
       <div class="directions">
        
@@ -17,7 +17,7 @@
         </div>
       
       </div>
-      <div class="search-center"></div>
+      {{!-- <div class="search-center"></div> --}}
     </div>
     <div class="spinner" style="display: none;">
       <div class="sk-wave">
@@ -132,11 +132,11 @@
       .forEach(function (el) {
         el.style.visibility = "visible";
       });
-    [].slice
-      .call(document.querySelectorAll(".search-center") || [])
-      .forEach(function (el) {
-        el.innerHTML = "";
-      });
+    //[].slice
+      //.call(document.querySelectorAll(".search-center") || [])
+      //.forEach(function (el) {
+      //  el.innerHTML = "";
+     // });
     [].slice
       .call(document.querySelectorAll(".result-list") || [])
       .forEach(function (el) {
@@ -554,6 +554,7 @@
         html += '<div class="availability">' + "<strong>Limited Availability</strong>" + "</div>";
     }
     html += "</div>";
+
     if (viewDetailsLinkUrlValue && viewDetailsLinkTextValue) {
       // Url value is URL object and not url.
       if (viewDetailsLinkUrlValue["url"]) {
@@ -562,11 +563,11 @@
       html +=
         '<div class="lp-param-results lp-subparam-viewDetailsLinkText lp-subparam-viewDetailsLinkUrl">';
       html +=
-        '<div class="lp-param lp-param-viewDetailsLabel link"><a href="' +
+        '<div class="lp-param lp-param-viewDetailsLabel link"><strong><a href="' +
         viewDetailsLinkUrlValue +
         '">' +
         viewDetailsLinkTextValue +
-        "</a></div>";
+        "</a></strong></div>";
       html += "</div>";
     }
 
@@ -719,16 +720,16 @@
       formattedTotal
     );
 
-    [].slice
-      .call(document.querySelectorAll(".search-center") || [])
-      .forEach(function (el) {
-        el.innerHTML = "";
-      });
-    [].slice
-      .call(document.querySelectorAll(".search-center") || [])
-      .forEach(function (el) {
-        el.innerHTML = searchDetailMessage;
-      });
+   // [].slice
+     // .call(document.querySelectorAll(".search-center") || [])
+     // .forEach(function (el) {
+     //   el.innerHTML = "";
+    //  });
+   // [].slice
+   //   .call(document.querySelectorAll(".search-center") || [])
+   //   .forEach(function (el) {
+   //     el.innerHTML = searchDetailMessage;
+   //   });
   }
 
   function getRequest(request_url, queryString) {
