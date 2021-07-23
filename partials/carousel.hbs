@@ -1,5 +1,5 @@
 <style>
-    .carousel {
+  .carousel {
         position: relative;
         height: 300px;
         width: 100%;
@@ -75,52 +75,54 @@
         background: rgba(0, 0, 0, .75);
     }
 
-    .is-hidden { display: none; } 
-
+    .is-hidden { display: none; }
 </style>
-
-
-
-
 <div class="carousel">
-
-    <button class="carousel__button carousel__button--left is-hidden">
-        <img src="/images/left-arrow.svg" alt="">
-    </button>
-
-    <div class="carousel__track-container">
-        <ul class="carousel__track">
-            {{#each this}}
-                {{#if @first}}
-                    <li class="carousel__slide current-slide">
-                        <img class="carousel__image" src={{dynamicImage image.url "300x200" false}} alt="Local Locker image {{@index}}" width="300" height="200">
-                    </li>
-                {{else}}
-                    <li class="carousel__slide">
-                        <img class="carousel__image" src={{dynamicImage image.url "300x200" false}} alt="Local Locker image {{@index}}" width="300" height="200">
-                    </li>
-                {{/if}}
-            {{/each}}
-        </ul>
-    </div>
-
-    <button class="carousel__button carousel__button--right">
-        <img src="/images/right-arrow.svg" alt="">
-    </button>
-
-    <div class="carousel__nav">
-        {{#each this}}
-            {{#if @first}}
-                <button class="carousel__indicator current-slide"></button>
-            {{else}}
-                <button class="carousel__indicator"></button>
-            {{/if}}
-        {{/each}}
-    </div>
+  <button class="carousel__button carousel__button--left is-hidden">
+    <img src="/images/left-arrow.svg" alt="" />
+  </button>
+  <div class="carousel__track-container">
+    <ul class="carousel__track">
+      {{#each this}}
+        {{#if @first}}
+          <li class="carousel__slide current-slide">
+            <img
+              class="carousel__image"
+              src={{dynamicImage image.url "300x200"}}
+              alt="Local Locker image {{@index}}"
+              width="300"
+              height="200"
+            />
+          </li>
+        {{else}}
+          <li class="carousel__slide">
+            <img
+              class="carousel__image"
+              src={{dynamicImage image.url "300x200"}}
+              alt="Local Locker image {{@index}}"
+              width="300"
+              height="200"
+            />
+          </li>
+        {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+  <button class="carousel__button carousel__button--right">
+    <img src="/images/right-arrow.svg" alt="" />
+  </button>
+  <div class="carousel__nav">
+    {{#each this}}
+      {{#if @first}}
+        <button class="carousel__indicator current-slide"></button>
+      {{else}}
+        <button class="carousel__indicator"></button>
+      {{/if}}
+    {{/each}}
+  </div>
 </div>
-
 <script>
-const track = document.querySelector('.carousel__track');
+  const track = document.querySelector('.carousel__track');
 const slides = Array.from(track.children);
 const nextButton = document.querySelector('.carousel__button--right');
 const prevButton = document.querySelector('.carousel__button--left');
@@ -204,5 +206,4 @@ dotsNav.addEventListener('click', e => {
     hideShowArrows(slides, prevButton, nextButton, targetIndex);
 
 });
-
 </script>
