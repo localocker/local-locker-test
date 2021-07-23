@@ -236,7 +236,7 @@
     [].slice
         .call(document.querySelectorAll(".location-data") || [])
         .forEach(function (el) {
-            el.innerHTML = '<div class="col">Loading Text</div>';
+            el.innerHTML = '<div class="col">Loading...</div>';
         });
     $.get(fullURL, function (data) {
         entities = data.response.entities;
