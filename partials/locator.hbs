@@ -1,5 +1,10 @@
 <div class="pb-2 mb-6 bg-orange-700 pt-8"></div>
 <div class="full-width-locator">
+  <style>
+    .full-width-locator {
+      height: calc(100vh - 78px);
+    }
+  </style>
   <div class="panel">
     <div class="header-section">
         <div class="lp-param lp-param-{$customizationInstanceID}-headline header">
@@ -73,6 +78,10 @@
       },
       address: {
         value: "address",
+        contentSource: "FIELD",
+      },
+      crossStreets: {
+        value: "c_crossStreets",
         contentSource: "FIELD",
       },
       availability: {
@@ -465,6 +474,10 @@
       locationOptions["address"]["contentSource"] === "FIELD"
         ? getValueFromPath(entityProfile, locationOptions["address"]["value"])
         : locationOptions["address"]["value"];
+    const crossStreetsValue =
+      locationOptions["crossStreets"]["contentSource"] === "FIELD"
+        ? getValueFromPath(entityProfile, locationOptions["crossStreets"]["value"])
+        : locationOptions["crossStreets"]["value"];
     const phoneNumberValue =
       locationOptions["phoneNumber"]["contentSource"] === "FIELD"
         ? getValueFromPath(entityProfile, locationOptions["phoneNumber"]["value"])
@@ -499,24 +512,31 @@
     }
     html += "</div>";
 
-    if (hoursValue) {
-      const offset = getValueFromPath(entityProfile, "timeZoneUtcOffset");
-      const parsedOffset = parseTimeZoneUtcOffset(offset);
-      html += '<div class="lp-param-results lp-subparam-hours">';
-      html +=
-        '<div class="open-now-string">' +
-        formatOpenNowString(hoursValue, parsedOffset) +
-        "</div>";
-      html += "</div>";
-    }
+//    if (hoursValue) {
+//      const offset = getValueFromPath(entityProfile, "timeZoneUtcOffset");
+//      const parsedOffset = parseTimeZoneUtcOffset(offset);
+//      html += '<div class="lp-param-results lp-subparam-hours">';
+//      html +=
+//        '<div class="open-now-string">' +
+//        formatOpenNowString(hoursValue, parsedOffset) +
+//        "</div>";
+//      html += "</div>";
+//    }
 
     const localeString = "en-US";
     html += i18n.addressForCountry({
       locale: localeString,
-      profile: { address: addressValue },
+      profile: { address: addressValue,
+                 crossStreets: crossStreetsValue},
       regionAbbr: false,
       derivedData: { address: addressValue },
     });
+
+//    html += '<div class="lp-param-results lp-subparam-crossStreets">';
+//    if (crossStreetsValue) {
+//        html += '<div class="crossStreets">' + crossStreetsValue + "</div>";
+//    }
+//    html += "</div>";
 
     html += '<div class="lp-param-results lp-subparam-phoneNumber">';
     if (phoneNumberValue) {
@@ -533,7 +553,7 @@
     const singleLineAddress =
       entityProfile.name +
       " " +
-      addressValue.line1 +
+      addressValue.line1 + 
       " " +
       (addressValue.line2 ? addressValue.line2 + " " : "") +
       addressValue.city +
@@ -541,6 +561,7 @@
       addressValue.region +
       " " +
       addressValue.postalCode;
+
     html += '<div class="lp-param-results lp-subparam-getDirectionsLabel">';
     html +=
       '<div class="link"><a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=' +
@@ -1179,7 +1200,7 @@
     center: { lat: 40.693807, lng: 73.9917 },
     zoom: zoom,
     styles: [
-      { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
+      { elementType: "geometry", stylers: [{ color: "#5A6980" }] },
       { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
       { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
       {
@@ -1200,47 +1221,37 @@
       {
         featureType: "road",
         elementType: "geometry",
-        stylers: [{ color: "#38414e" }],
+        stylers: [{ color: "#00173C" }],
       },
       {
         featureType: "road",
-        elementType: "geometry.stroke",
-        stylers: [{ color: "#212a37" }],
-      },
-      {
-        featureType: "road",
-        elementType: "labels.text.fill",
-        stylers: [{ color: "#9ca5b3" }],
+        elementType: "labels.text",
+        stylers: [{ visibility: "off" }],
       },
       {
         featureType: "road.highway",
         elementType: "geometry",
-        stylers: [{ color: "#746855" }],
-      },
-      {
-        featureType: "road.highway",
-        elementType: "geometry.stroke",
-        stylers: [{ color: "#1f2835" }],
+        stylers: [{ visibility: "off" }],
       },
       {
         featureType: "road.highway",
         elementType: "labels.text.fill",
-        stylers: [{ color: "#f3d19c" }],
+        stylers: [{ visibility: "off" }],
       },
       {
         featureType: "transit",
         elementType: "geometry",
-        stylers: [{ color: "#2f3948" }],
+        stylers: [{ visibility: "off" }],
       },
       {
         featureType: "transit.station",
         elementType: "labels.text.fill",
-        stylers: [{ color: "#d59563" }],
+        stylers: [{ visibility: "off" }],
       },
       {
         featureType: "water",
         elementType: "geometry",
-        stylers: [{ color: "#17263c" }],
+        stylers: [{ color: "#00173C" }],
       },
       {
         featureType: "water",
@@ -4323,6 +4334,10 @@ i18n.address1 = function(opt_data, opt_sb, opt_ijData) {
   var output = '';
   output += '\x3Cspan class=\"c-address-street-1\"\x3E';
   output += nullSafe(opt_data.profile.address.line1);
+  output += ' ';
+  output += '\x3Ci\x3E';
+  output += nullSafe(opt_data.profile.crossStreets);
+  output += '\x3C/i\x3E';
   output += '\x3C/span\x3E';
   return output;
 };
