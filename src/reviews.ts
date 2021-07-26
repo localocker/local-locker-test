@@ -44,7 +44,7 @@ const populateLocationReviewsCount = (html) => {
 const fetchReviews = async () => {
   document.getElementById("reviews-container").innerHTML =
     reviewsTemplateSkeleton.repeat(5);
-  populateReviewsTotalCount('<div class="w-36 h-6 skeleton"></div>');
+  // populateReviewsTotalCount('<div class="w-36 h-6 skeleton"></div>');
   populateLocationReviewsCount('<div class="w-36 h-6 skeleton"></div>');
 
   const res = await axios.get(`https://admin.localocker.com/location/${48}/`);
