@@ -83,28 +83,25 @@
   </button>
   <div class="carousel__track-container">
     <ul class="carousel__track">
-      {{#each this}}
-        {{#if @first}}
           <li class="carousel__slide current-slide">
             <img
               class="carousel__image"
-              src={{dynamicImage image.url "300x200" true}}
-              alt="Local Locker image {{@index}}"
+              src={{dynamicImage c_heroImagePage.url "300x200" true}}
+              alt="{{c_heroImagePage.alternateText}}"
               width="300"
               height="200"
             />
           </li>
-        {{else}}
-          <li class="carousel__slide">
-            <img
-              class="carousel__image"
-              src={{dynamicImage image.url "300x200" true}}
-              alt="Local Locker image {{@index}}"
-              width="300"
-              height="200"
-            />
-          </li>
-        {{/if}}
+      {{#each c_otherImagesPage}}
+        <li class="carousel__slide">
+          <img
+            class="carousel__image"
+            src={{dynamicImage this.url "300x200" true}}
+            alt="{{this.alternateText}}"
+            width="300"
+            height="200"
+          />
+        </li>
       {{/each}}
     </ul>
   </div>
@@ -112,12 +109,9 @@
     <img src="/images/right-arrow.svg" alt="" />
   </button>
   <div class="carousel__nav">
-    {{#each this}}
-      {{#if @first}}
-        <button class="carousel__indicator current-slide"></button>
-      {{else}}
+    <button class="carousel__indicator current-slide"></button>
+    {{#each c_otherImagesPage}}
         <button class="carousel__indicator"></button>
-      {{/if}}
     {{/each}}
   </div>
 </div>
