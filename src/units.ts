@@ -88,7 +88,7 @@ const renderUnits = async () => {
   const tableBodyContainer = document.getElementById("units-table-body");
 
   //   Load Skeleton
-  tableBodyContainer.innerHTML = renderUnitSkeleton().repeat(6);
+  tableBodyContainer.innerHTML = renderUnitSkeleton().repeat(3);
 
   // Run API Request
   var script_tag = document.getElementById('units-script');

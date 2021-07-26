@@ -35,19 +35,28 @@ const populateReviewsTotalCount = (html) => {
   });
 };
 
+const populateLocationReviewsCount = (html) => {
+  document.querySelectorAll(".location-reviews-count").forEach((n) => {
+    n.innerHTML = html;
+  });
+};
+
 const fetchReviews = async () => {
   document.getElementById("reviews-container").innerHTML =
     reviewsTemplateSkeleton.repeat(5);
   populateReviewsTotalCount('<div class="w-36 h-6 skeleton"></div>');
+  populateLocationReviewsCount('<div class="w-36 h-6 skeleton"></div>');
 
   const res = await axios.get(`https://admin.localocker.com/location/${48}/`);
   const {
     data: { all_location_reviews_and_rating },
+    data: { location_reviews_count },
+    data: { location_rating }
   } = res;
 
   const { average_rating_all_locations, reviews, total_reviews_count } =
     all_location_reviews_and_rating;
-
+  
   document.getElementById("reviews-container").innerHTML = "";
 
   reviews.forEach((r) => {
@@ -62,6 +71,12 @@ const fetchReviews = async () => {
             <div class="flex">${starSVG.repeat(5)}</div>
             <div class="ml-2">${total_reviews_count} Reviews</div>
     </div>`);
+
+  populateLocationReviewsCount(`<div class="flex items-center text-ll-blue">
+    <div class="flex">${starSVG.repeat(5)}</div>
+    <div class="ml-2">${location_reviews_count} Reviews</div>
+</div>`);
+
 };
 
 document.addEventListener("DOMContentLoaded", function (event) {
