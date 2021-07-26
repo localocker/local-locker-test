@@ -1,5 +1,5 @@
 <div class="bg-gray-100 p-8">
-  <h2 class="text-center mb-4">Nearby Stores</h2>
+  <h2 class="text-center mb-4">Nearby Locations</h2>
   <div class="location-data flex flex-col md:flex-row gap-8 justify-center"> </div>
 </div>
 
@@ -205,14 +205,14 @@
     var baseURL = "https://liveapi.yext.com/v2/accounts/me/entities/geosearch?";
     var api_key = "c1be28fe46a4efb864aa9d8583108490";
     var vparam = "20181017";
-    var lat = {{latitude}};
-    var lng = {{longitude}};
+    var lat = {{geocodedCoordinate.latitude}};
+    var lng = {{geocodedCoordinate.longitude}};
     var location = lat + ", " + lng;
     var limit = 4;
     var radius = 500;
     var entityTypes =
-        "location,healthcareProfessional,restaurant,healthcareFacility,atm,financialProfessional";
-    var fields = "name,hours,address,websiteUrl,timeZoneUtcOffset,c_locationNickname";
+        "location";
+    var fields = "name,hours,address,websiteUrl,timeZoneUtcOffset,c_locationNickname,c_heroImagePage,c_limitedAvailability";
     const savedSearchIdString = "";
     var fullURL =
         baseURL +
@@ -260,27 +260,39 @@
         location = entities[i];
         locationHTML = "";
         const parsedOffset = parseTimeZoneUtcOffset(location.timeZoneUtcOffset);
+        var availability;
+        if (location.c_limitedAvailability) {
+          availability = "Limited Availability";
+        } else {
+          availability = "&#10004; Units Available";
+        }        
         if (true) {
             if (location.websiteUrl) {
             locationHTML =
-                '<div class="col-md-3 col-sm-6 location"><div class="name hover:underline hover:font-semibold text-ll-red "><a href="' +
+                '<div class="col-md-3 col-sm-6 location">' +
+                '<div><img src="' + location.c_heroImagePage.url + '" alt="' + location.c_heroImagePage.alternateText + '" width="300" height="200"></div>' + 
+                '<div class="name hover:underline hover:font-semibold text-ll-red "><a href="' +
                 location.websiteUrl.url +
                 '">' +
                 location.c_locationNickname +
-                '</a></div><div class="openat">' +
-                getOpenNowString(location.hours, parsedOffset) +
-                '</div><div class="address">' +
+                '</div><div class="address mt-2">' +
                 location.address.line1 +
-                "</div></div>";
+                '</div><div class="address-line-2">' + 
+                location.address.city + ', ' + location.address.region + ' ' + location.address.postalCode +
+                '</div><div class="availability mt-2"><strong>' +
+                availability + 
+                "</strong></div></div>";
             } else {
             locationHTML =
                 '<div class="col-md-3 col-sm-6 location"><div class="name">' +
                 location.c_locationNickname +
-                '</div><div class="openat">' +
-                getOpenNowString(location.hours, parsedOffset) +
-                '</div><div class="address">' +
+                '</div><div class="address mt-2">' +
                 location.address.line1 +
-                "</div></div>";
+                '</div><div class="address-line-2">' + 
+                location.address.city + ', ' + location.address.region + ' ' + location.address.postalCode +
+                '</div><div class="availability mt-2"><strong>' +
+                availability + 
+                "</strong></div></div>";
             }
             //console.log(locationHTML);
             [].slice
