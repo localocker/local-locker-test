@@ -212,7 +212,7 @@
     var radius = 500;
     var entityTypes =
         "location,healthcareProfessional,restaurant,healthcareFacility,atm,financialProfessional";
-    var fields = "name,hours,address,websiteUrl,timeZoneUtcOffset";
+    var fields = "name,hours,address,websiteUrl,timeZoneUtcOffset,c_locationNickname";
     const savedSearchIdString = "";
     var fullURL =
         baseURL +
@@ -266,7 +266,7 @@
                 '<div class="col-md-3 col-sm-6 location"><div class="name hover:underline hover:font-semibold text-ll-red "><a href="' +
                 location.websiteUrl.url +
                 '">' +
-                location.name +
+                location.c_locationNickname +
                 '</a></div><div class="openat">' +
                 getOpenNowString(location.hours, parsedOffset) +
                 '</div><div class="address">' +
@@ -275,7 +275,7 @@
             } else {
             locationHTML =
                 '<div class="col-md-3 col-sm-6 location"><div class="name">' +
-                location.name +
+                location.c_locationNickname +
                 '</div><div class="openat">' +
                 getOpenNowString(location.hours, parsedOffset) +
                 '</div><div class="address">' +
