@@ -11,7 +11,7 @@ let selected_marker_icon;
 // Map Configuration
 let markers = [];
 let bounds;
-let selectedLocationIndex;
+let selectedLocationIndex = -1;
 
 export const map = new google.maps.Map(document.getElementById("map"), {
   center: { lat: 40.693807, lng: 73.9917 },

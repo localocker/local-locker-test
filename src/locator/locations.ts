@@ -169,7 +169,7 @@ export function locationJSONtoHTML(entityProfile, index, locationOptions) {
       "</div></div>";
   }
 
-  return '<div class="result">' + html + "</div>";
+  return '<div id="result-' + index + '" class="result">' + html + "</div>";
 }
 
 // Renders each location the the result-list-inner html
@@ -182,20 +182,26 @@ export function renderLocations(locations, append, viewMore) {
       });
   }
 
-  for (let index = 0; index < locations.length; index++) {
-    const location = locations[index];
+  // Done separately because the el.innerHTML call overwrites the original html.
+  // Need to wait until all innerHTML is set before attaching listeners.
+  locations.forEach((location, index) => {
     [].slice
       .call(document.querySelectorAll(".result-list-inner") || [])
       .forEach(function (el) {
         el.innerHTML += locationJSONtoHTML(location, index, locationOptions);
-        el.getElementsByClassName("result")[0].onmouseover = () => {
-          highlightLocation(index, false, false, undefined);
-        };
-        el.getElementsByClassName("result")[0].onclick = () => {
-          highlightLocation(index, false, true, undefined);
-        };
       });
-  }
+  });
+
+  locations.forEach((_, index) => {
+    document
+      .getElementById("result-" + index)
+      .addEventListener("mouseover", () => {
+        highlightLocation(index, false, false);
+      });
+    document.getElementById("result-" + index).addEventListener("click", () => {
+      highlightLocation(index, false, true);
+    });
+  });
 
   if (viewMore) {
     [].slice
