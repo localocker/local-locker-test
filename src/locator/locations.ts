@@ -148,7 +148,7 @@ export function locationJSONtoHTML(entityProfile, index, locationOptions) {
   }
 
   // Add center column
-  html = `<div class="center-column">html</div>`;
+  html = `<div class="center-column">${html}</div>`;
 
   // Add left and right column
   if (entityProfile.__distance) {
