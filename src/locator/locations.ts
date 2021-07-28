@@ -54,18 +54,15 @@ export function locationJSONtoHTML(entityProfile, index, locationOptions) {
     if (cardTitleLinkUrlValue["url"]) {
       cardTitleLinkUrlValue = cardTitleLinkUrlValue["url"];
     }
-    html +=
-      '<div class="name hover:underline hover:font-semibold text-ll-red ">' +
-      '<a href="' +
-      cardTitleLinkUrlValue +
-      '">' +
-      cardTitleValue +
-      "</a></div>";
+    html += `<div class="name hover:underline hover:font-semibold text-ll-red ">
+      <a href="${cardTitleLinkUrlValue}">
+        ${cardTitleValue} 
+      </a>
+    </div>`;
   } else if (cardTitleValue) {
-    html +=
-      '<div class="name hover:underline hover:font-semibold text-ll-red ">' +
-      cardTitleValue +
-      "</div>";
+    html += `<div class="name hover:underline hover:font-semibold text-ll-red ">
+      ${cardTitleValue}
+    </div>`;
   }
   html += "</div>";
 
@@ -118,14 +115,15 @@ export function locationJSONtoHTML(entityProfile, index, locationOptions) {
     " " +
     addressValue.postalCode;
 
-  html += '<div class="lp-param-results lp-subparam-getDirectionsLabel">';
-  html +=
-    '<div class="link"><a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=' +
-    singleLineAddress +
-    '">' +
-    getDirectionsLabelValue +
-    "</a></div>";
-  html += "</div>";
+  html += `<div class="lp-param-results lp-subparam-getDirectionsLabel">
+    <div class="link">
+      <a target="_blank"
+        href="https://www.google.com/maps/dir/?api=1&destination=${singleLineAddress}"
+      >
+        ${getDirectionsLabelValue}
+      </a>
+    </div>
+  </div>`;
   html += '<div class="lp-param-results lp-subparam-availability mt-3">';
   if (availabilityValue) {
     html +=
@@ -140,36 +138,33 @@ export function locationJSONtoHTML(entityProfile, index, locationOptions) {
     if (viewDetailsLinkUrlValue["url"]) {
       viewDetailsLinkUrlValue = viewDetailsLinkUrlValue["url"];
     }
-    html +=
-      '<div class="lp-param-results lp-subparam-viewDetailsLinkText lp-subparam-viewDetailsLinkUrl">';
-    html +=
-      '<div class="lp-param lp-param-viewDetailsLabel link"><strong><a href="' +
-      viewDetailsLinkUrlValue +
-      '">' +
-      viewDetailsLinkTextValue +
-      "</a></strong></div>";
-    html += "</div>";
+    html += `<div class="lp-param-results lp-subparam-viewDetailsLinkText lp-subparam-viewDetailsLinkUrl">
+      <div class="lp-param lp-param-viewDetailsLabel link"><strong>
+        <a href="${viewDetailsLinkUrlValue}">
+          ${viewDetailsLinkTextValue}
+        </a>
+      </strong></div>
+    </div>`;
   }
 
   // Add center column
-  html = '<div class="center-column">' + html + "</div>";
+  html = `<div class="center-column">html</div>`;
 
   // Add left and right column
   if (entityProfile.__distance) {
-    html =
-      '<div class="left-column">' +
-      (index + 1) +
-      ".</div>" +
-      html +
-      '<div class="right-column"><div class="distance">' +
-      formatMiOrKm(
+    html = `<div class="left-column">
+      ${index + 1}.
+    </div>
+    ${html}
+    <div class="right-column"><div class="distance">
+      ${formatMiOrKm(
         entityProfile.__distance.distanceMiles,
         entityProfile.__distance.distanceKilometers
-      ) +
-      "</div></div>";
+      )}
+    </div></div>`;
   }
 
-  return '<div id="result-' + index + '" class="result">' + html + "</div>";
+  return `<div id="result-${index}" class="result">${html}</div>`;
 }
 
 // Renders each location the the result-list-inner html
@@ -316,8 +311,6 @@ export function getNearestLocationsByString() {
     request_url += "&location=" + queryString;
     request_url += "&limit=" + limit;
     getRequest(request_url, queryString);
-  } else {
-    // Error Message
   }
 }
 
