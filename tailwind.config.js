@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       colors: {
         "ll-blue": "#00173C",
+        "ll-hover-blue": "#001c48",
         "ll-red": "#E52222",
         "ll-light-blue": "#5c6d88",
       },

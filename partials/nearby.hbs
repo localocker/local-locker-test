@@ -213,7 +213,7 @@
     var entityTypes =
         "location";
     var fields = "name,hours,address,websiteUrl,timeZoneUtcOffset,c_locationNickname,c_heroImagePage,c_limitedAvailability";
-    const savedSearchIdString = "";
+    const savedSearchIdString = "551464658";
     var fullURL =
         baseURL +
         "api_key=" +
@@ -231,7 +231,7 @@
         "&fields=" +
         fields +
         "&resolvePlaceholders=true" +
-        savedSearchIdString;
+        "&filter=%7B%22c_offline%22%3A%7B%22%24eq%22%3AFALSE%7D%7D";
 
     [].slice
         .call(document.querySelectorAll(".location-data") || [])

@@ -17,6 +17,15 @@ export const enableAutocomplete = true;
 export const base_url = "https://liveapi.yext.com/v2/accounts/me/";
 export const useMiles = true;
 
+export type locationOption = {
+  // The value of the content, either a field name or a constant value
+  value: string;
+  // Determines where this value comes from. Generally either FIELD or text.
+  contentSource: string;
+  // Determines whether the content defined in value should be parsed as RTF.
+  isRtf: boolean | undefined;
+};
+
 export const locationOptions = {
   cardTitle: {
     value: "c_locationNickname",
@@ -54,6 +63,7 @@ export const locationOptions = {
   },
   coordinates: {
     value: "geocodedCoordinate",
+    contentSource: "FIELD",
   },
   viewDetailsLinkText: {
     value: "View Details",
