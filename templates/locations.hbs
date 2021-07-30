@@ -26,7 +26,8 @@
             "c_locationNickname",
             "c_pageTextBlockTitleH3",
             "c_pageTextBlockText",
-            "c_otherNeighborhoodsTitle"
+            "c_otherNeighborhoodsTitle",
+            "c_bookATourLink"
         ], 
         "filter" : {
             "entityTypes": [
@@ -66,7 +67,10 @@
                         <div>
                             <div class="mb-4 w-full">{{>staticmap geocodedCoordinate}}</div>
                             <div class="pb-10">{{>carousel}}</div>                                        
-                            <div class="">{{>featurelist c_features}}</div> 
+                            <div class="space-y-5">
+                                {{>bookATour c_bookATourLink}}
+                                {{>featurelist c_features}}
+                            </div> 
                         </div>
                     </div>
                     <div class="section">{{>reviews}}</div> 
