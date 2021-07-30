@@ -11,6 +11,7 @@ import {
   locationInput,
   locationNoun,
   locationNounPlural,
+  locationOption,
   locationOptions,
   radius,
 } from "./constants";
@@ -20,11 +21,6 @@ import { highlightLocation } from "./map";
 
 export let currentLatitude = 0;
 export let currentLongitude = 0;
-type locationOption = {
-  value: string;
-  contentSource: string;
-  isRtf: boolean | undefined;
-};
 
 export function locationJSONtoHTML(entityProfile, index, locationOptions) {
   const getValue = (opt: locationOption) => {
