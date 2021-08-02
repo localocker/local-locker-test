@@ -1,23 +1,8 @@
 <style>
-  .close-button {
-  border: none;
-  display: inline-block;
-  padding: 8px 16px;
-  vertical-align: middle;
-  overflow: hidden;
-  text-decoration: none;
-  color: inherit;
-  background-color: inherit;
-  text-align: center;
-  cursor: pointer;
-  white-space: nowrap
-}
-
-.topright {
-  position: absolute;
-  right: 0;
-  top: 0
-}
+  .close-button { border: none; display: inline-block; padding: 8px 16px;
+  vertical-align: middle; overflow: hidden; text-decoration: none; color:
+  inherit; background-color: inherit; text-align: center; cursor: pointer;
+  white-space: nowrap } .topright { position: absolute; right: 0; top: 0 }
 </style>
 
 <div
@@ -44,15 +29,34 @@
     <div
       class="inline-block align-bottom bg-white px-6 pt-5 pb-6 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-xl sm:w-full sm:p-10"
     >
-      <span onclick="document.getElementById('waitlist-modal').style.display='none'" class="close-button topright">&times;</span>
+      <span
+        onclick="document.getElementById('waitlist-modal').style.display='none'"
+        class="close-button topright"
+      >&times;</span>
 
       <h2>
         Join Waitlist
       </h2>
-      <p>
-        Please provide your personal information. We will notify you as soon as the unit you are interested in is available
+      <p class="pb-4">
+        Please provide your personal information. We will notify you as soon as
+        the unit you are interested in is available
       </p>
-      <form class="form" id="waitlist-form">
+      <div>
+        <!--[if lte IE 8]>
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+        <![endif]-->
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+        <script>
+        hbspt.forms.create({
+        region: "na1",
+        portalId: "6639500",
+        formId: "1ca8ed5b-693b-4429-8a27-9a216ac5bd8b"
+        });
+        </script> 
+      </div>                        
+                       
+
+      {{!-- <form class="form" id="waitlist-form">
         <div class="flex gap-4">
           <div class="w-full">
             <label>
@@ -116,7 +120,7 @@
         <button class="btn btn-primary w-full mt-8">
           Submit
         </button>
-      </form>
+      </form> --}}
     </div>
   </div>
 </div>
