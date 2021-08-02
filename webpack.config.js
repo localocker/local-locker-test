@@ -8,11 +8,15 @@ module.exports = {
     main: "./src/main.js",
     reviews: "./src/reviews.ts",
     units: "./src/units.ts",
+    locator: "./src/locator.ts",
   },
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "public"),
     clean: true,
+  },
+  resolve: {
+    extensions: [".ts", ".js", ".json"],
   },
   devtool: "inline-source-map",
   module: {
@@ -57,5 +61,8 @@ module.exports = {
   },
   optimization: {
     minimizer: [new CssMinimizerPlugin(), "..."],
+  },
+  externals: {
+    google: "google",
   },
 };

@@ -1,7 +1,8 @@
 /.artifact-output
-/public 
+/public
 /localData
 /node_modules
 /sites-rendered-output
 cli
 cli.exe
+/.idea
