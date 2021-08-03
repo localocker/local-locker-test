@@ -50,8 +50,17 @@
         hbspt.forms.create({
         region: "na1",
         portalId: "6639500",
-        formId: "1ca8ed5b-693b-4429-8a27-9a216ac5bd8b"
+        formId: "1ca8ed5b-693b-4429-8a27-9a216ac5bd8b", 
+        onFormReady: function($form) {
+          var address = document.getElementById('address').innerText;
+          console.log("address: ", address);
+          var test = $form.find('input[name="address"]').val(address).change();
+          
+
+        }
         });
+        //var field = $form.find('input[name="firstname"]').val('Brian').change();
+                
         </script> 
       </div>                        
                        

@@ -129,19 +129,19 @@ export function locationJSONtoHTML(entityProfile, index, locationOptions) {
   }
   html += "</div>";
 
-  if (viewDetailsLinkUrlValue && viewDetailsLinkTextValue) {
-    // Url value is URL object and not url.
-    if (viewDetailsLinkUrlValue["url"]) {
-      viewDetailsLinkUrlValue = viewDetailsLinkUrlValue["url"];
-    }
-    html += `<div class="lp-param-results lp-subparam-viewDetailsLinkText lp-subparam-viewDetailsLinkUrl">
-      <div class="lp-param lp-param-viewDetailsLabel link"><strong>
-        <a href="${viewDetailsLinkUrlValue}">
-          ${viewDetailsLinkTextValue}
-        </a>
-      </strong></div>
-    </div>`;
-  }
+  // if (viewDetailsLinkUrlValue && viewDetailsLinkTextValue) {
+  //   // Url value is URL object and not url.
+  //   if (viewDetailsLinkUrlValue["url"]) {
+  //     viewDetailsLinkUrlValue = viewDetailsLinkUrlValue["url"];
+  //   }
+  //   html += `<div class="lp-param-results lp-subparam-viewDetailsLinkText lp-subparam-viewDetailsLinkUrl">
+  //     <div class="lp-param lp-param-viewDetailsLabel link"><strong>
+  //       <a href="${viewDetailsLinkUrlValue}">
+  //         ${viewDetailsLinkTextValue}
+  //       </a>
+  //     </strong></div>
+  //   </div>`;
+  // }
 
   // Add center column
   html = `<div class="center-column">${html}</div>`;
