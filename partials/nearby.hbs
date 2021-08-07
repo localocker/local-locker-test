@@ -1,6 +1,6 @@
 <div class="bg-gray-100 p-8">
   <h2 class="text-center mb-4">Nearby Locations</h2>
-  <div class="location-data flex flex-col md:flex-row gap-8 justify-center"> </div>
+  <div class="location-data grid sm:grid-cols-2 md:grid-cols-3 lg:flex gap-8 justify-center"> </div>
 </div>
 
 <script>
@@ -212,8 +212,8 @@
     var radius = 500;
     var entityTypes =
         "location";
-    //var fields = "name,hours,address,websiteUrl,timeZoneUtcOffset,c_locationNickname,c_heroImagePage,c_limitedAvailability";
-    var fields = "name,hours,address,websiteUrl,timeZoneUtcOffset,c_locationNickname,c_limitedAvailability";
+    //var fields = "name,hours,address,mainPhone,websiteUrl,timeZoneUtcOffset,c_locationNickname,c_heroImagePage,c_limitedAvailability";
+    var fields = "name,hours,address,mainPhone,websiteUrl,timeZoneUtcOffset,c_locationNickname,c_limitedAvailability";
     const savedSearchIdString = "551464658";
     var fullURL =
         baseURL +
@@ -270,7 +270,7 @@
         if (true) {
             if (location.websiteUrl) {
             locationHTML =
-                '<div class="col-md-3 col-sm-6 location">' +
+                '<div class="location">' +
                 //'<div><img src="' + location.c_heroImagePage.url + '" alt="' + location.c_heroImagePage.alternateText + '" width="300" height="200"></div>' + 
                 '<div class="name hover:underline hover:font-semibold text-ll-red "><a href="' +
                 location.websiteUrl.url +
@@ -280,6 +280,8 @@
                 location.address.line1 +
                 '</div><div class="address-line-2">' + 
                 location.address.city + ', ' + location.address.region + ' ' + location.address.postalCode +
+                '</div><div class="phoneNumber mt-2">' +
+                location.mainPhone + 
                 '</div><div class="availability mt-2"><strong>' +
                 availability + 
                 "</strong></div></div>";
