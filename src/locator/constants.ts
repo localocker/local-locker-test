@@ -1,6 +1,6 @@
-export const limit = 10;
+export const limit = 5;
 export const radius = 50;
-export const defaultQuery = "Manhattan";
+export const defaultQuery = "10012";
 export const locationInput = <HTMLInputElement>(
   document.getElementById("location-input")
 );

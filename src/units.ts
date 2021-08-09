@@ -51,7 +51,12 @@ window.showWaitlistModal = () => {
   $("#waitlist-modal").show();
 };
 
+
+
+
 const renderUnitRow = (uc: UnitCategory) => {
+  
+  console.log("uc objcet:" ,uc);
   const cta =
     uc.status === "available"
       ? `<a class="btn btn-primary w-32" href="https://booking.localocker.com/booking/1?unitCategory=${uc.id}">

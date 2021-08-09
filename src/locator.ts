@@ -44,7 +44,8 @@ if (enableAutocomplete) {
     document.getElementById("location-input"),
     {
       options: {
-        types: ["(regions)"],
+        //types: ["(regions)"],
+        componentRestrictions: {'country': "us"}
       },
     }
   );
