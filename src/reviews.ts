@@ -45,9 +45,13 @@ const fetchReviews = async () => {
   document.getElementById("reviews-container").innerHTML =
     reviewsTemplateSkeleton.repeat(5);
   // populateReviewsTotalCount('<div class="w-36 h-6 skeleton"></div>');
-  populateLocationReviewsCount('<div class="w-36 h-6 skeleton"></div>');
+  populateLocationReviewsCount('<div class="w-36 h-6 skeleton"></div>'); 
+  
+  // get entity id
+  var script_tag = document.getElementById('units-script');
+  var entityId = script_tag.getAttribute('data');
 
-  const res = await axios.get(`https://admin.localocker.com/location/${48}/`);
+  const res = await axios.get(`https://admin.localocker.com/location/${entityId}/`);
   const {
     data: { all_location_reviews_and_rating },
     data: { location_reviews_count },

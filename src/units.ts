@@ -51,20 +51,36 @@ window.showWaitlistModal = () => {
   $("#waitlist-modal").show();
 };
 
-
-
-
 const renderUnitRow = (uc: UnitCategory) => {
   
   console.log("uc objcet:" ,uc);
-  const cta =
-    uc.status === "available"
-      ? `<a class="btn btn-primary w-32" href="https://booking.localocker.com/booking/1?unitCategory=${uc.id}">
+
+  //https://staging-fe.localocker.com/booking/?id=610&size=3x1x2&price=510.98&key=91&deals=&[%E2%80%A6]n%2C+NY%2C+11201&book_now=true&locationPath=X-888%2F49
+  
+  // const cta =
+  //   uc.status === "available"
+  //     ? `<a class="btn btn-primary w-32" href="https://booking.localocker.com/booking/1?unitCategory=${uc.id}">
+  //       Book Now
+  //     </a>`
+  //     : `<button class="btn btn-secondary w-32" onclick="showWaitlistModal()">
+  //       Join Waitlist
+  //     </button>`;
+  
+  // https://staging-fe.localocker.com/booking/?id=610&size=3x1x2&price=510.98&book_now=true&locationPath=X-888%2F49
+    //get path name for return URL on booking page
+    const path = window.location.pathname.replace(/^\//, '');
+    console.log("path", path);
+    // get address for location details on bookin page
+    const address = document.getElementById('address').innerText;
+    const cta =
+    uc.status === "available" 
+      ? `<a class="btn btn-primary w-32" href="https://staging-fe.localocker.com/booking/1?id=${uc.id}&size=${uc.size}&price=${uc.price}&book_now=true&locationAddress=${address}&locationPath=${path}">
         Book Now
       </a>`
       : `<button class="btn btn-secondary w-32" onclick="showWaitlistModal()">
         Join Waitlist
       </button>`;
+ 
   return `
     <tr>
     <td>
@@ -100,7 +116,7 @@ const renderUnits = async () => {
   var entityId = script_tag.getAttribute('data');
   const unitCategories = await fetchUnitCategories(entityId);
 
-  console.log(unitCategories);
+  console.log("unit categories", unitCategories);
   //Load Content
   tableBodyContainer.innerHTML = unitCategories
     // .filter((uc) => uc.status === "available")
