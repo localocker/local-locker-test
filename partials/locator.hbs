@@ -10,13 +10,11 @@
         <div class="lp-param lp-param-{$customizationInstanceID}-headline header">
             <h1> Local Locker locations near you</h1>
         </div>
-      <div class="directions">
-
-      </div>
+      <div class="directions"></div>
       <div class="error-text"></div>
       <div class="search-bar space-x-4">
-        <input type="text" class="flex-grow form-control shadow pl-2 lp-param-placeholderText md:flex-none" id="location-input" placeholder="Enter Zip code or Address" aria-label="E.g. New York">
-        <input type="submit" value="Search" class="btn btn-primary shadow   hover:-translate-y-1 ease-in-out transition-all cursor-pointer block text-center focus:outline-none" id="search-location-button">
+        <input type="text" class="flex-grow form-control shadow pl-2 rounded lp-param-placeholderText md:flex-none" id="location-input" placeholder="Enter Zip code or Address" aria-label="E.g. New York">
+        <input type="submit" value="Search" class="btn btn-primary shadow block focus:outline-none" id="search-location-button">
         <div class="btn btn-link lp-param-requestLocationText shadow" onclick="getUsersLocation();" role="button">
             Use my location
         </div>
