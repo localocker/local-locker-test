@@ -1,6 +1,6 @@
 <div class="bg-gray-100 p-8">
   <h2 class="text-center mb-4">Nearby Locations</h2>
-  <div class="location-data grid sm:grid-cols-2 md:grid-cols-3 lg:flex gap-8 justify-center"> </div>
+  <div class="location-data grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 justify-center"> </div>
 </div>
 
 <script>
@@ -265,7 +265,7 @@
         if (location.c_limitedAvailability) {
           availability = "Limited Availability";
         } else {
-          availability = "&#10004; Units Available";
+          availability = "&#10003; Units Available";
         }        
         if (true) {
             if (location.websiteUrl) {

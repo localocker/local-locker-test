@@ -18,8 +18,8 @@ export const map = new google.maps.Map(document.getElementById("map"), {
   zoom: zoom,
   styles: [
     { elementType: "geometry", stylers: [{ color: "#5A6980" }] },
-    { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
-    { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+    { elementType: "labels.text.stroke", stylers: [{ visibility: "off" }] },
+    { elementType: "labels.text.fill", stylers: [{ visibility: "off" }] },
     {
       featureType: "administrative.locality",
       elementType: "labels.text.fill",
@@ -42,17 +42,7 @@ export const map = new google.maps.Map(document.getElementById("map"), {
     },
     {
       featureType: "road",
-      elementType: "labels.text",
-      stylers: [{ visibility: "off" }],
-    },
-    {
-      featureType: "road.highway",
-      elementType: "geometry",
-      stylers: [{ visibility: "off" }],
-    },
-    {
-      featureType: "road.highway",
-      elementType: "labels.text.fill",
+      elementType: "labels",
       stylers: [{ visibility: "off" }],
     },
     {
@@ -61,8 +51,8 @@ export const map = new google.maps.Map(document.getElementById("map"), {
       stylers: [{ visibility: "off" }],
     },
     {
-      featureType: "transit.station",
-      elementType: "labels.text.fill",
+      featureType: "transit",
+      elementType: "labels",
       stylers: [{ visibility: "off" }],
     },
     {
