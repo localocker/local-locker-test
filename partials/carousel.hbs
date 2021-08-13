@@ -84,30 +84,23 @@
   <div class="carousel__track-container">
     <ul class="carousel__track">
           <li class="carousel__slide current-slide">
-            <picture>
-            <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(max-width: 768px)">
             <img
-              class="carousel__image"
-              src={{dynamicImage c_heroImagePage.url "300x200" true}}
-              alt="{{c_heroImagePage.alternateText}}"
-              width="300"
-              height="200"
-            />
-            </picture>
-          </li>
-      {{#each c_otherImagesPage}}
-        <li class="carousel__slide">
-          <picture>
-          <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(max-width: 768px)">
-          <img
             class="carousel__image"
-            src={{dynamicImage this.url "300x200" true}}
-            alt="{{this.alternateText}}"
+            src={{dynamicImage c_heroImagePage.url "300x200" true}}
+            alt="{{c_heroImagePage.alternateText}}"
             width="300"
             height="200"
           />
-          </picture>
-
+          </li>
+      {{#each c_otherImagesPage}}
+        <li class="carousel__slide">
+          <img
+          class="carousel__image"
+          src={{dynamicImage this.url "300x200" true}}
+          alt="{{this.alternateText}}"
+          width="300"
+          height="200"
+          />
         </li>
       {{/each}}
     </ul>
