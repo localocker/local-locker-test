@@ -54,7 +54,7 @@
                 <div class="centered-container">                                              
                     {{>backtolocator}}
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 space-x-4">
-                        <div class="md:col-span-1 lg:col-span-2">
+                        <div class="lg:col-span-2">
                             {{> locationdetails}}  
                             <div class="section units-table">
                                 {{>units}}
@@ -62,7 +62,7 @@
                         </div>
                         <div>
                             <div class="mb-4 w-full">{{>staticmap geocodedCoordinate}}</div>
-                            <div class="pb-10">{{>carousel}}</div>                                        
+                            <div class="pb-10 hidden md:block">{{>carousel}}</div>                                        
                             <div class="space-y-6">
                                 {{>bookATour c_bookATourLink}}
                                 {{>featurelist c_features}}
