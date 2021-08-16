@@ -14,15 +14,16 @@ import google from "google";
 
 
 searchButton.addEventListener("click", function () {
-  const locationInput = (<HTMLInputElement>document.getElementById('location-input')).value;
-  var isValidZip = /(^\d{5}$)/.test(locationInput);
-  if (isValidZip) {
-    console.log(isValidZip, locationInput);
-    getNearestLocationsByString();
-  }
-  else{
-    console.log("else", isValidZip, locationInput);
-  }
+  getNearestLocationsByString();
+  // const locationInput = (<HTMLInputElement>document.getElementById('location-input')).value;
+  // var isValidZip = /(^\d{5}$)/.test(locationInput);
+  // if (isValidZip) {
+  //   console.log(isValidZip, locationInput);
+  //   getNearestLocationsByString();
+  // }
+  // else{
+  //   console.log("else", isValidZip, locationInput);
+  // }
 });
 
 window.addEventListener("popstate", function (e) {
@@ -41,15 +42,16 @@ window.addEventListener("load", function () {
 
 locationInput.addEventListener("keydown", function (e) {
   if (e.key === "Enter") {
-    const locationInput = (<HTMLInputElement>document.getElementById('location-input')).value;
-    var isValidZip = /(^\d{5}$)/.test(locationInput);
-    if (isValidZip) {
-      console.log(isValidZip, locationInput);
-      getNearestLocationsByString();
-    }
-    else{
-      console.log("else", isValidZip, locationInput);
-    }
+    getNearestLocationsByString();
+    // const locationInput = (<HTMLInputElement>document.getElementById('location-input')).value;
+    // var isValidZip = /(^\d{5}$)/.test(locationInput);
+    // if (isValidZip) {
+    //   console.log(isValidZip, locationInput);
+    //   getNearestLocationsByString();
+    // }
+    // else{
+    //   console.log("else", isValidZip, locationInput);
+    // }
   }
 });
 
@@ -69,21 +71,22 @@ if (enableAutocomplete) {
   );
   autocomplete.addListener("place_changed", () => {
     if (!isLoading) {
-      const locationInput = (<HTMLInputElement>document.getElementById('location-input')).value;
-      var isValidZip = /(^\d{5}$)/.test(locationInput);
-      if (isValidZip) {
-        console.log(isValidZip, locationInput);
-        getNearestLocationsByString();
-      }
-      else{
-        console.log("else", isValidZip, locationInput);
-        var errorText = document.getElementById("error-text-section");
-        errorText.innerHTML = "";
-        const p = document.createElement("p");
-        const node = document.createTextNode("Please enter valid zip code.");
-        p.appendChild(node);
-        errorText.appendChild(p);
-      }
+      getNearestLocationsByString();
+      // const locationInput = (<HTMLInputElement>document.getElementById('location-input')).value;
+      // var isValidZip = /(^\d{5}$)/.test(locationInput);
+      // if (isValidZip) {
+      //   console.log(isValidZip, locationInput);
+      //   getNearestLocationsByString();
+      // }
+      // else{
+      //   console.log("else", isValidZip, locationInput);
+      //   var errorText = document.getElementById("error-text-section");
+      //   errorText.innerHTML = "";
+      //   const p = document.createElement("p");
+      //   const node = document.createTextNode("Please enter valid ZIP code.");
+      //   p.appendChild(node);
+      //   errorText.appendChild(p);
+      // }
     }
   });
 }
