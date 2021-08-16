@@ -78,6 +78,7 @@ if (enableAutocomplete) {
       else{
         console.log("else", isValidZip, locationInput);
         var errorText = document.getElementById("error-text-section");
+        errorText.innerHTML = "";
         const p = document.createElement("p");
         const node = document.createTextNode("Please enter valid zip code.");
         p.appendChild(node);
