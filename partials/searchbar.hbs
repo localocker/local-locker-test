@@ -6,9 +6,11 @@
       type="search"
       id="query"
       name="q"
-      placeholder="Enter ZIP Code or Address"
+      placeholder="Enter ZIP Code"
       aria-label="Search for locations using an address or zip code"
       class="bg-transparent w-full block mx-2 focus:outline-none"
+      required pattern="[0-9]{5}"
+      maxlength="5"
     />
       {{> icon-location-arrow}}
 </form>
