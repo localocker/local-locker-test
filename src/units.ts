@@ -74,7 +74,7 @@ const renderUnitRow = (uc: UnitCategory) => {
     const address = document.getElementById('address').innerText;
     const cta =
     uc.status === "available" 
-      ? `<a class="btn btn-primary w-32" href="https://staging-fe.localocker.com/booking/1?id=${uc.id}&size=${uc.size}&price=${uc.price}&book_now=true&locationAddress=${address}&locationPath=${path}">
+      ? `<a class="btn btn-primary w-32" href="https://booking.localocker.com/booking/1?id=${uc.id}&size=${uc.size}&price=${uc.price}&book_now=true&locationAddress=${address}&locationPath=${path}">
         Book Now
       </a>`
       : `<button class="btn btn-secondary w-32" onclick="showWaitlistModal()">
