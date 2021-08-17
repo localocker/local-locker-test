@@ -72,9 +72,11 @@ const renderUnitRow = (uc: UnitCategory) => {
     console.log("path", path);
     // get address for location details on bookin page
     const address = document.getElementById('address').innerText;
+    const unitID = uc.units[0].id;
+    console.log("unit ID", unitID);
     const cta =
     uc.status === "available" 
-      ? `<a class="btn btn-primary w-32" href="https://booking.localocker.com/booking/1?id=${uc.id}&size=${uc.size}&price=${uc.price}&book_now=true&locationAddress=${address}&locationPath=${path}">
+      ? `<a class="btn btn-primary w-32" href="https://booking.localocker.com/booking/1?id=${unitID}&size=${uc.size}&price=${uc.price}&book_now=true&locationAddress=${address}&locationPath=${path}">
         Book Now
       </a>`
       : `<button class="btn btn-secondary w-32" onclick="showWaitlistModal()">
