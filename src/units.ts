@@ -72,9 +72,15 @@ const renderUnitRow = (uc: UnitCategory) => {
     // get address for location details on bookin page
     const address = document.getElementById('address').innerText;
     var unitID;
-    if  (typeof uc.units[0].id !== "undefined" )
+    var availableUnits = [];
+    uc.units.forEach(function (unit) {
+      if (unit.status === "available") {
+        availableUnits.push(unit);
+      }
+    });
+    if (availableUnits.length > 0)
     {
-      unitID = uc.units[0].id;
+      unitID = availableUnits[0].id;
     }
     console.log("unit ID", unitID);
     const cta =
