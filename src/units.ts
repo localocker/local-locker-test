@@ -53,8 +53,6 @@ window.showWaitlistModal = () => {
 
 const renderUnitRow = (uc: UnitCategory) => {
   
-  console.log("uc objcet:" ,uc);
-
   //https://staging-fe.localocker.com/booking/?id=610&size=3x1x2&price=510.98&key=91&deals=&[%E2%80%A6]n%2C+NY%2C+11201&book_now=true&locationPath=X-888%2F49
   
   // const cta =
@@ -82,7 +80,6 @@ const renderUnitRow = (uc: UnitCategory) => {
     {
       unitID = availableUnits[0].id;
     }
-    console.log("unit ID", unitID);
     const cta =
     uc.status === "available" 
       ? `<a class="btn btn-primary w-32" href="https://booking.localocker.com/booking/1?id=${unitID}&size=${uc.size}&price=${uc.price}&book_now=true&locationAddress=${address}&locationPath=${path}">
