@@ -69,7 +69,6 @@ const renderUnitRow = (uc: UnitCategory) => {
   // https://staging-fe.localocker.com/booking/?id=610&size=3x1x2&price=510.98&book_now=true&locationPath=X-888%2F49
     //get path name for return URL on booking page
     const path = window.location.pathname.replace(/^\//, '');
-    console.log("path", path);
     // get address for location details on bookin page
     const address = document.getElementById('address').innerText;
     const unitID = uc.units[0].id;
