@@ -71,7 +71,11 @@ const renderUnitRow = (uc: UnitCategory) => {
     const path = window.location.pathname.replace(/^\//, '');
     // get address for location details on bookin page
     const address = document.getElementById('address').innerText;
-    const unitID = uc.units[0].id;
+    var unitID;
+    if  (typeof uc.units[0].id !== "undefined" )
+    {
+      unitID = uc.units[0].id;
+    }
     console.log("unit ID", unitID);
     const cta =
     uc.status === "available" 
