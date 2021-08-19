@@ -338,7 +338,7 @@ export function getLocations() {
   getRequest(request_url, null);
 }
 
-function getUsersLocation() {
+export function getUsersLocation() {
   if (navigator.geolocation) {
     startLoading();
     const error = (error) => {

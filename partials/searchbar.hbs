@@ -1,18 +1,19 @@
 <form id="form" class="border border-ll-light-blue rounded-lg w-full lg:w-72 px-3 py-2 flex items-center focus-within:border-white">
   <button class="search-bar-icon" aria-label="Search bar icon">
-    {{> icon-search}}
+    {{> icon-search fillColor="#fff"}}
   </button>
     <input
       type="search"
       id="query"
       name="q"
-      placeholder="Enter ZIP Code"
+      placeholder="Enter ZIP Code or Address"
       aria-label="Search for locations using an address or zip code"
+      autocomplete="off"
       class="bg-transparent w-full block mx-2 focus:outline-none"
-      required pattern="[0-9]{5}"
-      maxlength="5"
     />
-      {{> icon-location-arrow}}
+    {{!-- <div class="search-location-arrow" aria-label="Use My Location button" id="useLocation">
+      {{> icon-location-arrow fillColor="#fff"}}
+    </div> --}}
 </form>
 
 <script>
@@ -21,10 +22,11 @@
   const site = '/?q=';
 
   function submitted(event) {
-  event.preventDefault();
-  const url = site + q.value;
-  const win = window.open(url, '_self');
-  win.focus();
+    event.preventDefault();
+    console.log("event just fired");
+    const url = site + q.value;
+    const win = window.open(url, '_self');
+    win.focus();
   }
 
   f.addEventListener('submit', submitted);

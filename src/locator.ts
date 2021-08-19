@@ -4,8 +4,9 @@ import {
   loadLocationsOnLoad,
   locationInput,
   searchButton,
+  useMyLocation
 } from "./locator/constants";
-import { getLocations, getNearestLocationsByString } from "./locator/locations";
+import { getLocations, getNearestLocationsByString, getUsersLocation } from "./locator/locations";
 import { getQueryParamsFromUrl } from "./locator/utils";
 import { isLoading } from "./locator/loader";
 // @ts-ignore
@@ -15,6 +16,19 @@ import google from "google";
 
 searchButton.addEventListener("click", function () {
   getNearestLocationsByString();
+  // const locationInput = (<HTMLInputElement>document.getElementById('location-input')).value;
+  // var isValidZip = /(^\d{5}$)/.test(locationInput);
+  // if (isValidZip) {
+  //   console.log(isValidZip, locationInput);
+  //   getNearestLocationsByString();
+  // }
+  // else{
+  //   console.log("else", isValidZip, locationInput);
+  // }
+});
+
+useMyLocation.addEventListener("click", function () {
+  getUsersLocation();
   // const locationInput = (<HTMLInputElement>document.getElementById('location-input')).value;
   // var isValidZip = /(^\d{5}$)/.test(locationInput);
   // if (isValidZip) {

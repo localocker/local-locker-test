@@ -143,6 +143,10 @@ h2.section-header {
   display: flex;
 }
 
+.search-location-arrow{
+  cursor: pointer;
+}
+
 .search-bar-icon {
   cursor: pointer;
 }
