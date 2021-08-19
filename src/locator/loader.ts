@@ -23,9 +23,10 @@ export function startLoading() {
   //  el.innerHTML = "";
   // });
   [].slice
-    .call(document.querySelectorAll(".result-list") || [])
+    .call(document.getElementsByClassName("result") || [])
     .forEach(function (el) {
-      el.style.visibility = "hidden";
+      // el.style.visibility = "hidden";
+      el.innerHTML = '<div class="skeleton h-6 flex-grow mx-4 my-10"></div>';
     });
   locationInput.disabled = true;
   [].slice

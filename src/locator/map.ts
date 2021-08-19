@@ -204,7 +204,10 @@ export function addMarkersToMap(locations) {
       bounds.extend(marker.position);
 
       google.maps.event.addListener(marker, "click", function () {
+        console.log("marker was clicked");
         highlightLocation(index, true, false, marker);
+        const urlToOpen = document.getElementsByClassName("result selected")[0].getElementsByClassName("center-column")[0].getElementsByClassName('lp-param-results lp-subparam-cardTitle lp-subparam-cardTitleLinkUrl')[0].getElementsByClassName('name')[0].getElementsByTagName('a')[0].href;
+        window.open(urlToOpen);
       });
 
       google.maps.event.addListener(selected_marker, "click", function () {
@@ -213,6 +216,7 @@ export function addMarkersToMap(locations) {
 
       google.maps.event.addListener(marker, "mouseover", function () {
         highlightLocation(index, false, false, marker);
+        
       });
 
       markers.push(marker);
@@ -274,6 +278,7 @@ export function highlightLocation(
 
     const selectedMarker = markers[selectedLocationIndex];
     selectedMarker.setIcon(selected_marker_icon);
+
     selectedMarker.setLabel({
       text: String(selectedLocationIndex + 1),
       color: pinStyles.text_selected,
