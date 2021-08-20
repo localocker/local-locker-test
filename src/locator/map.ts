@@ -204,7 +204,6 @@ export function addMarkersToMap(locations) {
       bounds.extend(marker.position);
 
       google.maps.event.addListener(marker, "click", function () {
-        console.log("marker was clicked");
         highlightLocation(index, true, false, marker);
         const urlToOpen = document.getElementsByClassName("result selected")[0].getElementsByClassName("center-column")[0].getElementsByClassName('lp-param-results lp-subparam-cardTitle lp-subparam-cardTitleLinkUrl')[0].getElementsByClassName('name')[0].getElementsByTagName('a')[0].href;
         window.open(urlToOpen);

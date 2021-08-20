@@ -14,6 +14,7 @@ type Unit = {
   unit_category: number;
   status: "booked" | "available";
   created: string;
+  offline_flag: boolean;
 };
 
 type UnitCategory = {
@@ -72,10 +73,12 @@ const renderUnitRow = (uc: UnitCategory) => {
     var unitID;
     var availableUnits = [];
     uc.units.forEach(function (unit) {
-      if (unit.status === "available") {
+      if (unit.status === "available" && unit.offline_flag === false) {
+        console.log("available unit ", unit);
         availableUnits.push(unit);
       }
     });
+    console.log(availableUnits);
     if (availableUnits.length > 0)
     {
       unitID = availableUnits[0].id;
