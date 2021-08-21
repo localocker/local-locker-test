@@ -1,0 +1,60 @@
+---
+{
+    "stream": {
+        "$id": "sites-neighborhoods",
+        "source": "knowledgeGraph",
+        "destination": "pages",
+        "fields": [
+            "id", 
+            "uid", 
+            "name", 
+            "address", 
+            "hours",
+            "slug",
+            "mainPhone",
+            "frequentlyAskedQuestions",
+            "photoGallery",
+            "videos",
+            "accessHours",
+            "c_pageName",
+            "c_pageSubtitleH2",
+            "c_pageTextBlockText",
+            "c_pageTextBlockTitleH3",
+            "c_relatedLocations.c_locationNickname",
+            "c_relatedLocations.address",
+            "c_relatedLocations.mainPhone",
+            "c_relatedLocations.c_heroImagePage",
+            "c_relatedLocations.c_limitedAvailability",
+            "c_relatedLocations.websiteUrl"
+        ], 
+        "filter" : {
+            "entityTypes": [
+                "ce_neighborhood"
+            ]
+        }
+    },
+    "urlFormat": "{{slug}}"
+}
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{>head}}
+        <title>{{name}} - {{neighborhood}}</title>
+        {{>schema}}
+        <link rel="shortcut icon" type="image/jpg" href="/images/favicon-32x32.png"/>
+    </head>
+    <body>      
+        <div class="flex min-h-screen w-full"> 
+            {{>sidebar}}
+            <div class="w-full">
+                {{>nav}}                            
+                <div class="centered-container">
+                    {{>backtolocator}}   
+                </div>
+                <div class="w-full"> {{>footer}} </div>
+            </div>
+        </div>  
+        {{!-- {{>bodyTag}}       --}}
+    </body> 
+</html>
