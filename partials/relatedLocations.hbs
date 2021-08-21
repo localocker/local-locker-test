@@ -1,0 +1,22 @@
+<div class="space-y-6 py-6 px-10">
+    {{#each this}}
+        <div class="border px-4 py-2 rounded transform bg-white">
+            <div>
+                <img src="{{dynamicImage this.c_heroImagePage.url "200x200" true}}" width="108" height="108">
+            </div>
+            <div>
+                <h2>{{this.c_locationNickname}}</h2>
+                <div class="">
+                    <span>
+                        <img class="inline-block pb-1" src="/images/get-directions.svg" alt="">
+                    </span>
+                    <a class="hover:underline" href="https://www.google.com/maps/dir/?api=1&destination={{name}} {{address.line1}} {{address.city}} {{address.region}} {{address.postalCode}}">
+                        {{this.address.line1}}, {{address.city}} {{address.region}} {{address.postalCode}}
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    {{/each}}
+</div>
