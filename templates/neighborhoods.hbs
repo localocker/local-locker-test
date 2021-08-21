@@ -33,14 +33,25 @@
             ]
         }
     },
-    "urlFormat": "{{slug}}"
+    "urlFormat": "neighborhoods/{{slug}}"
 }
 ---
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        {{>head}}
-        <title>{{name}} - {{neighborhood}}</title>
+
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="../main.js" async></script>
+        <link rel="stylesheet" href="../main.css" />
+        <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        async
+        defer
+        ></script>
+
+        <title>{{name}}</title>
         {{>schema}}
         <link rel="shortcut icon" type="image/jpg" href="/images/favicon-32x32.png"/>
     </head>
@@ -49,8 +60,14 @@
             {{>sidebar}}
             <div class="w-full">
                 {{>nav}}                            
-                <div class="centered-container">
-                    {{>backtolocator}}   
+                <div class="centered-container px-12 pt-5 mb-10">
+                    {{>backtolocator}}  
+                    <div>
+                        {{>neighborhood-details}}   
+                    </div>  
+                    <div>
+                        {{>relatedLocations}}   
+                    </div>                                        
                 </div>
                 <div class="w-full"> {{>footer}} </div>
             </div>
