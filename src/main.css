@@ -197,7 +197,30 @@ h2.section-header {
 }
 
 .neighborhood-feature {
-  @apply px-5 py-5 space-y-5 hover:shadow-md hover:bg-gradient-to-r from-white to-red-100
+  @apply px-5 py-5 space-y-5 hover:shadow-md hover:bg-gradient-to-r from-white to-red-100;
+}
+
+/* FAQ Styling */
+details > summary {
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details > summary::after {
+  content: url(./images/icon-arrow-down.svg);
+  @apply ml-0.5;
+}
+
+details[open] > summary::after {
+  content: url(./images/icon-arrow-down.svg);
+  @apply transform rotate-180 origin-center -translate-y-1;
+}
+
+details[open] > summary {
+  @apply font-bold
 }
 
 

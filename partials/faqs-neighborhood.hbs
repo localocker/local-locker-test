@@ -1,17 +1,17 @@
 <div class="">
-<h1 class="text-4xl mb-3 font-extrabold text-ll-blue">
+<h1 class="text-4xl mb-9 font-extrabold text-ll-blue">
     Frequently Asked Questions
 </h1>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+  <div class="grid grid-cols-1 gap-x-4 gap-y-4 lg:grid-cols-2">
     {{#each this}}
-      <div class="bg-gray-200 p-4 rounded-sm">
-        <h4>
-          {{convertRTFToHTML question}}
-        </h4>
-        <p>
-          {{convertRTFToHTML answer}}
-        </p>
+      <div class="rounded-sm shadow-md">
+        <details class="px-5 py-5 hover:cursor-pointer">
+          <summary class="flex justify-between items-center text-lg font-bold text-ll-blue hover:text-ll-red">{{convertRTFToHTML question}}</summary>
+          <p class="py-2 text-dark-grayish-blue text-xs font-normal">          {{convertRTFToHTML answer}}</p>
+        </details>
       </div>
     {{/each}}
   </div>
 </div>
+
