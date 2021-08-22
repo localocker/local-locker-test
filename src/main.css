@@ -192,4 +192,9 @@ h2.section-header {
     font-weight: bold;
 }
 
+.neighborhood-feature {
+  @apply px-5 py-5 space-y-5 hover:shadow-md hover:bg-gradient-to-r from-white to-red-100
+}
+
+
 @tailwind utilities;
