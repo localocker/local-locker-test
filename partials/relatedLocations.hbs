@@ -1,37 +1,41 @@
 <div class="px-10 py-6 gap-x-5 gap-y-5 grid md:grid-cols-2">
     {{#each c_relatedLocations}}
-        <div id="Location Card" class="border rounded-lg bg-white px-8 py-8 grid lg:grid-cols-2">
-            <div id="Image Section" class="aspect-w-1">
-                <img src="{{dynamicImage this.c_heroImagePage.url "200x200" true}}" width="108" height="108">
+        <div id="Location Card" class="grid border rounded-lg bg-white px-8 py-8 gap-y-5">
+            <div class="grid gap-y-3 lg:grid-cols-2">
+                    <div id="Image" class="lg:order-1">
+                        <img class="lg:float-right" src="{{dynamicImage this.c_heroImagePage.url "200x200" true}}" width="108" height="108">
+                    </div>
+                    <div id="Address Section" class="grid gap-y-2">
+                        <h2>{{this.c_locationNickname}}</h2>
+                        <div>
+                            <span>
+                                <img class="inline-block pb-1" src="/images/get-directions.svg" alt="">
+                            </span>
+                            <a class="hover:underline" href="https://www.google.com/maps/dir/?api=1&destination={{name}} {{address.line1}} {{address.city}} {{address.region}} {{address.postalCode}}">
+                                {{this.address.line1}}, {{address.city}} {{address.region}} {{address.postalCode}}
+                            </a>
+                        </div>
+                        <div id="Special Features Section">
+                            <div>Special Features:</div>
+                            {{!-- {{#each }} --}}
+                                <ul class="check-mark-ul">
+                                    <li class="check-mark-li"> Feature 1</li>
+                                    <li class="check-mark-li"> Feature 2</li>
+                                </ul>
+                            {{!-- {{/each}} --}}
+                        </div>
+                    </div>
             </div>
-            <div id="Location Details">
-                <h2>{{this.c_locationNickname}}</h2>
-                <div>
-                    <span>
-                        <img class="inline-block pb-1" src="/images/get-directions.svg" alt="">
-                    </span>
-                    <a class="hover:underline" href="https://www.google.com/maps/dir/?api=1&destination={{name}} {{address.line1}} {{address.city}} {{address.region}} {{address.postalCode}}">
-                        {{this.address.line1}}, {{address.city}} {{address.region}} {{address.postalCode}}
-                    </a>
-                </div>
-            </div>
-            <div id="CTA Button">
-                <a href={{websiteUrl.url}} class="btn bg-ll-blue text-white rounded-lg inline-block hover:bg-ll-hover-blue">Click here &#8594; 
-                </a>
-            </div>
-            <div id="Special Features Section">
-                <div>Special Features:</div>
-                {{!-- {{#each }} --}}
-                    <ul class="check-mark-ul">
-                        <li class="check-mark-li"> Feature 1</li>
-                        <li class="check-mark-li"> Feature 2</li>
-                    </ul>
-                {{!-- {{/each}} --}}
-            </div>
-            <div id="Availability">
-                {{#if c_limitedAvailability}}
-                    <h4>Limited Availability</h4>
-                {{/if}}
+            <div class="grid gap-y-3 lg:grid-cols-2 lg:items-center">
+                    <div id="CTA Button">
+                        <a href={{websiteUrl.url}} class="btn bg-ll-blue text-white rounded-lg inline-block hover:bg-ll-hover-blue">Click here &#8594; 
+                        </a>
+                    </div>
+                    <div id="Availability" class="lg:text-right">
+                        {{#if c_limitedAvailability}}
+                            <h4>Limited Availability</h4>
+                        {{/if}}
+                    </div>
             </div>
         </div>
     {{/each}}
