@@ -1,7 +1,7 @@
-<div class="px-10 py-6 gap-x-5 gap-y-5 grid lg:grid-cols-2">
+<div class="px-10 py-6 gap-x-5 gap-y-5 grid md:grid-cols-2">
     {{#each c_relatedLocations}}
-        <div class="border rounded-lg bg-white px-8 py-8">
-            <div id="Image Section" class="">
+        <div id="Location Card" class="border rounded-lg bg-white px-8 py-8 grid lg:grid-cols-2">
+            <div id="Image Section" class="aspect-w-1">
                 <img src="{{dynamicImage this.c_heroImagePage.url "200x200" true}}" width="108" height="108">
             </div>
             <div id="Location Details">
@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div id="CTA Button">
-                <a href={{websiteUrl}} class="btn bg-ll-blue text-white rounded-lg inline-block hover:bg-ll-hover-blue">Click here &#8594; 
+                <a href={{websiteUrl.url}} class="btn bg-ll-blue text-white rounded-lg inline-block hover:bg-ll-hover-blue">Click here &#8594; 
                 </a>
             </div>
             <div id="Special Features Section">
