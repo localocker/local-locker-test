@@ -1,3 +1,222 @@
-<h1 class="text-4xl mb-3 font-extrabold text-ll-blue">
+<h1 class="text-4xl mb-10 font-extrabold text-ll-blue">
     Inside the Storage Units
 </h1>
+
+<style>
+  .visible-carousel {
+        position: relative;
+        height: 400px;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .visible-carousel__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .visible-carousel__track-container {
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .visible-carousel__track {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        position: relative;
+        height: 100%;
+        transition: transform 250ms ease-in;
+    }
+
+    .visible-carousel__slide {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .visible-carousel__button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+    }
+
+    .visible-carousel__button--left {
+        left: -20px;
+    }
+
+    .visible-carousel__button--right {
+        right: -20px;
+    }
+
+    .visible-carousel__button img {
+        width: 12px;
+    }
+
+    .visible-carousel__nav {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .visible-carousel__indicator {
+        border: 0;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        background: rgba(0, 0, 0, 0.3);
+        margin: 0 3px;
+        cursor: pointer;
+    }
+
+    .visible-carousel__indicator.current-slide {
+        background: rgba(0, 0, 0, .75);
+    }
+
+    .visible-is-hidden { display: none; }
+</style>
+
+<div class="visible-carousel">
+  <button class="visible-carousel__button visible-carousel__button--left visible-is-hidden">
+    <img src="/images/left-arrow.svg" alt="" />
+  </button>
+  <div class="visible-carousel__track-container">
+    <ul class="visible-carousel__track">
+      {{#each photoGallery}}
+        {{#if @first}}
+          <li class="visible-carousel__slide current-slide">
+            <picture>
+                <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(max-width: 767px)">
+                <img
+                class="visible-carousel__image"
+                src={{dynamicImage image.url "1000x1000" true}}
+                alt="{{image.alternateText}}"
+                width="600"
+                height="400"
+                />
+            </picture>
+          </li>
+        {{else}}
+            <li class="visible-carousel__slide">
+                <picture>
+                    <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(max-width: 767px)">
+                    <img
+                        class="visible-carousel__image"
+                        src={{dynamicImage image.url "1000x1000" true}}
+                        alt="{{image.alternateText}}"
+                        width="600"
+                        height="400"
+                    />
+                </picture>
+            </li>
+        {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+  <button class="visible-carousel__button visible-carousel__button--right">
+    <img src="/images/right-arrow.svg" alt="" />
+  </button>
+  <div class="visible-carousel__nav">
+    {{#each photoGallery}}
+      {{#if @first}}
+        <button class="visible-carousel__indicator current-slide"></button>
+      {{else}}
+        <button class="visible-carousel__indicator"></button>
+     {{/if}}
+    {{/each}}
+  </div>
+</div>
+
+<script>
+    const track2 = document.querySelector('.visible-carousel__track');
+    const slides2 = Array.from(track2.children);
+    console.log("slides: ", slides2);
+    const nextButton2 = document.querySelector('.visible-carousel__button--right');
+    const prevButton2 = document.querySelector('.visible-carousel__button--left');
+    const dotsNav2 = document.querySelector('.visible-carousel__nav');
+    const dots2 = Array.from(dotsNav2.children);
+
+    const slideWidth2 = slides2[0].getBoundingClientRect().width;
+
+// arrange the slides next to one another
+const setSlidePosition2 = (slide, index) => {
+    slide.style.left = slideWidth2 * index + 'px';
+}
+slides2.forEach(setSlidePosition2);
+
+const moveToSlide2 = (track2, currentSlide, targetSlide) => {
+    track2.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+    currentSlide.classList.remove('current-slide');
+    targetSlide.classList.add('current-slide');
+}
+
+const updateDots2 = (currentDot, targetDot) => {
+    currentDot.classList.remove('current-slide');
+    targetDot.classList.add('current-slide');
+}
+
+const hideShowArrows2 = (slides2, prevButton2, nextButton2, targetIndex) => {
+    if (targetIndex === 0) {
+        prevButton2.classList.add('visible-is-hidden');
+        nextButton2.classList.remove('visible-is-hidden');
+    } else if (targetIndex === slides2.length-1) {
+        prevButton2.classList.remove('visible-is-hidden');
+        nextButton2.classList.add('visible-is-hidden');
+    } else {
+        prevButton2.classList.remove('visible-is-hidden');
+        nextButton2.classList.remove('visible-is-hidden');
+    }
+}
+
+// when I click left, move slides to the left
+prevButton2.addEventListener('click', e => {
+    const currentSlide = track2.querySelector('.current-slide');
+    const prevSlide = currentSlide.previousElementSibling;
+    const currentDot = dotsNav2.querySelector('.current-slide');
+    const prevDot = currentDot.previousElementSibling;
+    const prevIndex = slides2.findIndex(slide => slide === prevSlide);
+
+
+    moveToSlide2(track2, currentSlide, prevSlide);  
+    updateDots2(currentDot, prevDot);
+    hideShowArrows2(slides2, prevButton2, nextButton2, prevIndex);
+
+});
+
+// when I click right, move slides to the right
+nextButton2.addEventListener('click', e => {
+    const currentSlide = track2.querySelector('.current-slide');
+    const nextSlide = currentSlide.nextElementSibling;
+    const currentDot = dotsNav2.querySelector('.current-slide');
+    const nextDot = currentDot.nextElementSibling;
+    const nextIndex = slides2.findIndex(slide => slide === nextSlide);
+
+    moveToSlide2(track2, currentSlide, nextSlide);
+    updateDots2(currentDot, nextDot);
+    hideShowArrows2(slides2, prevButton2, nextButton2, nextIndex);
+
+})
+
+// when I click the nav indicators, move to that slide
+dotsNav2.addEventListener('click', e => {
+    const targetDot = e.target.closest('button');
+
+    if (!targetDot) return;
+
+    const currentSlide = track2.querySelector('.visible-current-slide');
+    const currentDot = dotsNav2.querySelector('.visible-current-slide');
+    const targetIndex = dots2.findIndex(dot => dot === targetDot);
+    const targetSlide = slides2[targetIndex];
+
+    moveToSlide2(track2, currentSlide, targetSlide);
+    updateDots2(currentDot, targetDot);
+    hideShowArrows2(slides2, prevButton2, nextButton2, targetIndex);
+
+});
+</script>

@@ -1,4 +1,4 @@
-<div class="hours-list">  
+{{!-- <div class="hours-list">  
   {{#with (formatHours this "Monday" "TimeFormatShort" "DateFormatShort") }}
       {{#each this.regularHours}}
         <p><strong>{{this.displayDay}}:</strong>
@@ -9,5 +9,24 @@
         {{/each}}
         </p>
       {{/each}}
+  {{/with}}
+</div> --}}
+
+<div class="hours-list">  
+  {{#with (formatHours this "Monday" "TimeFormatShort" "DateFormatShort") }}
+    <div class="grid grid-cols-2">
+      {{#each this.regularHours}}
+        <div>
+          <strong>{{this.displayDay}}:</strong>
+        </div>
+        <div>
+          {{#if this.isClosed}}Closed{{/if}}
+          {{#if this.is247}}Open 24/7{{/if}}
+          {{#each this.openIntervals}}
+            {{this.start}}-{{this.end}}
+          {{/each}}
+        </div>
+      {{/each}}
+    </div>
   {{/with}}
 </div>
