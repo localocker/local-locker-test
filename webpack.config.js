@@ -6,9 +6,6 @@ module.exports = {
   plugins: [new MiniCssExtractPlugin()],
   entry: {
     main: "./src/main.js",
-    reviews: "./src/reviews.ts",
-    units: "./src/units.ts",
-    locator: "./src/locator.ts",
     carousel:"./src/carousel.js"
   },
   output: {

@@ -4,75 +4,31 @@
     Customer Reviews
 </h1>
 
-
-            <section class="wrapper_carousel flex flex-col justify-center w-full" role="region" aria-label="testimonial carousel">
-            
-                <div class="carousel-data relative overflow-hidden flex items-center justify-center w-full pt-14">
-
-                    <div class="stars-section"></div>
-                    <div class="carousel-item" role="group" aria-label="slide 1 of 5">
-                        <p class="text_caption italic my-8">
-                            Clean and simple storage space, customer service is easy to reach and very helpful! Can very much recommend					
-                        </p>
-                        <span class="caption-author">
-                            - Ross Grant
-                        </span>
-                    </div>
-            
-                    <div class="carousel-item" role="group" aria-label="slide 2 of 5">
-                        <p class="text_caption italic my-8">
-                            Really this is the best storage company I’ve found in NYC. Especially the customer service. Chantel was extremely helpful, friendly and professional and her customer support was 100% of the reason I decided to use local locker.
-                        </p>
-            
-                        <span class="caption-author">
-                            - Thomas T.
-                        </span>
-            
-                    </div>
-            
-                    <div class="carousel-item" role="group" aria-label="slide 3 of 5">
-            
-                        <p class="text_caption italic my-8">
-                            Hello - Glad this place opened up right on cortelyou. Very convenient access hours (accessible hours are much later than the other larger storage places i've looked at) and good customer service.					
-                        </p>
-            
-                        <span class="caption-author">
-                            - Judy Tong
-                        </span>
-            
-                    </div>
-            
-                    <div class="carousel-item" role="group" aria-label="slide 4 of 5">
-            
-                        <p class="text_caption italic my-8">
-                            Local Locker is my fave. I've been a loyal customer since they first opened... and I never looked back. I own a few pieces from van Gogh that don't really suit my penthouse, so they're stored in a temperature-controlled unit at LL!
-                        </p>
-            
-                        <span class="caption-author">
-                            - Luc Marrie
-                        </span>
-            
-                    </div>
-
-                    <div class="carousel-item" role="group" aria-label="slide 5 of 5">
-            
-                        <p class="text_caption italic my-8">
-                            I've used 6 or 7 different storage companies in the past 10 years, and none of them compete with the folks at Local Locker. Their booking flow and customer support are flawless. Did I mention their website is also extremely fast?  
-                        </p>
-            
-                        <span class="caption-author">
-                            - Travis Pinnick
-                        </span>
-            
-                    </div>
-            
+            <section class="wrapper_carousel px-5 pt-5 flex flex-col justify-center w-full" role="region" aria-label="testimonial carousel">
+                <div class="carousel-data relative overflow-hidden flex items-center justify-center w-full">
+                    {{#each global.reviews}}
+                        <div class="carousel-item" role="group" aria-label="slide {{@index}} of {{length global.reviews}}">
+                            <div>
+                                <img src="/images/5star.png" height="30" width="200">
+                            </div>
+                            <p class="text_caption italic my-8">
+                                {{this.caption}}
+                            </p>
+                            <span class="caption-author">
+                                - {{this.name}}
+                            </span>
+                            <span class="caption-date">
+                                {{this.date}}
+                            </span>
+                        </div>
+                    {{/each}}
                 </div>
             
-                <div class="carousel-indicators flex items-center pt-12">
+                <div class="carousel-indicators flex items-center">
                         
                 </div>
             
-                <div class="carousel-controls flex justify-end mt-auto" aria-label="carousel controls">
+                <div class="carousel-controls flex justify-end" aria-label="carousel controls">
                     <button type="button" class="button_carousel-prev" aria-label="previous"><i class="fas fa-caret-left"></i></button>
                     <button type="button" class="button_carousel-next ml-1" aria-label="next"><i class="fas fa-caret-right"></i></button>
                 </div>

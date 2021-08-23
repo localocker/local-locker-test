@@ -7,25 +7,10 @@
 	        box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    letter-spacing: 1px;
-  }
-
 
   p {
       margin-bottom: 1em;
       line-height: 1.5em;
-  }
-
-  main {
-      max-width: 1280px;
-      width: 100%;
-      padding: 16px;
-      margin: 0 auto;
-      font-family: 'Lato', 'Arial', 'sans-serif';
-      color: #242424;
   }
 
 
@@ -33,9 +18,10 @@ body {
 
 .wrapper_carousel {
     background: var(--primary-grey);
-    height: 500px;
+    height: auto;
     border-radius: 12px;
     box-shadow: 2px 2px 12px 2px #cccccc;
+    background-color: #F6F6F6;
 }
 
 .carousel-data {
@@ -58,6 +44,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    @apply text-xl;
 }
 
 .initial-slide, .active-slide {
@@ -125,8 +112,13 @@ body {
 
 .caption-author {
     font-weight: 700;
-    font-size: 14px;
+    @apply text-xl;
 }
+
+.caption-date {
+    @apply text-gray-500;
+}
+
 
 .carousel-indicators {
     margin: 0 auto;
