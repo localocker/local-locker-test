@@ -7,7 +7,3 @@ function importAll(r) {
   }
   
   const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/));
-
-
-
-  

@@ -16,7 +16,7 @@
     </div> --}}
 </form>
 
-<script>
+<script src="searchbar.js">
   const f = document.getElementById('form');
   const q = document.getElementById('query');
   const site = '/?q=';
@@ -24,9 +24,9 @@
   function submitted(event) {
     event.preventDefault();
     console.log("event just fired");
-    const url = site + q.value;
-    const win = window.open(url, '_self');
-    win.focus();
+//    const url = site + q.value;
+//    const win = window.open(url, '_self');
+//    win.focus();
   }
 
   f.addEventListener('submit', submitted);
