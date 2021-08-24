@@ -93,7 +93,7 @@ const renderUnitRow = (uc: UnitCategory) => {
 
     var cta = "";
     if (uc.status === "available through clutter") {
-      cta = `<button class="btn bg-white text-clutter border-2 border-clutter w-32 gap-0 pb-4 rounded-lg flex-wrap focus:bg-clutter" onclick="showClutterModal()">Book With <img src="/images/clutter-logo.svg" class="pt-1"></button>`;
+      cta = `<button class="btn bg-white text-clutter border-2 border-clutter w-32 gap-0 pb-3 rounded-lg flex-wrap focus:bg-clutter" onclick="showClutterModal()">Book With <img src="/images/clutter-logo.svg" class="pt-1"></button>`;
     } else {
       cta = uc.status === "available" 
         ? `<a class="btn btn-primary w-32 rounded-lg" href="https://booking.localocker.com/booking/1?id=${unitID}&size=${uc.size}&price=${uc.price}&book_now=true&locationAddress=${address}&locationPath=${path}">
