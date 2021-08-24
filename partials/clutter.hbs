@@ -1,0 +1,52 @@
+<style>
+  .close-button { border: none; display: inline-block; padding: 8px 16px;
+  vertical-align: middle; overflow: hidden; text-decoration: none; color:
+  inherit; background-color: inherit; text-align: center; cursor: pointer;
+  white-space: nowrap } .topright { position: absolute; right: 0; top: 0 }
+</style>
+
+<div
+  class="fixed z-10 inset-0 overflow-y-auto"
+  aria-labelledby="modal-title"
+  role="dialog"
+  aria-modal="true"
+  id="clutter-modal"
+  style="display: none;"
+>
+  <div
+    class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
+  >
+    <div
+      class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+      aria-hidden="true"
+    ></div>
+    <span
+      class="hidden sm:inline-block sm:align-middle sm:h-screen"
+      aria-hidden="true"
+    >
+      ​
+    </span>
+    <div
+      class="inline-block align-bottom bg-white px-6 pt-5 pb-6 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-xl sm:w-full sm:p-10"
+    >
+      <span
+        onclick="document.getElementById('clutter-modal').style.display='none'"
+        class="close-button topright"
+      >&times;</span>
+        <h2 class="mb-4 text-center">
+          About <span class="inline-block align-text-top">{{> clutter-logo fillColor="#097e77"}}</span>
+        </h2>
+        <div class="pb-4">
+          Our partner Clutter is an on-demand storage service. This means they pick up your things, store them for you, and drop them off when you need them.
+        </div>
+        <div class="pb-4">
+          Use code <strong>locallocker</strong> when you sign up for $50 off.
+        </div>
+        <div class="flex justify-center items-center">
+          <a class="btn btn-clutter w-32 gap-0 pb-4 rounded-lg flex-wrap" href="https://www.clutter.com/?utm_source=locallocker&utm_campaign=web&utm_medium=referral">Book With {{> clutter-logo fillColor="#fff"}}</a>
+        </div>
+                      
+                       
+    </div>
+  </div>
+</div>

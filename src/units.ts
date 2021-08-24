@@ -54,6 +54,11 @@ window.showWaitlistModal = () => {
   $("#waitlist-modal").show();
 };
 
+//@ts-ignore
+window.showClutterModal = () => {
+  $("#clutter-modal").show();
+};
+
 const renderUnitRow = (uc: UnitCategory) => {
   
   //https://staging-fe.localocker.com/booking/?id=610&size=3x1x2&price=510.98&key=91&deals=&[%E2%80%A6]n%2C+NY%2C+11201&book_now=true&locationPath=X-888%2F49
@@ -88,7 +93,7 @@ const renderUnitRow = (uc: UnitCategory) => {
 
     var cta = "";
     if (uc.status === "available through clutter") {
-      cta = `<a class="btn btn-primary w-32 gap-0 rounded-lg flex-wrap bg-white text-clutter border-2 border-clutter" href="https://www.clutter.com/?utm_source=locallocker&utm_campaign=web&utm_medium=referral">Book With <strong>Clutter</strong></a>`;
+      cta = `<button class="btn btn-clutter w-32 gap-0 pb-4 rounded-lg flex-wrap" onclick="showClutterModal()">Book With <img src="/images/clutter-logo.svg" class="pt-1"></button>`;
     } else {
       cta = uc.status === "available" 
         ? `<a class="btn btn-primary w-32 rounded-lg" href="https://booking.localocker.com/booking/1?id=${unitID}&size=${uc.size}&price=${uc.price}&book_now=true&locationAddress=${address}&locationPath=${path}">
@@ -164,6 +169,7 @@ const renderUnits = async () => {
   //   .map((uc) => renderUnitRow(uc))
   //   .join("");
 };
+
 
 const hookupForm = () => {
   const waitlistForm = document.getElementById("waitlist-form");
