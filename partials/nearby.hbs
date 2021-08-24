@@ -214,7 +214,7 @@
     var radius = 500;
     var entityTypes =
         "location";
-    var fields = "name,hours,address,mainPhone,websiteUrl,timeZoneUtcOffset,c_locationNickname,c_limitedAvailability,c_heroImageThumbnail";
+    var fields = "name,hours,address,mainPhone,websiteUrl,timeZoneUtcOffset,c_locationNickname,c_limitedAvailability,c_heroImagePage,c_heroImageThumbnail";
     const savedSearchIdString = "551464658";
     var fullURL =
         baseURL +
@@ -267,13 +267,15 @@
           availability = "Limited Availability";
         } else {
           availability = "&#10003; Units Available";
-        }        
+        }
+        //style="width:80%;height:auto;padding-top:2rem;padding-bottom:2rem;
+        //style="width:100%;height:auto;        
         if (true) {
             if (location.websiteUrl) {
             locationHTML =
-                '<div class="location grid grid-cols-1 sm:grid-cols-2 px-5 py-5 grid gap-x-5 gap-y-3 md:grid-cols-1 bg-white ">' +
-                '<div class="flex justify-center items-center"><img class="nearby-hero-image" src="' + location.c_heroImageThumbnail.url + '" alt="' + location.c_heroImageThumbnail.alternateText + '" width="200" height="200" style="width:100%;height:auto;"></div>' + 
-                '<div class="grid address-cta-column gap-y-4"><a class="address text-xl font-semibold hover:underline" href="' +
+                '<div class="location grid grid-cols-1 shadow-md sm:grid-cols-2 grid gap-x-5 gap-y-3 md:grid-cols-1 bg-white ">' +
+                '<div class="flex justify-center items-center sm:px-3 md:px-0"><img class="nearby-hero-image object-contain" src="' + location.c_heroImagePage.url + '" alt="' + location.c_heroImagePage.alternateText + '" width="200" height="200" style="width:100%;height:auto"></div>' + 
+                '<div class="grid address-cta-column px-5 py-5 gap-y-4"><a class="address text-xl font-semibold hover:underline" href="' +
                 location.websiteUrl.url +
                 '"><div>' +
                 location.address.line1 +
@@ -284,7 +286,7 @@
                 '</div><div class="availability"><strong>' +
                 availability + 
                 "</strong></div>" + 
-                "<div class='mt-1 flex justify-center items-center'><a class='btn bg-ll-blue text-white flex hover:bg-ll-hover-blue w-1/2 sm:w-3/4 md:w-5/6 lg:w-4/5 xl:w-4/6' href='" +
+                "<div class='mt-1 flex justify-center items-center'><a class='btn bg-ll-blue text-white flex hover:bg-ll-hover-blue w-1/2 sm:w-4/5 md:w-5/6 lg:w-4/5 xl:w-4/6' href='" +
                 location.websiteUrl.url +
                 "'>View Location</a></div>" +
                 "</div></div>";
