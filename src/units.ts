@@ -17,9 +17,10 @@ type Unit = {
   offline_flag: boolean;
 };
 
+
 type UnitCategory = {
   id: number;
-  status: "booked" | "available";
+  status: "booked" | "available" | "available through clutter";
   is_hidden: boolean;
   join_waitlist: boolean;
   size: string;
@@ -27,6 +28,7 @@ type UnitCategory = {
   price: string;
   units: Unit[];
 };
+
 
 const renderUnitSkeleton = () => {
   return `
@@ -83,24 +85,30 @@ const renderUnitRow = (uc: UnitCategory) => {
     {
       unitID = availableUnits[0].id;
     }
-    const cta =
-    uc.status === "available" 
-      ? `<a class="btn btn-primary w-32" href="https://booking.localocker.com/booking/1?id=${unitID}&size=${uc.size}&price=${uc.price}&book_now=true&locationAddress=${address}&locationPath=${path}">
-        Book Now
-      </a>`
-      : `<button class="btn btn-secondary w-32" onclick="showWaitlistModal()">
-        Join Waitlist
-      </button>`;
+
+    var cta = "";
+    if (uc.status === "available through clutter") {
+      cta = `<a class="btn btn-primary w-32 gap-0 rounded-lg flex-wrap bg-white text-clutter border-2 border-clutter" href="https://www.clutter.com/?utm_source=locallocker&utm_campaign=web&utm_medium=referral">Book With <strong>Clutter</strong></a>`;
+    } else {
+      cta = uc.status === "available" 
+        ? `<a class="btn btn-primary w-32 rounded-lg" href="https://booking.localocker.com/booking/1?id=${unitID}&size=${uc.size}&price=${uc.price}&book_now=true&locationAddress=${address}&locationPath=${path}">
+          Book Now
+        </a>`
+        : `<button class="btn btn-secondary w-32 border-2 rounded-lg" onclick="showWaitlistModal()">
+          Join Waitlist
+        </button>`;
+    }
+
  
   return `
     <tr>
     <td>
       ${uc.size}
     </td>
-    <td>
+    <td class="hidden sm:block">
       ${toTitleCase(uc.status)}
     </td>
-    <td>
+    <td class="align-baseline">
       $${uc.price}
     </td>
     <td class="flex justify-center">
@@ -127,13 +135,34 @@ const renderUnits = async () => {
   var entityId = script_tag.getAttribute('data');
   const unitCategories = await fetchUnitCategories(entityId);
 
-  // console.log("unit categories", unitCategories);
+  // Filter down to relevant unit categories
+  var filteredUnits = unitCategories.filter(uc => (uc.status === "available" && uc.is_hidden === false) || (uc.status === "booked" && uc.join_waitlist === true && uc.is_hidden === false));
+
+  // Convert floats to int to string
+  filteredUnits.forEach(uc => uc.price = parseInt(uc.price).toString());
+
+  // Sort categories by price
+  filteredUnits.sort((a,b) => parseFloat(a.price) - parseFloat(b.price));
+  var clutterUnit: UnitCategory = {
+    id: 123456789,
+    status: "available through clutter",
+    is_hidden: false,
+    join_waitlist: false,
+    size: "Large offsite units with on-demand pickup & delivery",
+    details: "",
+    price: "225 (prices vary)",
+    units: []
+  }
+  filteredUnits.push(clutterUnit);
+  
   //Load Content
-  tableBodyContainer.innerHTML = unitCategories
-    // .filter((uc) => uc.status === "available")
-    .filter(uc => (uc.status === "available" && uc.is_hidden === false) || (uc.status === "booked" && uc.join_waitlist === true && uc.is_hidden === false))
-    .map((uc) => renderUnitRow(uc))
-    .join("");
+  tableBodyContainer.innerHTML = filteredUnits.map((uc) => renderUnitRow(uc)).join("");
+
+
+  // tableBodyContainer.innerHTML = unitCategories
+  //   .filter(uc => (uc.status === "available" && uc.is_hidden === false) || (uc.status === "booked" && uc.join_waitlist === true && uc.is_hidden === false))
+  //   .map((uc) => renderUnitRow(uc))
+  //   .join("");
 };
 
 const hookupForm = () => {
