@@ -11,11 +11,37 @@ import { getQueryParamsFromUrl } from "./locator/utils";
 import { isLoading } from "./locator/loader";
 // @ts-ignore
 import google from "google";
+import axios from "axios";
 
+var valid = true;
 
+const onSearch = async (address) => {
+  const addressInfo = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18`
+  );
+  if (
+    addressInfo?.data?.results[0]?.types &&
+    addressInfo.data.results[0].types.some(
+      (type) =>
+        type === "street_address" ||
+        type === "geocode" ||
+        type === "postal_code" ||
+        type === "premise" ||
+        type === "intersection" ||
+        type === "route"
+    )
+  ) {
+    valid = true;
+    getNearestLocationsByString();
+  } else {
+    alert("Please enter the ZIP code or address.");
+  }
+};
 
 searchButton.addEventListener("click", function () {
-  getNearestLocationsByString();
+  const queryString = locationInput.value;
+  onSearch(queryString);
+  //getNearestLocationsByString();
+
   // const locationInput = (<HTMLInputElement>document.getElementById('location-input')).value;
   // var isValidZip = /(^\d{5}$)/.test(locationInput);
   // if (isValidZip) {
@@ -54,9 +80,14 @@ window.addEventListener("load", function () {
   getNearestLocationsByString();
 });
 
+
 locationInput.addEventListener("keydown", function (e) {
   if (e.key === "Enter") {
-    getNearestLocationsByString();
+    const queryString = locationInput.value;
+    onSearch(queryString);
+    valid = false;
+   // getNearestLocationsByString();
+
     // const locationInput = (<HTMLInputElement>document.getElementById('location-input')).value;
     // var isValidZip = /(^\d{5}$)/.test(locationInput);
     // if (isValidZip) {
@@ -85,7 +116,11 @@ if (enableAutocomplete) {
   );
   autocomplete.addListener("place_changed", () => {
     if (!isLoading) {
-      getNearestLocationsByString();
+
+      if (valid) {
+        getNearestLocationsByString();
+      }
+
       // const locationInput = (<HTMLInputElement>document.getElementById('location-input')).value;
       // var isValidZip = /(^\d{5}$)/.test(locationInput);
       // if (isValidZip) {

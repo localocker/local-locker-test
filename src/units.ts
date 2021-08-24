@@ -74,11 +74,11 @@ const renderUnitRow = (uc: UnitCategory) => {
     var availableUnits = [];
     uc.units.forEach(function (unit) {
       if (unit.status === "available" && unit.offline_flag === false) {
-        console.log("available unit ", unit);
+        // console.log("available unit ", unit);
         availableUnits.push(unit);
       }
     });
-    console.log(availableUnits);
+    // console.log(availableUnits);
     if (availableUnits.length > 0)
     {
       unitID = availableUnits[0].id;
@@ -127,7 +127,7 @@ const renderUnits = async () => {
   var entityId = script_tag.getAttribute('data');
   const unitCategories = await fetchUnitCategories(entityId);
 
-  console.log("unit categories", unitCategories);
+  // console.log("unit categories", unitCategories);
   //Load Content
   tableBodyContainer.innerHTML = unitCategories
     // .filter((uc) => uc.status === "available")
@@ -148,7 +148,7 @@ const hookupForm = () => {
     });
 
     document.getElementById("waitlist-form");
-    console.log(formData);
+    // console.log(formData);
 
     // axios.post(
     //   "https://webhook.site/#!/e4128d2d-9449-4f25-a229-c84a1945a531/008ff727-edaa-4620-bce7-5bb2c814d365/1",

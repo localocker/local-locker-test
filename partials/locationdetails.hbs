@@ -9,8 +9,7 @@
         <div class="grid lg:grid-cols-2 gap-x-4 gap-y-4 grid-cols-1">
             <div class='' id='address'>
                 <h3>Address</h3>
-                <a id="address" href="https://www.google.com/maps/dir/?api=1&destination={{name}} {{address.line1}} {{address.city}} {{address.region}} {{address.postalCode}}">{{address.line1}} {{address.city}}, {{address.region}} {{address.postalCode}}</a>
-                <p><i>{{c_crossStreets}}</i></p>
+                <a id="address" class="hover:underline" href="https://www.google.com/maps/dir/?api=1&destination={{name}} {{address.line1}} {{address.city}} {{address.region}} {{address.postalCode}}">{{address.line1}} {{address.city}}, {{address.region}} {{address.postalCode}}<p><i>{{c_crossStreets}}</i></p></a>
             </div>
             <div class=''>
                 <h3>Phone</h3>
