@@ -1,6 +1,8 @@
 <div class="bg-gray-100 p-8">
   <h2 class="text-center mb-5">Nearby Locations</h2>
-  <div class="location-data justify-start grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8"> </div>
+  <div class="location-data grid gap-x-5 gap-y-5 sm:px-10 md:px-0 md:grid-cols-3 lg:gap-x-20"> </div>
+  {{!-- <div class="location-data justify-start grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8"> </div> --}}
+
 </div>
 
 <script>
@@ -208,12 +210,11 @@
     var lat = {{latitude}};
     var lng = {{longitude}};
     var location = lat + ", " + lng;
-    var limit = 4;
+    var limit = 3;
     var radius = 500;
     var entityTypes =
         "location";
-    //var fields = "name,hours,address,mainPhone,websiteUrl,timeZoneUtcOffset,c_locationNickname,c_heroImagePage,c_limitedAvailability";
-    var fields = "name,hours,address,mainPhone,websiteUrl,timeZoneUtcOffset,c_locationNickname,c_limitedAvailability";
+    var fields = "name,hours,address,mainPhone,websiteUrl,timeZoneUtcOffset,c_locationNickname,c_limitedAvailability,c_heroImageThumbnail";
     const savedSearchIdString = "551464658";
     var fullURL =
         baseURL +
@@ -257,7 +258,7 @@
             el.innerHTML = '<div class="col">No Locations Found</div>';
             });
         }
-        for (var i = 0; i < entities.length; i++) {
+        for (var i = 1; i < entities.length; i++) {
         location = entities[i];
         locationHTML = "";
         const parsedOffset = parseTimeZoneUtcOffset(location.timeZoneUtcOffset);
@@ -270,21 +271,23 @@
         if (true) {
             if (location.websiteUrl) {
             locationHTML =
-                '<div class="location">' +
-                //'<div><img src="' + location.c_heroImagePage.url + '" alt="' + location.c_heroImagePage.alternateText + '" width="300" height="200"></div>' + 
-                '<div class="name hover:underline hover:font-semibold text-ll-red "><a href="' +
+                '<div class="location grid grid-cols-1 sm:grid-cols-2 px-5 py-5 grid gap-x-5 gap-y-3 md:grid-cols-1 bg-white ">' +
+                '<div class="flex justify-center items-center"><img class="nearby-hero-image" src="' + location.c_heroImageThumbnail.url + '" alt="' + location.c_heroImageThumbnail.alternateText + '" width="200" height="200" style="width:100%;height:auto;"></div>' + 
+                '<div class="grid address-cta-column gap-y-4"><a class="address text-xl font-semibold hover:underline" href="' +
                 location.websiteUrl.url +
-                '">' +
-                location.c_locationNickname +
-                '</div><div class="address mt-2">' +
+                '"><div>' +
                 location.address.line1 +
                 '</div><div class="address-line-2">' + 
                 location.address.city + ', ' + location.address.region + ' ' + location.address.postalCode +
-                '</div><div class="phoneNumber mt-2">' +
+                '</div></a><div class="phoneNumber">' +
                 location.mainPhone + 
-                '</div><div class="availability mt-2"><strong>' +
+                '</div><div class="availability"><strong>' +
                 availability + 
-                "</strong></div></div>";
+                "</strong></div>" + 
+                "<div class='mt-1 flex justify-center items-center'><a class='btn bg-ll-blue text-white flex hover:bg-ll-hover-blue w-1/2 sm:w-3/4 md:w-5/6 lg:w-4/5 xl:w-4/6' href='" +
+                location.websiteUrl.url +
+                "'>View Location</a></div>" +
+                "</div></div>";
             } else {
             locationHTML =
                 '<div class="col-md-3 col-sm-6 location"><div class="name">' +

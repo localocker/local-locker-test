@@ -188,4 +188,8 @@ h2.section-header {
   @apply border border-ll-blue w-full block py-1 px-2;
 }
 
+/* .nearby-hero-image {
+  @apply: w-full h-screen;
+} */
+
 @tailwind utilities;
