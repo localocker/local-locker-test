@@ -53,17 +53,17 @@
                 {{>nav}}                            
                 <div class="centered-container">
                     {{>backtolocator}}
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 space-x-4">
-                        <div class="lg:col-span-2">
+                    <div class="grid lg:grid-cols-5 gap-x-6">
+                        <div class="lg:col-span-3">
                             {{> locationdetails}}  
                             <div class="section units-table">
                                 {{>units}}
                             </div>                        
                         </div>
-                        <div>
+                        <div class="grid gap-y-5 lg:col-span-2">
                             <div class="mb-4 w-full">{{>staticmap geocodedCoordinate}}</div>
-                            <div class="pb-10">{{>carousel}}</div>                                        
-                            <div class="space-y-6">
+                            <div class="pb-5">{{>carousel}}</div>                                     
+                            <div class="grid gap-y-5">
                                 {{>bookATour c_bookATourLink}}
                                 {{>featurelist c_features}}
                             </div> 

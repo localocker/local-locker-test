@@ -1,8 +1,9 @@
 <h4 class="text-left">Storage Facility Features:</h4>
-<div class="text-left md:grid grid-cols-2 gap-x-4 gap-y-3 overflow-hidden">
+<div class="text-left grid sm:grid-cols-2 sm:gap-x-3 sm:gap-y-2">
   {{#each this}}
-    <div class="">
-      <strong>&#10003;</strong> {{formatOption this}}
+    <div class="grid grid-cols-7">
+      <strong class="col-span-1">&#10003;</strong>
+      <span class="col-span-6">{{formatOption this}}</span>
     </div>
   {{/each}}
 </div>

@@ -93,13 +93,13 @@ const renderUnitRow = (uc: UnitCategory) => {
 
     var cta = "";
     if (uc.status === "available through clutter") {
-      cta = `<button class="btn bg-white text-clutter border-2 border-clutter w-32 gap-0 pb-3 rounded-lg flex-wrap focus:bg-clutter" onclick="showClutterModal()">Book With <img src="/images/clutter-logo.svg" class="pt-1" width="68" height=""16></button>`;
+      cta = `<button class="flex flex-col btn bg-white text-clutter border-2 border-clutter gap-0 pb-3 rounded-lg flex-wrap focus:bg-clutter w-full xs:w-32" onclick="showClutterModal()"><div>Book With</div><img src="/images/clutter-logo.svg" class="pt-1" width="68" height=""16></button>`;
     } else {
       cta = uc.status === "available" 
-        ? `<a class="btn btn-primary w-32 rounded-lg" href="https://booking.localocker.com/booking/1?id=${unitID}&size=${uc.size}&price=${uc.price}&book_now=true&locationAddress=${address}&locationPath=${path}">
+        ? `<a class="btn btn-primary rounded-lg w-full xs:w-32" href="https://booking.localocker.com/booking/1?id=${unitID}&size=${uc.size}&price=${uc.price}&book_now=true&locationAddress=${address}&locationPath=${path}">
           Book Now
         </a>`
-        : `<button class="btn btn-secondary w-32 border-2 rounded-lg" onclick="showWaitlistModal()">
+        : `<button class="btn btn-secondary border-2 rounded-lg w-full xs:w-32" onclick="showWaitlistModal()">
           Join Waitlist
         </button>`;
     }

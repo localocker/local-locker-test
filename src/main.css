@@ -68,7 +68,7 @@ h2.section-header {
 
 
 .btn-primary {
-  @apply bg-ll-red  text-white border-ll-red focus:ring-2 focus:bg-red-900;
+  @apply bg-ll-red text-white border-ll-red focus:ring-2 focus:bg-red-900;
 }
 
 .btn-clutter {
