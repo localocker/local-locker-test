@@ -53,7 +53,7 @@
                 {{>nav}}                            
                 <div class="centered-container">
                     {{>backtolocator}}
-                    <div class="grid grid-cols-1 md:px-5 lg:grid-cols-3 gap-4 space-x-4">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 space-x-4">
                         <div class="lg:col-span-2">
                             {{> locationdetails}}  
                             <div class="section units-table">
@@ -62,7 +62,7 @@
                         </div>
                         <div>
                             <div class="mb-4 w-full">{{>staticmap geocodedCoordinate}}</div>
-                            <div class="pb-10 hidden md:block">{{>carousel}}</div>                                        
+                            <div class="pb-10">{{>carousel}}</div>                                        
                             <div class="space-y-6">
                                 {{>bookATour c_bookATourLink}}
                                 {{>featurelist c_features}}
@@ -75,7 +75,11 @@
                     <div class="section">{{>faqs frequentlyAskedQuestions}}</div>    
                     
                 </div>
-                <div class="w-full"> {{>footer}} </div>
+                <div class="w-full bg-gray-100">
+                    <div class="centered-container">
+                        {{>footer}}
+                    </div>
+                </div>
             </div>
         </div>  
         {{>bodyTag}}      
