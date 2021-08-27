@@ -25,8 +25,8 @@ const reviewsTemplate = (
 </div>`;
 
 const reviewsTemplateSkeleton = reviewsTemplate(
-  '<div class="w-36 h-4 skeleton"></div>',
-  '<div class="skeleton"></div>',
+  '<div class="w-36 h-4 mb-1 skeleton"></div>',
+  '',
   '<div class="w-36 h-4 skeleton"></div>',
   '<div class="w-full h-4 skeleton"></div><div class="w-full h-4 mt-2 skeleton"></div>'
 );
@@ -81,8 +81,8 @@ const fetchReviews = async () => {
 
   populateLocationReviewsCount(`<div class="flex items-center text-ll-blue">
     <div class="flex">${starSVG.repeat(5)}</div>
-    <div class="ml-2">${location_reviews_count} Reviews</div>
-</div>`);
+    <div class="ml-2 hover:cursor-pointer hover:underline"><a href="#reviews-section">${location_reviews_count} Reviews</a></div>
+</div></a>`);
 
 };
 
