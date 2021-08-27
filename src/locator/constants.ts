@@ -57,6 +57,10 @@ export const locationOptions = {
     value: "mainPhone",
     contentSource: "FIELD",
   },
+  heroImageThumbnail: {
+    value: "c_heroImageThumbnail",
+    contentSource: "FIELD",
+  },
   getDirectionsLabel: {
     value: "Get Directions",
     contentSource: "text",

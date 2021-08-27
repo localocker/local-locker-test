@@ -1,0 +1,20 @@
+<div class="text-center py-10">
+    <div>
+        <h1 class="text-4xl mb-3 font-extrabold text-ll-blue">
+            Find Storage by NYC Neighborhood
+        </h1>
+    </div>
+    <div class="grid text-ll-red mt-8 gap-y-5">
+        <div class="grid grid-rows-6 grid-flow-col font-bold gap-y-2">
+            {{#each this}}
+                <div>
+                    <a href="{{this.websiteUrl.url}}">{{this.neighborhood}}
+                    </a>
+                </div>
+            {{/each}}
+            </ul>
+        </div>
+    </div>
+
+
+</div>
