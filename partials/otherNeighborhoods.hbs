@@ -7,8 +7,9 @@
     <div class="grid text-ll-red mt-8 gap-y-5">
         <div class="grid grid-rows-6 grid-flow-col font-bold gap-y-2">
             {{#each this}}
+            <script>console.log("{{this}}");</script>
                 <div>
-                    <a href="{{this.websiteUrl.url}}">{{this.neighborhood}}
+                    <a href="{{this.websiteUrl.displayUrl}}">{{this.neighborhood}}
                     </a>
                 </div>
             {{/each}}
