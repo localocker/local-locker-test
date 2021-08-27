@@ -13,10 +13,11 @@ const starRatings = {
 
 const reviewsTemplate = (
   name: string,
+  date: string,
   stars: string,
   comment: string
 ) => `<div class="flex flex-col sm:flex-row border-b py-2">
-<div class="sm:w-1/3 mb-1 sm:mb-0">${name}</div>
+<div class="sm:w-1/3 mb-1 sm:mb-0">${name}<div class="text-gray-400">${date}</div></div>
 <div class="w-full">
     <div class="flex">${stars}</div>
     <p class="mt-2">${comment}</p>
@@ -25,6 +26,7 @@ const reviewsTemplate = (
 
 const reviewsTemplateSkeleton = reviewsTemplate(
   '<div class="w-36 h-4 skeleton"></div>',
+  '<div class="skeleton"></div>',
   '<div class="w-36 h-4 skeleton"></div>',
   '<div class="w-full h-4 skeleton"></div><div class="w-full h-4 mt-2 skeleton"></div>'
 );
@@ -66,6 +68,7 @@ const fetchReviews = async () => {
   reviews.forEach((r) => {
     document.getElementById("reviews-container").innerHTML += reviewsTemplate(
       r.reviewer.displayName,
+      format(r.createTime.substring(0,10)),
       starRatings[r.starRating],
       r.comment
     );
@@ -87,3 +90,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
   //do work
   fetchReviews();
 });
+
+var format = function(input) {
+  var pattern = /(\d{4})\-(\d{2})\-(\d{2})/;
+  if (!input || !input.match(pattern)) {
+    return null;
+  }
+  return input.replace(pattern, '$2/$3/$1');
+};
