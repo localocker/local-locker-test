@@ -10,6 +10,7 @@ import { addMarkersToMap, centerOnGeo } from "./map";
 export let isLoading = false;
 
 export function startLoading() {
+  // console.log("start loading");
   isLoading = true;
 
   [].slice

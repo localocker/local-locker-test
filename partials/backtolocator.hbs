@@ -14,8 +14,21 @@
         ></path>
       </svg>
     </div>
-    <a href="/" class="">
+    <a id="backButton" href="#" class="">
       Back
     </a>
   </div>
 </div>
+<script>
+  document.getElementById("backButton").addEventListener("click", backButtonUrl);
+
+  function backButtonUrl() {
+    let previousQuery = sessionStorage.getItem('query');
+    if (previousQuery) {
+      window.open(previousQuery, "_self");
+    }
+    else {
+      window.open("/", "_self");
+    }  
+  }
+</script>

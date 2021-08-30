@@ -37,6 +37,7 @@ const onSearch = async (address) => {
   }
 };
 
+
 searchButton.addEventListener("click", function () {
   const queryString = locationInput.value;
   onSearch(queryString);

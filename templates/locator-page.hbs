@@ -10,6 +10,7 @@
         <title>Store Locator</title>
         <link rel="shortcut icon" type="image/jpg" href="/images/favicon-32x32.png"/>
         <script>
+                console.log("defining initMaps Functions");
                 var initMapsFunctions = [];
                 var initMaps = function(noKey) {
                     for (i = 0; i < initMapsFunctions.length; i++) {
@@ -18,19 +19,19 @@
                 }
         </script>
         <script>
-          function loadScriptAsync(url) {
-              return new Promise((resolve, reject) => {
-                  const script = document.createElement("script");
-                  script.type = 'text/javascript';
-                  script.async = true;
-                  script.defer = true;
-                  script.onload = resolve;
-                  script.onerror = reject;
-                  script.src = url;
-                  document.head.appendChild(script);
-              });
-          }
-          window.mapsLoader = loadScriptAsync("https://maps.googleapis.com/maps/api/js?key=AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18&libraries=places&callback=initMaps");
+            function loadScriptAsync(url) {
+                return new Promise((resolve, reject) => {
+                    const script = document.createElement("script");
+                    script.type = 'text/javascript';
+                    script.async = true;
+                    script.defer = true;
+                    script.onload = resolve;
+                    script.onerror = reject;
+                    script.src = url;
+                    document.head.appendChild(script);
+                });
+            }
+            window.mapsLoader = loadScriptAsync("https://maps.googleapis.com/maps/api/js?key=AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18&callback=initMaps&libraries=places");
         </script>
     </head>
     <body>

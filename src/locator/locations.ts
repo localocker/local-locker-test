@@ -308,6 +308,10 @@ export function getNearestLocationsByString() {
     request_url += "&limit=" + limit;
     getRequest(request_url, queryString);
   }
+  var url = window.location.href;
+  var myStorage = window.sessionStorage;
+  sessionStorage.setItem('query', url);
+  // console.log("saved " , url);
 }
 
 // Get locations by lat lng (automatically fired if the user grants acceess)
