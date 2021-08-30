@@ -7,7 +7,9 @@
 
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+
+    function runOnStart() {
+
     var baseURL = "https://liveapi.yext.com/v2/accounts/me/entities/geosearch?";
     var api_key = "c1be28fe46a4efb864aa9d8583108490";
     var vparam = "20181017";
@@ -115,6 +117,18 @@
         }
         }
     });
-    });
+
+
+    }
+    if(document.readyState !== 'loading') {
+        runOnStart();
+    }
+    else {
+        document.addEventListener('DOMContentLoaded', function () {
+            runOnStart()
+        });
+    }
+
+    
 
 </script>
