@@ -10,14 +10,16 @@ import './review-carousel.css';
     const indicatorContainer = document.querySelector('.carousel-indicators');
     const indicatorButtons = [];
 
-
     function initialSlide() {
+        console.log("setting intial slide");
 
         if (position == 0) {
             slides[position].classList.add('active-slide');
         }
 
     }
+
+    initialSlide();
 
     function setIndicators() {
 
@@ -35,6 +37,8 @@ import './review-carousel.css';
         }
 
     }
+
+    setIndicators();
 
     function updateIndicators() {
 

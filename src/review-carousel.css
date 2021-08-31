@@ -207,7 +207,7 @@ button.current-indicator {
 
 }
 
-@media only screen and (max-width: 400px) {
+/* @media only screen and (max-width: 400px) {
 
     .wrapper_carousel {
         height: 700px;
@@ -226,7 +226,7 @@ button.current-indicator {
     }
 
     .carousel-indicators button {
-        width: 40px;
+        width: 10px;
     }
 
-}
+} */
