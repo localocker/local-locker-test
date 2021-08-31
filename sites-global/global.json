@@ -1,30 +1,3 @@
 {
-    "accountId": "896630679068588615",
-    "reviews": [
-        {
-            "name": "Ross Grant",
-            "date": "12/20/2020",
-            "caption": "Clean and simple storage space, customer service is easy to reach and very helpful! Can very much recommend"
-        },
-        {
-            "name": "Thomas T.",
-            "date": "04/10/2021",
-            "caption": "Really this is the best storage company I’ve found in NYC. Especially the customer service. Chantel was extremely helpful, friendly and professional and her customer support was 100% of the reason I decided to use local locker."
-        },
-        {
-            "name": "Judy Tong",
-            "date": "12/22/2020",
-            "caption": "Hello - Glad this place opened up right on cortelyou. Very convenient access hours (accessible hours are much later than the other larger storage places i've looked at) and good customer service."
-        },
-        {
-            "name": "Luc Marrie",
-            "date": "08/25/2021",
-            "caption": "Local Locker is my fave. I've been a loyal customer since they first opened... and I never looked back. I own a few pieces from van Gogh that don't really suit my penthouse, so they're stored in a temperature-controlled unit at LL!"
-        },
-        {
-            "name": "Travis Pinnick",
-            "date": "12/25/2020",
-            "caption": "I've used 6 or 7 different storage companies in the past 10 years, and none of them compete with the folks at Local Locker. Their booking flow and customer support are flawless. Did I mention their website is also extremely fast?"
-        }
-    ]
+    "accountId": "896630679068588615"
 }

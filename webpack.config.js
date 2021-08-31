@@ -6,7 +6,7 @@ module.exports = {
   plugins: [new MiniCssExtractPlugin()],
   entry: {
     main: "./src/main.js",
-    carousel:"./src/carousel.js"
+    reviews:"./src/reviews.ts",
   },
   output: {
     filename: "[name].js",
