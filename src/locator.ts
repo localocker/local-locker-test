@@ -33,9 +33,14 @@ const onSearch = async (address) => {
     valid = true;
     getNearestLocationsByString();
   } else {
-    alert("Please enter the ZIP code or address.");
-  }
-};
+      [].slice
+        .call(document.querySelectorAll(".error-text") || [])
+        .forEach(function (el) {
+          el.textContent =
+            "Please enter a ZIP code or address.";
+        });
+    }
+  };
 
 
 searchButton.addEventListener("click", function () {
@@ -98,6 +103,14 @@ locationInput.addEventListener("keydown", function (e) {
     // else{
     //   console.log("else", isValidZip, locationInput);
     // }
+  }
+  else if (e.key === "Backspace" || e.key === "Delete") {
+    [].slice
+    .call(document.querySelectorAll(".error-text") || [])
+    .forEach(function (el) {
+      el.textContent =
+        "";
+    });
   }
 });
 

@@ -20,7 +20,10 @@ const onSearch = async (address) => {
       const win = window.open(url, '_self');
       win.focus();
     } else {
-      alert("Please enter the ZIP code or address.");
+      // alert("Please enter the ZIP code or address.");
+      var errorSection = document.getElementById("header-error");
+      errorSection.textContent = "Please enter a ZIP code or address.";
+      errorSection.style.color = "red";
     }
   };
 
@@ -30,4 +33,12 @@ const onSearch = async (address) => {
   f.addEventListener('submit', function (event) {
     event.preventDefault();
     onSearch(q.value)
+  });
+
+  f.addEventListener('keydown', function (event) {
+    const key = event.key;
+    if (key === "Backspace" || key === "Delete") {
+      var errorSection = document.getElementById("header-error");
+      errorSection.textContent="";    
+    }
   });
