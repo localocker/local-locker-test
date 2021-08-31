@@ -1,4 +1,4 @@
-<div class="hours-list text-base">  
+{{!-- <summary class="hours-list text-base">   --}}
   {{#with (formatHours this "Monday" "TimeFormatShort" "DateFormatShort") }}
       {{#each this.regularHours}}
       <div class="grid grid-cols-2 lg:grid-cols-5">
@@ -15,4 +15,4 @@
       </div>
       {{/each}}
   {{/with}}
-</div>
+{{!-- </summary> --}}
