@@ -36,11 +36,6 @@ import './review-carousel.css';
 
     }
 
-    window.onload = function (event) {
-        initialSlide();
-        setIndicators();
-    };
-
     function updateIndicators() {
 
         indicatorButtons.forEach( function(element, index){

@@ -9,6 +9,7 @@
             "uid", 
             "name", 
             "address", 
+            "geocodedCoordinate",
             "hours",
             "slug",
             "neighborhood",
@@ -23,6 +24,7 @@
             "c_pageTextBlockTitleH3",
             "c_relatedLocations.c_locationNickname",
             "c_relatedLocations.address",
+            "c_relatedLocations.geocodedCoordinate",
             "c_relatedLocations.mainPhone",
             "c_relatedLocations.c_heroImagePage",
             "c_relatedLocations.c_limitedAvailability",
@@ -94,7 +96,7 @@
                     <div class="bg-white" style="background-image:linear-gradient(0deg,#00173C 36%,#FFFFFF 36%)">
                         <div class="container mx-auto max-w-screen-xl">
                             <div class="px-8 py-8">
-                                {{>video videos}}
+                                {{>video videos}} 
                             </div> 
                         </div>
                     </div>
@@ -106,11 +108,11 @@
                         </div>                             
                     </div>
                     <div class="grid md:grid-cols-2">
-                        <div>
-                            <img class="" src="{{photoGallery.[0].image.url}}">
+                        {{!-- <div class=""> --}}
+                            <img class="w-full h-60 object-cover object-bottom md:h-96" src="{{photoGallery.[0].image.url}}">
                             {{!-- Ask Alice how we want to populate this pic --}}
-                        </div>
-                        <div class="bg-ll-red text-2xl py-12 font-bold text-white flex justify-center items-center text-center">Storage solutions walking distance from home.</div>
+                        {{!-- </div> --}}
+                        <div class="bg-ll-red text-3xl px-10 py-12 font-bold text-white flex justify-center items-center text-center">Storage solutions walking distance from home.</div>
                     </div>
                     <div class="bg-white">
                         <div class="container mx-auto max-w-screen-xl">
