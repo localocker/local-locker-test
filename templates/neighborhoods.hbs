@@ -108,10 +108,7 @@
                         </div>                             
                     </div>
                     <div class="grid md:grid-cols-2">
-                        {{!-- <div class=""> --}}
-                            <img class="w-full h-60 object-cover object-bottom md:h-96" src="{{photoGallery.[0].image.url}}">
-                            {{!-- Ask Alice how we want to populate this pic --}}
-                        {{!-- </div> --}}
+                        <img class="w-full h-60 object-cover object-bottom md:h-96" src="{{photoGallery.[0].image.url}}">
                         <div class="bg-ll-red text-3xl px-10 py-12 font-bold text-white flex justify-center items-center text-center">Storage solutions walking distance from home.</div>
                     </div>
                     <div class="bg-white">
@@ -121,9 +118,13 @@
                             </div>  
                         </div>                             
                     </div>
-                <div class="w-full"> {{>footer}} </div>
+                <div class="w-full bg-gray-100">
+                    <div class="centered-container">
+                        {{>footer}}
+                    </div>
+                </div>
             </div>
         </div>  
-        {{!-- {{>bodyTag}}       --}}
+        {{>bodyTag}}      
     </body> 
 </html>
