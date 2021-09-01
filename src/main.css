@@ -207,6 +207,10 @@ h2.section-header {
   @apply transform rotate-180;
 } */
 
+details[open] .summary .subtitle{
+      @apply hidden;
+}
+
 /* details[open] > summary {
   @apply font-bold;
 } */

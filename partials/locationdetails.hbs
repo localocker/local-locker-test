@@ -19,12 +19,24 @@
 
         <div class="grid gap-y-5 sm:grid-cols-2 md:gap-x-5">
             <div class=''>
-                <details class=""><summary class="text-lg font-bold text-ll-red">Access Hours</summary>
+                <details class="">
+                    <summary class="summary text-lg font-bold text-ll-red">  
+                        Access Hours
+                        <div class="subtitle text-ll-blue text-base font-normal">
+                            {{c_accessHoursSummary}}
+                        </div>
+                    </summary>
                 {{>hours accessHours}}
                 </details>
             </div>
             <div class=''>
-                <details><summary class="text-lg font-bold text-ll-red">Support Hours</summary>
+                <details>
+                    <summary class="summary text-lg font-bold text-ll-red">
+                        Support Hours
+                        <div class="subtitle text-ll-blue text-base font-normal">
+                            Click to expand
+                        </div>
+                    </summary>
                 {{>hours hours}}
                 </details>
             </div>
