@@ -5,6 +5,10 @@ body {
   @apply bg-gray-50 text-ll-blue;
 }
 
+h1 {
+  @apply text-4xl mb-6 leading-none font-extrabold text-ll-blue md:text-5xl;
+}
+
 h2 {
   @apply text-2xl font-bold;
 }
