@@ -18,6 +18,7 @@ module.exports = {
        'xl': '1.25rem',
        '2xl': '1.5rem',
       '3xl': '1.875rem',
+      '3.5xl': '2rem',
       '4xl': '2.25rem',
        '5xl': '2.5rem',
        '6xl': '4rem',
@@ -51,6 +52,7 @@ module.exports = {
       lineHeight: {
         "ll-h1-desktop": "1.3",
         "ll-h1-mobile": "1.2",
+        "ll-locator": "1.1"
       },
     },
   },
