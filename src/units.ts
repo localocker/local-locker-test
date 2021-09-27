@@ -21,6 +21,7 @@ type Unit = {
 type UnitCategory = {
   id: number;
   status: "booked" | "available" | "available through clutter";
+  status_text: string;
   is_hidden: boolean;
   join_waitlist: boolean;
   size: string;
@@ -92,10 +93,13 @@ const renderUnitRow = (uc: UnitCategory) => {
     }
 
     var cta = "";
+    var status_text = String(uc.status);
     if (uc.status === "available through clutter") {
       //cta = `<button class="flex flex-col btn bg-white text-clutter border-2 border-clutter gap-0 pb-3 rounded-lg flex-wrap focus:bg-clutter w-full xs:w-32" onclick="showClutterModal()"><div>Book With</div><img src="/images/clutter-logo.svg" class="pt-1" width="68" height=""16></button>`;
+      status_text = uc.status_text;
       cta = `<a href="https://www.clutter.com/services/storage/warehouse-storage?utm_source=locallocker&utm_campaign=web&utm_medium=referral" target="_blank"><button class="flex flex-col btn bg-white text-clutter border-2 border-clutter gap-0 pb-3 rounded-lg flex-wrap w-full xs:w-32">Book With<img src="/images/clutter-logo.svg" class="pt-1" width="68" height=""16></button></a>`;
     } else {
+      uc.status_text = String(uc.status);
       cta = uc.status === "available" 
         ? `<a class="btn btn-primary rounded-lg w-full xs:w-32" href="https://booking.localocker.com/booking/1?id=${unitID}&size=${uc.size}&price=${uc.price}&book_now=true&locationAddress=${address}&locationPath=${path}">
           Book Now
@@ -112,7 +116,7 @@ const renderUnitRow = (uc: UnitCategory) => {
       ${uc.size}
     </td>
     <td class="hidden md:block">
-      ${toTitleCase(uc.status)}
+      ${toTitleCase(uc.status_text)}
     </td>
     <td class="">
       ${uc.price}
@@ -154,15 +158,20 @@ const renderUnits = async () => {
   let currency = "$";
   filteredUnits.forEach(uc => uc.price = currency.concat(uc.price));
 
-
+  // Clutter Variables
+  var clutter0 = script_tag.getAttribute('clutter0');
+  var clutter1 = script_tag.getAttribute('clutter1');
+  var clutter2 = script_tag.getAttribute('clutter2');
+  var clutter3 = script_tag.getAttribute('clutter3');
   var clutterUnit: UnitCategory = {
     id: 123456789,
     status: "available through clutter",
+    status_text: clutter1,
     is_hidden: false,
     join_waitlist: false,
-    size: "Offsite units with pickup and delivery",
+    size: clutter0,
     details: "",
-    price: "Starting at $50",
+    price: clutter2,
     units: []
   }
   filteredUnits.push(clutterUnit);
