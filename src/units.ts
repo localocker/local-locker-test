@@ -97,7 +97,7 @@ const renderUnitRow = (uc: UnitCategory) => {
     if (uc.status === "available through clutter") {
       //cta = `<button class="flex flex-col btn bg-white text-clutter border-2 border-clutter gap-0 pb-3 rounded-lg flex-wrap focus:bg-clutter w-full xs:w-32" onclick="showClutterModal()"><div>Book With</div><img src="/images/clutter-logo.svg" class="pt-1" width="68" height=""16></button>`;
       status_text = uc.status_text;
-      cta = `<a href="https://www.clutter.com/services/storage/warehouse-storage?utm_source=locallocker&utm_campaign=web&utm_medium=referral" target="_blank"><button class="flex flex-col btn bg-white text-clutter border-2 border-clutter gap-0 pb-3 rounded-lg flex-wrap w-full xs:w-32">Book With<img src="/images/clutter-logo.svg" class="pt-1" width="68" height=""16></button></a>`;
+      cta = `<a href="https://www.clutter.com/services/storage/warehouse-storage?utm_source=locallocker&utm_campaign=web&utm_medium=referral" target="_blank"><button class="flex flex-col btn bg-white text-clutter border-2 border-clutter gap-0 pb-3 rounded-lg flex-wrap w-full xs:w-32">${uc.details}<img src="/images/clutter-logo.svg" class="pt-1" width="68" height=""16></button></a>`;
     } else {
       uc.status_text = String(uc.status);
       cta = uc.status === "available" 
@@ -170,7 +170,7 @@ const renderUnits = async () => {
     is_hidden: false,
     join_waitlist: false,
     size: clutter0,
-    details: "",
+    details: clutter3,
     price: clutter2,
     units: []
   }
