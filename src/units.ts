@@ -115,7 +115,7 @@ const renderUnitRow = (uc: UnitCategory) => {
       ${toTitleCase(uc.status)}
     </td>
     <td class="">
-      $${uc.price}
+      ${uc.price}
     </td>
     <td class="details-column align-middle md:align-baseline">
       ${cta}
@@ -149,14 +149,20 @@ const renderUnits = async () => {
 
   // Sort categories by price
   filteredUnits.sort((a,b) => parseFloat(a.price) - parseFloat(b.price));
+
+  // Add dollar sign to all values
+  let currency = "$";
+  filteredUnits.forEach(uc => uc.price = currency.concat(uc.price));
+
+
   var clutterUnit: UnitCategory = {
     id: 123456789,
     status: "available through clutter",
     is_hidden: false,
     join_waitlist: false,
-    size: "Large offsite units with on-demand pickup & delivery",
+    size: "Offsite units with pickup and delivery",
     details: "",
-    price: "225 (prices vary)",
+    price: "Starting at $50",
     units: []
   }
   filteredUnits.push(clutterUnit);

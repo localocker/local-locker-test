@@ -6,7 +6,7 @@ body {
 }
 
 h1 {
-  @apply text-4xl mb-6 leading-none font-extrabold text-ll-blue md:text-5xl;
+  @apply text-4xl mb-5 leading-ll-h1-mobile font-extrabold text-ll-blue md:text-5xl md:leading-ll-h1-desktop;
 }
 
 h2 {

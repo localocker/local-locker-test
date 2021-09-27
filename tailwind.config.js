@@ -48,6 +48,10 @@ module.exports = {
         "ll-light-blue": "#5c6d88",
         "clutter": "#037f78"
       },
+      lineHeight: {
+        "ll-h1-desktop": "1.3",
+        "ll-h1-mobile": "1.2",
+      },
     },
   },
   variants: {
