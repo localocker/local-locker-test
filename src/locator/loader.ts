@@ -95,36 +95,52 @@ export function getRequest(request_url, queryString) {
         alert(data.meta.errors[0]["message"]);
       }
       const locations = [];
-      for (let i = 0; i < data.response.entities.length; i++) {
-        const location = data.response.entities[i];
 
-        // Add location distance if it exists
-        if (data.response.distances) {
-          location.__distance = data.response.distances[i];
-        }
-        locations.push(location);
-      }
-      // Update Panel
-      renderLocations(locations, false, false);
-      renderSearchDetail(
-        data.response.geo,
-        locations.length,
-        data.response.count,
-        queryString
-      );
-
-      // Update Map
-      addMarkersToMap(locations);
-
-      if (locations.length == 0) {
-        centerOnGeo(data.response.geo);
-      }
-      [].slice
+      // Cases where API returns 0 locations
+      if (data.response.entities.length == 0) {
+        [].slice
         .call(document.querySelectorAll(".error-text") || [])
         .forEach(function (el) {
-          el.textContent = "";
+          el.textContent = "No results in this location.";
         });
-      stopLoading();
+        stopLoading();
+        [].slice
+        .call(document.querySelectorAll(".result-list") || [])
+        .forEach(function (el) {
+          el.style.visibility = "hidden";
+        });
+      } else {
+          for (let i = 0; i < data.response.entities.length; i++) {
+            const location = data.response.entities[i];
+    
+            // Add location distance if it exists
+            if (data.response.distances) {
+              location.__distance = data.response.distances[i];
+            }
+            locations.push(location);
+          }
+          // Update Panel
+          renderLocations(locations, false, false);
+          renderSearchDetail(
+            data.response.geo,
+            locations.length,
+            data.response.count,
+            queryString
+          );
+    
+          // Update Map
+          addMarkersToMap(locations);
+    
+          if (locations.length == 0) {
+            centerOnGeo(data.response.geo);
+          }
+          [].slice
+            .call(document.querySelectorAll(".error-text") || [])
+            .forEach(function (el) {
+              el.textContent = "";
+            });
+          stopLoading();
+      }
     })
     .catch((err) => {
       alert("There was an error");
