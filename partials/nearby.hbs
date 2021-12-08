@@ -259,9 +259,11 @@
                 location.address.line1 +
                 '</div><div class="address-line-2">' + 
                 location.address.city + ', ' + location.address.region + ' ' + location.address.postalCode +
-                '</div></a><div class="phoneNumber">' +
+                '</div></a><div class="phoneNumber"><a href="tel:' +
                 location.mainPhone + 
-                '</div><div class="availability"><strong>' +
+                '">' +
+                location.mainPhone +
+                '</a></div><div class="availability"><strong>' +
                 availability + 
                 "</strong></div>" + 
                 "<div class='mt-1 flex justify-center items-center'><a class='btn bg-ll-blue text-white flex hover:bg-ll-hover-blue w-3/5 sm:w-4/5 md:w-5/6 lg:w-4/5 xl:w-4/6' href='" +
