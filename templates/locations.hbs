@@ -93,7 +93,9 @@
                         <div class="section">{{>nearby geocodedCoordinate}}</div>
                     {{/if}}
                     <div class="section">{{>pageTextBlock}}</div>
-                    <div class="section">{{>faqs frequentlyAskedQuestions}}</div>
+                    <a id="faq-anchor">
+                        <div class="section">{{>faqs frequentlyAskedQuestions}}</div>
+                    </a>
                     {{#if c_displayFindStorageBy}}
                         <div class="section">{{>otherNeighborhoods (sortBy c_otherNeighborhoods "neighborhood")}}</div>
                     {{/if}}
