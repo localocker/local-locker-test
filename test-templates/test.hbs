@@ -1,7 +1,7 @@
 ---
 {
     "stream": {
-        "$id": "sites-locations",
+        "$id": "test-locations",
         "source": "knowledgeGraph",
         "destination": "pages",
         "fields": [
@@ -13,7 +13,6 @@
             "accessHours",
             "c_accessHoursSummary",
             "c_features",
-            "frequentlyAskedQuestions",
             "mainPhone",
             "geocodedCoordinate",
             "hours",
@@ -39,13 +38,11 @@
             "c_displayBookATour",
             "c_displayClutterUnit",
             "c_displayNearbyLocations",
-            "c_displayFindStorageBy",
-            "c_pageName",
-            "c_pageSubtitleH2"
+            "c_displayFindStorageBy"
         ], 
         "filter" : {
             "savedFilterIds": [
-                "551464658"
+                "769449283"
             ]
         },
       "localization": {
@@ -93,9 +90,9 @@
                         <div class="section">{{>nearby geocodedCoordinate}}</div>
                     {{/if}}
                     <div class="section">{{>pageTextBlock}}</div>
-                    <div class="section">{{>faqs frequentlyAskedQuestions}}</div>
+                    {{!-- <div class="section">{{>faqs frequentlyAskedQuestions}}</div>     --}}
                     {{#if c_displayFindStorageBy}}
-                        <div class="section">{{>otherNeighborhoods (sortBy c_otherNeighborhoods "neighborhood")}}</div>
+                        <div class="section">{{>otherNeighborhoods (sortBy c_otherNeighborhoods "neighborhood")}}</div> 
                     {{/if}}
                 </div>
                 <div class="w-full bg-gray-100">

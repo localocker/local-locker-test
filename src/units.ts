@@ -167,6 +167,7 @@ const renderUnits = async () => {
   var clutter3 = script_tag.getAttribute('clutter3');
   var vendorImage = script_tag.getAttribute('vendorImage');
   var vendorColor = script_tag.getAttribute('vendorColor');
+  const displayClutter = script_tag.getAttribute('displayClutter');
   var clutterUnit: UnitCategory = {
     id: 123456789,
     status: "available through clutter",
@@ -179,8 +180,13 @@ const renderUnits = async () => {
     image: vendorImage,
     color: vendorColor,
     units: []
+  };
+  if (displayClutter === "true") {
+    filteredUnits.push(clutterUnit);
+  } else {
+    // Choosing not to display Clutter unit - return nothing
   }
-  filteredUnits.push(clutterUnit);
+  
   
   //Load Content
   tableBodyContainer.innerHTML = filteredUnits.map((uc) => renderUnitRow(uc)).join("");

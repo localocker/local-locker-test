@@ -1,9 +1,13 @@
-<h4 class="text-left">Storage Facility Features:</h4>
-<div class="text-left grid sm:grid-cols-2 sm:gap-x-3 sm:gap-y-0 lg:grid-cols-1 lg:gap-y-0 xl:grid-cols-2">
-  {{#each this}}
-    <div class="grid grid-cols-7">
-      <strong class="col-span-1">&#10003;</strong>
-      <span class="col-span-6">{{formatOption this}}</span>
-    </div>
-  {{/each}}
-</div>
+{{#if c_displayBookATour}}
+  <h4 class="text-left">Storage Facility Features:</h4>
+{{else}}
+  <h4 class="mt-5 text-left">Storage Facility Features:</h4>
+{{/if}}
+  <div class="text-left grid sm:grid-cols-2 sm:gap-x-3 sm:gap-y-0 lg:grid-cols-1 lg:gap-y-0 xl:grid-cols-2">
+    {{#each this}}
+      <div class="grid grid-cols-7">
+        <strong class="col-span-1">&#10003;</strong>
+        <span class="col-span-6">{{formatOption this}}</span>
+      </div>
+    {{/each}}
+  </div>
