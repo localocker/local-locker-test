@@ -67,10 +67,10 @@ const fetchReviews = async () => {
 
   reviews.forEach((r) => {
     document.getElementById("reviews-container").innerHTML += reviewsTemplate(
-      r.reviewer.displayName,
-      format(r.createTime.substring(0,10)),
-      starRatings[r.starRating],
-      r.comment
+      r.reviewer.author_name,
+      format(r.time.substring(0,10)),
+      starRatings[r.rating],
+      r.text
     );
   });
 
