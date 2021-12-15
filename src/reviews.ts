@@ -79,10 +79,16 @@ const fetchReviews = async () => {
             <div class="ml-2">${total_reviews_count} Reviews</div>
     </div>`);
 
-  populateLocationReviewsCount(`<div class="flex items-center text-ll-blue">
+  if (location_reviews_count == null) {
+    populateLocationReviewsCount(`<div class="flex items-center text-ll-blue">
+    <div class="flex">${starSVG.repeat(5)}</div></div></a>`);
+  } else {
+    populateLocationReviewsCount(`<div class="flex items-center text-ll-blue">
     <div class="flex">${starSVG.repeat(5)}</div>
     <div class="ml-2 hover:cursor-pointer hover:underline"><a href="#reviews-section">${location_reviews_count} Reviews</a></div>
 </div></a>`);
+  };
+
 
 };
 
