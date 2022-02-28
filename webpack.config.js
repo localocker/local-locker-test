@@ -9,7 +9,9 @@ module.exports = {
     reviews: "./src/reviews.ts",
     units: "./src/units.ts",
     locator: "./src/locator.ts",
-    searchbar: "./src/searchbar.ts"
+    searchbar: "./src/searchbar.ts",
+    util: "./src/util.js",
+    analytics: "./src/analytics.js"
   },
   output: {
     filename: "[name].js",
