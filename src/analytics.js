@@ -14,7 +14,7 @@ function seed() {
     return p;
   }
   
-  window.trackAnalytics = (businessId, siteId) => {
+  window.trackAnalytics = (businessId, siteId, entityId) => {
     if (isStaging()) {
       return;
     }
@@ -25,6 +25,7 @@ function seed() {
       'eventType': "pageview",
       'businessids': businessId,
       'siteId': siteId,
+      'entityId': entityId
     };
       
     var pixel = pixelURL(jsonData);

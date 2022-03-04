@@ -1,0 +1,35 @@
+{{#each this}}
+    {{#if (compare @key "holidayHours")}}
+    {{else}}
+        {{#if isClosed}}
+            {{#if @last}}
+                {
+                    "@type":"OpeningHoursSpecification",
+                    "dayOfWeek":"{{@key}}"
+                }
+            {{else}}
+                {
+                    "@type":"OpeningHoursSpecification",
+                    "dayOfWeek":"{{@key}}"
+                },
+            {{/if}}
+        {{else}}
+            {{#if @last}}
+                {
+                    "@type":"OpeningHoursSpecification",
+                    "closes":{{#with openIntervals}}{{#with end}}"{{this}}"{{/with}}{{/with}},
+                    "dayOfWeek":"{{@key}}",
+                    "opens":{{#with openIntervals}}{{#with start}}"{{this}}"{{/with}}{{/with}}
+                }
+            {{else}}
+                {
+                    "@type":"OpeningHoursSpecification",
+                    "closes":{{#with openIntervals}}{{#with end}}"{{this}}"{{/with}}{{/with}},
+                    "dayOfWeek":"{{@key}}",
+                    "opens":{{#with openIntervals}}{{#with start}}"{{this}}"{{/with}}{{/with}}
+                },
+            {{/if}}
+        {{/if}}
+    {{/if}}
+{{/each}}
+{{!-- 

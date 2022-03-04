@@ -1,0 +1,7 @@
+{{#each this}}
+    {{#if @last}}
+        {"@type":"Offer","name":"{{this}}"}
+    {{else}}
+    {"@type":"Offer","name":"{{this}}"},
+    {{/if}}
+{{/each}}
