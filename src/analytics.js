@@ -25,7 +25,7 @@ function seed() {
       'eventType': "pageview",
       'businessids': businessId,
       'siteId': siteId,
-      'entityId': entityId
+      'ids': entityId
     };
       
     var pixel = pixelURL(jsonData);
