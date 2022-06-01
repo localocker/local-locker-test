@@ -26,6 +26,7 @@ type UnitCategory = {
   join_waitlist: boolean;
   size: string;
   details: string;
+  link: string;
   price: string;
   image: string;
   color: string;
@@ -99,7 +100,7 @@ const renderUnitRow = (uc: UnitCategory) => {
     if (uc.status === "available through clutter") {
       //cta = `<button class="flex flex-col btn bg-white text-clutter border-2 border-clutter gap-0 pb-3 rounded-lg flex-wrap focus:bg-clutter w-full xs:w-32" onclick="showClutterModal()"><div>Book With</div><img src="/images/clutter-logo.svg" class="pt-1" width="68" height=""16></button>`;
       status_text = uc.status_text;
-      cta = `<a href="https://www.clutter.com/services/storage/warehouse-storage?utm_source=locallocker&utm_campaign=web&utm_medium=referral" target="_blank"><button class="flex flex-col btn bg-white border-2 border-clutter gap-0 pb-3 rounded-lg flex-wrap w-full xs:w-32" style="color:${uc.color}; border-color: ${uc.details};">${uc.details}<img src=${uc.image} class="pt-1" style="" width="68" height=""16></button></a>`;
+      cta = `<a href=${uc.link} target="_blank"><button class="flex flex-col btn bg-white border-2 border-clutter gap-0 pb-3 rounded-lg flex-wrap w-full xs:w-32" style="color:${uc.color}; border-color: ${uc.details};">${uc.details}<img src=${uc.image} class="pt-1" style="" width="68" height=""16></button></a>`;
     } else {
       uc.status_text = String(uc.status);
       cta = uc.status === "available" 
@@ -165,6 +166,7 @@ const renderUnits = async () => {
   var clutter1 = script_tag.getAttribute('clutter1');
   var clutter2 = script_tag.getAttribute('clutter2');
   var clutter3 = script_tag.getAttribute('clutter3');
+  var clutterLink = script_tag.getAttribute('clutterLink');
   var vendorImage = script_tag.getAttribute('vendorImage');
   var vendorColor = script_tag.getAttribute('vendorColor');
   const displayClutter = script_tag.getAttribute('displayClutter');
@@ -176,6 +178,7 @@ const renderUnits = async () => {
     join_waitlist: false,
     size: clutter0,
     details: clutter3,
+    link: clutterLink,
     price: clutter2,
     image: vendorImage,
     color: vendorColor,
