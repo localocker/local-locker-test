@@ -246,8 +246,24 @@
         } else {
           availability = "&#10003; Units Available";
         }
-        //style="width:80%;height:auto;padding-top:2rem;padding-bottom:2rem;
-        //style="width:100%;height:auto;        
+        function formatPhoneNumber(phoneNumber) {
+          // Remove all non-digit characters from the input
+          const digitsOnly = phoneNumber.replace(/\D/g, '');
+          
+          // Format the phone number
+          const countryCode = digitsOnly.slice(0, 1);
+          const areaCode = digitsOnly.slice(1, 4);
+          const firstPart = digitsOnly.slice(4, 7);
+          const secondPart = digitsOnly.slice(7);
+          
+          const formattedNumber = `(${areaCode}) ${firstPart}-${secondPart}`;
+          
+          return formattedNumber;
+        }
+        if (location.mainPhone) {
+          location.mainPhone = formatPhoneNumber(location.mainPhone);
+        }
+
         if (true) {
             if (location.websiteUrl) {
             locationHTML =
