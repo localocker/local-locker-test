@@ -5,15 +5,15 @@
         <a href="tel:+1 (646) 713-0937" class="flex items-center p-4 hover:underline">
             <div class="mr-2">{{> icon-phone}}</div>
             {{#if mainPhone}}
-              <div><span>Call </span>{{phoneNumber "US" mainPhone "NATIONAL"}}</div>
+              <div><span>Call or Text </span>{{phoneNumber "US" mainPhone "NATIONAL"}}</div>
             {{else}}
-              <div><span>Call </span>(646) 713-0937</div>
+              <div><span>Call or Text </span>(646) 713-0937</div>
             {{/if}}
         </a>
-        <a href="sms:+1 (646) 849-2749" class="flex items-center p-4 hover:underline">
+        {{!-- <a href="sms:+1 (646) 849-2749" class="flex items-center p-4 hover:underline">
             <div class="mr-2">{{> icon-text}}</div>
             <div><span>Text </span>(646) 849-2749</div>
-        </a>
+        </a> --}}
         <a href="email:reserve@localocker.com" class="flex items-center p-4 hover:underline">
             <div class="mr-2">{{> icon-email}}</div>
             <div>reserve@localocker.com</div>
