@@ -2,14 +2,20 @@
   <div class="flex flex-col lg:flex-row lg:justify-between text-white lg:items-center">
     {{> searchbar}}
     <div class=" flex-col lg:flex-row lg:items-center hidden lg:flex" >
-        <a href="tel:+1 (646) 713-0937" class="flex items-center p-4 hover:underline">
-            <div class="mr-2">{{> icon-phone}}</div>
+        {{!-- <a href="tel:+1 (646) 713-0937" class="flex items-center p-4 hover:underline"> --}}
+            {{!-- <div class="mr-2">{{> icon-phone}}</div> --}}
             {{#if mainPhone}}
-              <div><span>Call or Text </span>{{phoneNumber "US" mainPhone "NATIONAL"}}</div>
+              <a href='{{phoneNumber "US" mainPhone "RFC3966"}}' class="flex items-center p-4 hover:underline">
+                <div class="mr-2">{{> icon-phone}}</div>
+                  <div><span>Call or Text </span>{{phoneNumber "US" mainPhone "NATIONAL"}}</div>
+              </a>
             {{else}}
-              <div><span>Call or Text </span>(646) 713-0937</div>
+              <a href="tel:+1 (646) 713-0937" class="flex items-center p-4 hover:underline">
+                <div class="mr-2">{{> icon-phone}}</div>
+                <div><span>Call or Text </span>(646) 713-0937</div>
+              </a>
             {{/if}}
-        </a>
+        {{!-- </a> --}}
         {{!-- <a href="sms:+1 (646) 849-2749" class="flex items-center p-4 hover:underline">
             <div class="mr-2">{{> icon-text}}</div>
             <div><span>Text </span>(646) 849-2749</div>
