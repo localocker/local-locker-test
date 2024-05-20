@@ -45,13 +45,23 @@
             <a href="mailto:reserve@localocker.com">reserve@localocker.com</a>
         </div>
         <div class="telephones flex flex-col">
-            <a href="tel:+1 (646) 713-0937"><i>(646) 713-0937 <sub>(call)</sub></i></a><a
-                href="sms:+1 (646) 849-2749"><i>(646) 849-2749 <sub>(text)</sub></i></a>
+            {{!-- <a href="tel:+1 (646) 713-0937"><i>(646) 713-0937 <sub>(Call or Text)</sub></i></a> --}}
+            {{#if mainPhone}}
+              <a href='{{phoneNumber "US" mainPhone "RFC3966"}}' class="flex items-center p-4 hover:underline">
+                <div class="mr-2">{{> icon-phone}}</div>
+                  <div><i><span>(Call or Text)</span> </i>{{phoneNumber "US" mainPhone "NATIONAL"}}</div>
+              </a>
+            {{else}}
+              <a href="tel:+1 (646) 713-0937" class="flex items-center p-4 hover:underline">
+                <div class="mr-2">{{> icon-phone}}</div>
+                <div><i><span>(Call or Text)</span> </i>(646) 713-0937</div>
+              </a>
+            {{/if}}
         </div>
     </div>
 
     <div>
-        <p><strong>©2021 Local Locker</strong></p>
+        <p><strong>©2024 Local Locker</strong></p>
     </div>
 
 </div>
