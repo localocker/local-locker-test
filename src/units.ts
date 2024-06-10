@@ -132,7 +132,12 @@ const renderUnitRow = (uc: UnitCategory) => {
 };
 
 const fetchUnitCategories = async (id) => {
-  const res = await axios.get(`https://admin.localocker.com/location/${id}/`);
+  const token = process.env.LOCAL_LOCKER_AUTH_TOKEN; // Replace this with your actual token
+  const res = await axios.get(`https://admin.localocker.com/location/${id}/`, {
+    headers: {
+      Authorization: `Token ${token}`,
+    },
+  });
   const { data } = res;
   return data.unit_categories as UnitCategory[];
 };
