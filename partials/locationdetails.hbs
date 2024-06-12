@@ -1,12 +1,12 @@
 <div class="grid gap-y-5">
     <div class="mt-4">
         <h1>{{c_pageName}}</h1>
-        <h3 class='text-2xl font-extrabold  text-ll-blue'>{{c_pageSubtitleH2}}</h3>
-        {{!-- <div class="location-reviews-count"></div>         --}}
+        <h3 class='text-2xl font-extrabold text-ll-blue'>{{c_pageSubtitleH2}}</h3>
+        <div class="location-reviews-count"></div>        
     </div>
     
     <div class="grid gap-y-5">
-        <div class="grid gap-x-2 grid-cols-2">
+        <div class="grid grid-cols-2 gap-x-2">
             <div class='' id=''>
                 <h3>Address</h3>
                 <a id="" class="hover:underline" href="https://www.google.com/maps/dir/?api=1&destination={{name}} {{address.line1}} {{address.city}} {{address.region}} {{address.postalCode}}">{{address.line1}} {{address.city}}, {{address.region}} {{address.postalCode}}<p><i>{{c_crossStreets}}</i></p></a>
@@ -21,9 +21,9 @@
         <div class="grid gap-y-5 sm:grid-cols-2 md:gap-x-5">
             <div class=''>
                 <details class="">
-                    <summary class="summary text-lg font-bold text-ll-red">  
+                    <summary class="text-lg font-bold summary text-ll-red">  
                         Access Hours
-                        <div class="subtitle text-ll-blue text-base font-normal">
+                        <div class="text-base font-normal subtitle text-ll-blue">
                             {{c_accessHoursSummary}}
                         </div>
                     </summary>
@@ -32,9 +32,9 @@
             </div>
             <div class=''>
                 <details>
-                    <summary class="summary text-lg font-bold text-ll-red">
+                    <summary class="text-lg font-bold summary text-ll-red">
                         Support Hours
-                        <div class="subtitle text-ll-blue text-base font-normal">
+                        <div class="text-base font-normal subtitle text-ll-blue">
                             Expand for details
                         </div>
                     </summary>

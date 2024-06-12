@@ -53,7 +53,12 @@ const fetchReviews = async () => {
   var script_tag = document.getElementById('units-script');
   var entityId = script_tag.getAttribute('data');
 
-  const res = await axios.get(`https://admin.localocker.com/location/${entityId}/`);
+  const res = await axios.get(`https://admin.localocker.com/location/${entityId}/`, {
+    headers: {
+      Authorization: `Token 6a12e2497169cb39f0ff65bbf13bfc2da4e6ef28`,   
+      "Content-Type": "application/json",
+    },
+  });
   const {
     data: { all_location_reviews_and_rating },
     data: { location_reviews_count },

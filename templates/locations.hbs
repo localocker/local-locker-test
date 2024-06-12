@@ -67,7 +67,7 @@
         <link rel="shortcut icon" type="image/jpg" href="/images/favicon-32x32.png"/>
     </head>
     <body>      
-        <div class="flex min-h-screen w-full"> 
+        <div class="flex w-full min-h-screen"> 
             {{>sidebar}}
             <div class="w-full">
                 {{>nav}}  
@@ -91,7 +91,7 @@
                             </div> 
                         </div>
                     </div>
-                    {{!-- <div class="section pt-5 md:pt-0">{{>reviews}}</div>  --}}
+                    <div class="pt-5 section md:pt-0">{{>reviews}}</div> 
                     {{#if c_displayNearbyLocations}}
                         <div class="section">{{>nearby geocodedCoordinate}}</div>
                     {{/if}}
