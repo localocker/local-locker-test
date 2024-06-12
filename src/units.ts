@@ -132,10 +132,16 @@ const renderUnitRow = (uc: UnitCategory) => {
 };
 
 const fetchUnitCategories = async (id) => {
-  const res = await axios.get(`https://admin.localocker.com/location/${id}/`);
+  // const token = process.env.LOCAL_LOCKER_AUTH_TOKEN; 
+  const res = await axios.get(`https://admin.localocker.com/location/${id}/`, {
+    headers: {
+      Authorization: `Token 6a12e2497169cb39f0ff65bbf13bfc2da4e6ef28`,
+    },
+  });
   const { data } = res;
   return data.unit_categories as UnitCategory[];
 };
+
 
 const renderUnits = async () => {
   const tableBodyContainer = document.getElementById("units-table-body");
